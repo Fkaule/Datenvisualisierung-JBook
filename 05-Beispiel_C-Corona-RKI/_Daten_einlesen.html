@@ -378,6 +378,18 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Weiterführendes Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Links.html">
+   Weiterführendes Material (Links)
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -532,19 +544,153 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">51603</span><span class="n">b8d18a4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">link</span><span class="o">=</span><span class="s2">&quot;https://opendata.arcgis.com/datasets/dd4580c810204019a7b8eb3e0b329dd6_0.csv&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">RKI_komplett</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ObjectId</th>
+      <th>IdBundesland</th>
+      <th>Bundesland</th>
+      <th>Landkreis</th>
+      <th>Altersgruppe</th>
+      <th>Geschlecht</th>
+      <th>AnzahlFall</th>
+      <th>AnzahlTodesfall</th>
+      <th>Meldedatum</th>
+      <th>IdLandkreis</th>
+      <th>Datenstand</th>
+      <th>NeuerFall</th>
+      <th>NeuerTodesfall</th>
+      <th>Refdatum</th>
+      <th>NeuGenesen</th>
+      <th>AnzahlGenesen</th>
+      <th>IstErkrankungsbeginn</th>
+      <th>Altersgruppe2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Schleswig-Holstein</td>
+      <td>SK Flensburg</td>
+      <td>A00-A04</td>
+      <td>M</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2020/09/30 00:00:00+00</td>
+      <td>1001</td>
+      <td>11.02.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2020/09/30 00:00:00+00</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>Schleswig-Holstein</td>
+      <td>SK Flensburg</td>
+      <td>A00-A04</td>
+      <td>M</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2020/10/29 00:00:00+00</td>
+      <td>1001</td>
+      <td>11.02.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2020/10/29 00:00:00+00</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>Schleswig-Holstein</td>
+      <td>SK Flensburg</td>
+      <td>A00-A04</td>
+      <td>M</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2020/11/03 00:00:00+00</td>
+      <td>1001</td>
+      <td>11.02.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2020/11/03 00:00:00+00</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>Schleswig-Holstein</td>
+      <td>SK Flensburg</td>
+      <td>A00-A04</td>
+      <td>M</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2020/11/20 00:00:00+00</td>
+      <td>1001</td>
+      <td>11.02.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2020/11/19 00:00:00+00</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1</td>
+      <td>Schleswig-Holstein</td>
+      <td>SK Flensburg</td>
+      <td>A00-A04</td>
+      <td>M</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2020/11/23 00:00:00+00</td>
+      <td>1001</td>
+      <td>11.02.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2020/11/18 00:00:00+00</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="deutschland-rausfiltern">

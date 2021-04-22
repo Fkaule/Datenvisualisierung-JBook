@@ -380,6 +380,18 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Weiterführendes Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Links.html">
+   Weiterführendes Material (Links)
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -604,19 +616,112 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">266</span><span class="n">ac6913304</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">RKI_Deutschland</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;RKI_Corona_Deutschland.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Meldedatum</th>
+      <th>Neue Fallzahlen</th>
+      <th>Neue Fallzahlen Mittelwert (7 Tage)</th>
+      <th>Faelle gesamt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-01-02 00:00:00+00:00</td>
+      <td>6</td>
+      <td>0</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-01-03 00:00:00+00:00</td>
+      <td>6</td>
+      <td>0</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-01-04 00:00:00+00:00</td>
+      <td>3</td>
+      <td>0</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-01-05 00:00:00+00:00</td>
+      <td>1</td>
+      <td>0</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-01-06 00:00:00+00:00</td>
+      <td>2</td>
+      <td>0</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>2021-02-05 00:00:00+00:00</td>
+      <td>10014</td>
+      <td>9633</td>
+      <td>2277913</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>2021-02-06 00:00:00+00:00</td>
+      <td>8369</td>
+      <td>9397</td>
+      <td>2286282</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>2021-02-07 00:00:00+00:00</td>
+      <td>3075</td>
+      <td>9235</td>
+      <td>2289357</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>2021-02-08 00:00:00+00:00</td>
+      <td>3917</td>
+      <td>8949</td>
+      <td>2293274</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>2021-02-09 00:00:00+00:00</td>
+      <td>6104</td>
+      <td>8059</td>
+      <td>2299378</td>
+    </tr>
+  </tbody>
+</table>
+<p>392 rows × 4 columns</p>
+</div></div></div>
 </div>
 </div>
 </div>

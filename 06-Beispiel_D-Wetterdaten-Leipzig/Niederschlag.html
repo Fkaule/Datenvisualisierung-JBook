@@ -54,6 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Weiterführendes Material (Links)" href="../Links.html" />
     <link rel="prev" title="Einlesen der Wetterdaten vom DWD" href="Temperaturen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -379,6 +380,18 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Weiterführendes Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Links.html">
+   Weiterführendes Material (Links)
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -567,19 +580,124 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">b7c39c02243d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># historische Daten einlesen</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">data_hist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;produkt_klima_tag_19340101_20181231_02932.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">data_hist</span> <span class="o">=</span> <span class="n">data_hist</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,(</span><span class="s2">&quot;MESS_DATUM&quot;</span><span class="p">,</span><span class="s2">&quot; RSK&quot;</span><span class="p">)]</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tgl. Niederschlagshoehe [mm]</th>
+      <th>Datum</th>
+      <th>Jahr</th>
+      <th>Monat</th>
+      <th>Tag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.3</td>
+      <td>1934-01-01</td>
+      <td>1934</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>1934-01-02</td>
+      <td>1934</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>1934-01-03</td>
+      <td>1934</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>1934-01-04</td>
+      <td>1934</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.9</td>
+      <td>1934-01-05</td>
+      <td>1934</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>23349</th>
+      <td>0.3</td>
+      <td>2021-01-14</td>
+      <td>2021</td>
+      <td>1</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>23350</th>
+      <td>0.5</td>
+      <td>2021-01-15</td>
+      <td>2021</td>
+      <td>1</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>23351</th>
+      <td>0.0</td>
+      <td>2021-01-16</td>
+      <td>2021</td>
+      <td>1</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>23352</th>
+      <td>0.7</td>
+      <td>2021-01-17</td>
+      <td>2021</td>
+      <td>1</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>23353</th>
+      <td>0.6</td>
+      <td>2021-01-18</td>
+      <td>2021</td>
+      <td>1</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+<p>23354 rows × 5 columns</p>
+</div></div></div>
 </div>
 <div class="section" id="auf-ungewohnliche-werte-prufen">
 <h3>auf ungewöhnliche Werte prüfen<a class="headerlink" href="#auf-ungewohnliche-werte-prufen" title="Permalink to this headline">¶</a></h3>
@@ -1204,6 +1322,7 @@ Name: tgl. Niederschlagshoehe [mm], dtype: float64
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Temperaturen.html" title="previous page">Einlesen der Wetterdaten vom DWD</a>
+    <a class='right-next' id="next-link" href="../Links.html" title="next page">Weiterführendes Material (Links)</a>
 
         </div>
         

@@ -378,6 +378,18 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Weiterführendes Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Links.html">
+   Weiterführendes Material (Links)
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -602,19 +614,316 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">6169</span><span class="n">de06a9e9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">data_confirmed</span><span class="o">=</span><span class="s2">&quot;https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Province/State</th>
+      <th>Country/Region</th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>1/22/20</th>
+      <th>1/23/20</th>
+      <th>1/24/20</th>
+      <th>1/25/20</th>
+      <th>1/26/20</th>
+      <th>1/27/20</th>
+      <th>...</th>
+      <th>1/22/21</th>
+      <th>1/23/21</th>
+      <th>1/24/21</th>
+      <th>1/25/21</th>
+      <th>1/26/21</th>
+      <th>1/27/21</th>
+      <th>1/28/21</th>
+      <th>1/29/21</th>
+      <th>1/30/21</th>
+      <th>1/31/21</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>33.939110</td>
+      <td>67.709953</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>54483</td>
+      <td>54559</td>
+      <td>54595</td>
+      <td>54672</td>
+      <td>54750</td>
+      <td>54854</td>
+      <td>54891</td>
+      <td>54939</td>
+      <td>55008</td>
+      <td>55023</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>Albania</td>
+      <td>41.153300</td>
+      <td>20.168300</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>70655</td>
+      <td>71441</td>
+      <td>72274</td>
+      <td>72812</td>
+      <td>73691</td>
+      <td>74567</td>
+      <td>75454</td>
+      <td>76350</td>
+      <td>77251</td>
+      <td>78127</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>Algeria</td>
+      <td>28.033900</td>
+      <td>1.659600</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>105124</td>
+      <td>105369</td>
+      <td>105596</td>
+      <td>105854</td>
+      <td>106097</td>
+      <td>106359</td>
+      <td>106610</td>
+      <td>106887</td>
+      <td>107122</td>
+      <td>107339</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>Andorra</td>
+      <td>42.506300</td>
+      <td>1.521800</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>9416</td>
+      <td>9499</td>
+      <td>9549</td>
+      <td>9596</td>
+      <td>9638</td>
+      <td>9716</td>
+      <td>9779</td>
+      <td>9837</td>
+      <td>9885</td>
+      <td>9937</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>Angola</td>
+      <td>-11.202700</td>
+      <td>17.873900</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>19269</td>
+      <td>19367</td>
+      <td>19399</td>
+      <td>19476</td>
+      <td>19553</td>
+      <td>19580</td>
+      <td>19672</td>
+      <td>19723</td>
+      <td>19782</td>
+      <td>19796</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>268</th>
+      <td>NaN</td>
+      <td>Vietnam</td>
+      <td>14.058324</td>
+      <td>108.277199</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>...</td>
+      <td>1548</td>
+      <td>1548</td>
+      <td>1548</td>
+      <td>1549</td>
+      <td>1551</td>
+      <td>1553</td>
+      <td>1651</td>
+      <td>1657</td>
+      <td>1767</td>
+      <td>1817</td>
+    </tr>
+    <tr>
+      <th>269</th>
+      <td>NaN</td>
+      <td>West Bank and Gaza</td>
+      <td>31.952200</td>
+      <td>35.233200</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>154557</td>
+      <td>155006</td>
+      <td>155414</td>
+      <td>155884</td>
+      <td>156393</td>
+      <td>156996</td>
+      <td>157593</td>
+      <td>158168</td>
+      <td>158559</td>
+      <td>158962</td>
+    </tr>
+    <tr>
+      <th>270</th>
+      <td>NaN</td>
+      <td>Yemen</td>
+      <td>15.552727</td>
+      <td>48.516388</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2118</td>
+      <td>2118</td>
+      <td>2118</td>
+      <td>2118</td>
+      <td>2119</td>
+      <td>2120</td>
+      <td>2120</td>
+      <td>2120</td>
+      <td>2120</td>
+      <td>2121</td>
+    </tr>
+    <tr>
+      <th>271</th>
+      <td>NaN</td>
+      <td>Zambia</td>
+      <td>-13.133897</td>
+      <td>27.849332</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>43333</td>
+      <td>44592</td>
+      <td>45337</td>
+      <td>46146</td>
+      <td>47622</td>
+      <td>48911</td>
+      <td>50319</td>
+      <td>51624</td>
+      <td>53352</td>
+      <td>54217</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>NaN</td>
+      <td>Zimbabwe</td>
+      <td>-19.015438</td>
+      <td>29.154857</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>30523</td>
+      <td>31007</td>
+      <td>31320</td>
+      <td>31646</td>
+      <td>32004</td>
+      <td>32304</td>
+      <td>32646</td>
+      <td>32952</td>
+      <td>33273</td>
+      <td>33388</td>
+    </tr>
+  </tbody>
+</table>
+<p>273 rows × 380 columns</p>
+</div></div></div>
 </div>
 <p>Die Daten liegen mit jedem Datum pro Spalte vor. Diese Art ist für die Verarbeitung mit <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> sehr ungeeignet, weshalb wir aus dem <strong>breiten</strong> (nach rechts) Dataframe jetzt einen <strong>langen</strong> (nach unten) erstellen und nutzen dafür den <code class="docutils literal notranslate"><span class="pre">.melt</span></code> Befehl</p>
 <div class="cell docutils container">
