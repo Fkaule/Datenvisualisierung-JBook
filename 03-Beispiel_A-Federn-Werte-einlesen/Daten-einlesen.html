@@ -1,0 +1,1915 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daten Einlesen &#8212; Datenvisualisierung mit Python</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="WHO Daten einlesen" href="../04-Beispiel_B-Corona-JH/Corona_JohnHopkins.html" />
+    <link rel="prev" title="Daten haendisch eingeben" href="../02-Beispiel_A-Federn-Werte-eintragen/Werte-Eintragen.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/HTWK_Zusatz_de_V_Black_sRGB.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Datenvisualisierung mit Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Willkommen zum Datenvisualisierungs Kurs der HTWK
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Einleitung/Einleitung.html">
+   Einführung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Einleitung/Einleitung.html#softwareubersich-python-matplotlib-jupyter-notebook-jupyterhub-jupyterlab">
+   Softwareübersich 🤯
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Python
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Jupyter
+    </span>
+    <span class="pre">
+     Notebook
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JupyterHub
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JupyterLab
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Einleitung/Einleitung.html#erste-schritte-in-jupyter-notebook">
+   Erste Schritte in Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Einleitung/Einfuehrung-Jupyter-Noteboks.html">
+   Einführung in Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Werte eintragen
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-Beispiel_A-Federn-Werte-eintragen/Werte-Eintragen.html">
+   Daten haendisch eingeben
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Werte einlesen
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Daten Einlesen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#filtern-nur-clara-und-messdose-1">
+   Filtern (nur Clara und Messdose 1)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Corona JohnHopkins
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-Beispiel_B-Corona-JH/Corona_JohnHopkins.html">
+   WHO Daten einlesen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-Beispiel_B-Corona-JH/Corona_JohnHopkins.html#einlesen-der-aufbereitenden-daten">
+   Einlesen der aufbereitenden Daten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-Beispiel_B-Corona-JH/Corona_JohnHopkins.html#plots">
+   Plots
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Corona RKI
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-Beispiel_C-Corona-RKI/Corona_RKI.html">
+   RKI Corona Daten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-Beispiel_C-Corona-RKI/Corona_RKI.html#plot-corona-fallzahlen-fur-deutschland-quelle-rki">
+   Plot Corona Fallzahlen für Deutschland (Quelle: RKI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-Beispiel_C-Corona-RKI/Corona_RKI.html#inzidenzwert-fur-die-bundeslander-bestimmen">
+   Inzidenzwert für die Bundesländer bestimmen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-Beispiel_C-Corona-RKI/Corona_RKI.html#plot-bundeslander">
+   Plot Bundesländer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-Beispiel_C-Corona-RKI/Corona_RKI.html#plot-aktuelle-zahlen-bundeslander">
+   Plot Aktuelle Zahlen Bundesländer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-Beispiel_C-Corona-RKI/Corona_RKI.html#plot-7-tage-inzidenz-leipzig">
+   Plot 7 Tage Inzidenz Leipzig
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Wetterdaten Leipzig
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html">
+   Einlesen der Wetterdaten vom DWD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#daten-aufbereiten">
+   Daten aufbereiten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1-mittelwert-uber-die-jahre-plotten">
+   Plot 1: Mittelwert über die Jahre plotten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1a-jahresmittelwerte-absolut">
+   Plot 1a: Jahresmittelwerte absolut
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1b-jahresmittelwerte-absolut-mit-rollendem-mittelwert">
+   Plot 1b: Jahresmittelwerte absolut mit rollendem Mittelwert
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1c-temperaturdifferenz-mit-rollendem-mittelwert">
+   Plot 1c: Temperaturdifferenz mit rollendem Mittelwert
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1d-nasa-daten-plotten">
+   Plot 1d: NASA Daten plotten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1d-temperaturdifferenz-mit-rollendem-mittelwert-nasa-daten">
+   Plot 1d: Temperaturdifferenz mit rollendem Mittelwert + NASA Daten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1e-temperaturdifferenz-mit-konfidenzintervalle-mit-seaborn-und-rollendem-mittelwert">
+   Plot 1e: Temperaturdifferenz mit Konfidenzintervalle (mit
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+   ) und rollendem Mittelwert
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-2-temperaturverlauf-uber-die-monate">
+   Plot 2: Temperaturverlauf über die Monate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-2b-monatsverlauf-mit-standardabweichung-seaborn">
+   Plot 2b: Monatsverlauf mit Standardabweichung
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-2c-letzten-4-jahre-im-vergleich-zum-monatsverlauf-mit-standardabweichung-seaborn">
+   Plot 2c: letzten 4 Jahre im Vergleich zum Monatsverlauf mit Standardabweichung
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-3-mittlere-jahrestemperatur-im-vergleich-zur-minimalen-jahrestemperatur-scatter-mit-seaborn">
+   Plot 3: Mittlere Jahrestemperatur im Vergleich zur minimalen Jahrestemperatur (Scatter mit
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-3b-mittlere-jahrestemperatur-im-vergleich-zur-minimalen-jahresmindesttemperatur-scatter-mit-seaborn">
+   Plot 3b: Mittlere Jahrestemperatur im Vergleich zur minimalen Jahresmindesttemperatur (Scatter mit
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-3c-mittlere-jahrestemperatur-im-vergleich-zur-mittleren-mindesttemperatur-jan-feb-dez-scatter-mit-seaborn">
+   Plot 3c: Mittlere Jahrestemperatur im Vergleich zur mittleren Mindesttemperatur (Jan+Feb+Dez) (Scatter mit
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-4-regression-fur-jahre-seit-2010">
+   Plot 4: Regression für Jahre seit 2010
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Niederschlag.html">
+   Niederschlag
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Niederschlag.html#plot-1-jahreswerte">
+   Plot 1 : Jahreswerte
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Niederschlag.html#plot-1b-sommermonate">
+   Plot 1b : Sommermonate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-Beispiel_D-Wetterdaten-Leipzig/Niederschlag.html#plot-2-monatswerte">
+   Plot 2 : Monatswerte
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/03-Beispiel_A-Federn-Werte-einlesen/Daten-einlesen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F03-Beispiel_A-Federn-Werte-einlesen/Daten-einlesen.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/03-Beispiel_A-Federn-Werte-einlesen/Daten-einlesen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Daten Einlesen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basics-pandas-matplotlib">
+     Basics (Pandas + Matplotlib)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotten">
+       Plotten
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#was-ist-ein-pandas-dataframe">
+       Was ist ein Pandas Dataframe?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mehrere-messungen-mit-matplotlib-plotten">
+       Mehrere Messungen mit
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Matplotlib
+        </span>
+       </code>
+       plotten
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#alle-messungen-einlesen-in-einem-dataframe-uberfuhren-parameter-aus-dateinamen-auslesen">
+       Alle Messungen einlesen in einem DataFrame überführen (Parameter aus Dateinamen auslesen)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotten-des-neuen-dataframes-mit-seaborn">
+       Plotten des neuen DataFrames mit
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Seaborn
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zusatzliche-seaborn-plots-mit-weiteren-parametern">
+     Zusätzliche
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Seaborn
+      </span>
+     </code>
+     plots mit weiteren Parametern
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#messdaten-automatisiert-einlesen-mit-kategorien">
+       Messdaten automatisiert einlesen mit Kategorien
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotten-lineplot-bootstrapping">
+       Plotten Lineplot (Bootstrapping)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotten-lineplot-mit-facetgrid">
+       Plotten Lineplot mit FacetGrid
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#maximalwerte-aus-messkurven-bestimmen">
+       Maximalwerte aus Messkurven bestimmen
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#maximalwerte-plotten-stripplot">
+       Maximalwerte plotten (stripplot)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#maximalwerte-plotten-catplot-mit-stripplot">
+       Maximalwerte plotten (catplot mit stripplot)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#maximalwerte-plotten-catplot-mit-boxplot">
+       Maximalwerte plotten (catplot mit boxplot)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#maximalwerte-plotten-catplot-mit-bar-plot">
+       Maximalwerte plotten (catplot mit bar plot)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtern-nur-clara-und-messdose-1">
+   Filtern (nur Clara und Messdose 1)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prufen-ob-filter-richtig-funktioniert-mit-unique">
+     Prüfen ob Filter richtig funktioniert mit
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .unique()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unique-fur-maxwerte-dataframe-anwenden">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .unique()
+      </span>
+     </code>
+     für MaxWerte Dataframe anwenden
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="daten-einlesen">
+<h1>Daten Einlesen<a class="headerlink" href="#daten-einlesen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basics-pandas-matplotlib">
+<h2>Basics (Pandas + Matplotlib)<a class="headerlink" href="#basics-pandas-matplotlib" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="plotten">
+<h3>Plotten<a class="headerlink" href="#plotten" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">glob</span> <span class="c1"># Zur Bestimmung der Liste an Dateien nach Suchschema</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">Files_Feder1</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;Feder_1-Messung*.csv&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Weg [mm]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Kraft [N]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">Files_Feder1</span><span class="p">:</span>
+
+    <span class="c1"># Daten einlesen</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># plotten</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span> 
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># muss nach plot kommen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1_Alle-Messungen.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="n">b3fe902a825</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">glob</span> <span class="c1"># Zur Bestimmung der Liste an Dateien nach Suchschema</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">Files_Feder1</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;Feder_1-Messung*.csv&quot;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="was-ist-ein-pandas-dataframe">
+<h3>Was ist ein Pandas Dataframe?<a class="headerlink" href="#was-ist-ein-pandas-dataframe" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Indexierung startet bei 0</p></li>
+<li><p>Vorteil des Pandas DataFrame kommt zum tragen, wenn alle Daten in einem DataFrame vereinigt sind und über Kategorien getrennt werden</p></li>
+</ul>
+<p>Oft wird als Name für Dataframes <code class="docutils literal notranslate"><span class="pre">df</span></code> verwendet, es geht aber natuerlich auch jeder andere Name</p>
+<p>Zur Darstellung gibt es verschiedene Möglichkeiten (Hier Beispielhaft mit dem Dataframe mit dem Namen <code class="docutils literal notranslate"><span class="pre">df</span></code>)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df</span></code> gesamten Dataframe anzeigen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.head()</span></code> ersten 5 Datenpunkte anzeigen (5 ist Standardwert)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.head(10)</span></code> ersten 10 Datenpunkte anzeigen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.tail()</span></code> letzten 5 Datenpunkte anzeigen (5 ist Standardwert)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.tail(10)</span></code> letzten 10 Datenpunkte anzeigen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> Zusammenfassung für jede Spalte (Anzahl, Mittelwert, usw.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.info()</span></code> Zeigt Datentypen und Anzahl der Werte je Spalten an</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg (mm)</th>
+      <th>Kraft (N)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.5</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.0</td>
+      <td>2.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.5</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10.0</td>
+      <td>5.6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg (mm)</th>
+      <th>Kraft (N)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.5</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.0</td>
+      <td>2.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.5</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10.0</td>
+      <td>5.6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg (mm)</th>
+      <th>Kraft (N)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.000000</td>
+      <td>2.800000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.952847</td>
+      <td>2.213594</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.500000</td>
+      <td>1.400000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.000000</td>
+      <td>2.800000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>7.500000</td>
+      <td>4.200000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>10.000000</td>
+      <td>5.600000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="mehrere-messungen-mit-matplotlib-plotten">
+<h3>Mehrere Messungen mit <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> plotten<a class="headerlink" href="#mehrere-messungen-mit-matplotlib-plotten" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>wollen wir nun von 3 verschiedenen Federn jeweils 5 Messungen plotten so wird der Code schon recht lang und bezüglich der Beschriftung muss auch etwas getricks werden</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">glob</span> <span class="c1"># Zur Bestimmung der Liste an Dateien nach Suchschema</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Weg [mm]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Kraft [N]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3&quot;</span><span class="p">)</span>
+
+<span class="c1"># Messung 1</span>
+<span class="n">Files_Feder1</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;Feder_1-Messung*.csv&quot;</span><span class="p">)</span>
+<span class="n">Messung</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># Laufvariable um zu prüfen was die erste Messung ist (Für Labelabfrage)</span>
+<span class="n">label</span><span class="o">=</span><span class="s2">&quot;Feder1&quot;</span> 
+<span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">Files_Feder1</span><span class="p">:</span>
+    <span class="n">Messung</span>  <span class="o">=</span> <span class="n">Messung</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># Daten einlesen</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># plotten</span>
+    <span class="k">if</span> <span class="n">Messung</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span> 
+
+<span class="c1"># Messung 2</span>
+<span class="n">Files_Feder1</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;Feder_2-Messung*.csv&quot;</span><span class="p">)</span>
+<span class="n">Messung</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># Laufvariable um zu prüfen was die erste Messung ist (Für Labelabfrage)</span>
+<span class="n">label</span><span class="o">=</span><span class="s2">&quot;Feder2&quot;</span> 
+<span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">Files_Feder1</span><span class="p">:</span>
+    <span class="n">Messung</span>  <span class="o">=</span> <span class="n">Messung</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># Daten einlesen</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># plotten</span>
+    <span class="k">if</span> <span class="n">Messung</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span> 
+
+<span class="c1"># Messung 3</span>
+<span class="n">Files_Feder1</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;Feder_3-Messung*.csv&quot;</span><span class="p">)</span>
+<span class="n">Messung</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># Laufvariable um zu prüfen was die erste Messung ist (Für Labelabfrage)</span>
+<span class="n">label</span><span class="o">=</span><span class="s2">&quot;Feder3&quot;</span> 
+<span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">Files_Feder1</span><span class="p">:</span>
+    <span class="n">Messung</span>  <span class="o">=</span> <span class="n">Messung</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># Daten einlesen</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># plotten</span>
+    <span class="k">if</span> <span class="n">Messung</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span> 
+
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># muss nach plot kommen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Matplotlib.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_9_0.svg" src="../_images/Daten-einlesen_9_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="alle-messungen-einlesen-in-einem-dataframe-uberfuhren-parameter-aus-dateinamen-auslesen">
+<h3>Alle Messungen einlesen in einem DataFrame überführen (Parameter aus Dateinamen auslesen)<a class="headerlink" href="#alle-messungen-einlesen-in-einem-dataframe-uberfuhren-parameter-aus-dateinamen-auslesen" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Wir wollen nun schauen wie wir mit nur wenigen Zeilen Code viel effektiver mit der Bibliothek <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> plotten können</p></li>
+<li><p>Bisher haben jetzt für <strong>jede Messung einen eigenen DataFrame</strong> erstellt.</p></li>
+<li><p>Damit wir jedoch den <strong>DataFrame effektiv nutzen</strong> können, müssen wir <strong>alle Messungen in einen DataFrame</strong> zusammenführen.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">glob</span> <span class="c1"># Zur Bestimmung der Liste an Dateien nach Suchschema</span>
+
+<span class="n">all_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;Feder*-Messung*.csv&quot;</span><span class="p">)</span> <span class="c1"># Liste aller Dateien die eingelesen werden sollen</span>
+
+<span class="n">li</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># dummy array um Dataframes zu sammeln</span>
+
+<span class="c1"># Funktion die Parameter aus Dateinamen liest </span>
+<span class="k">def</span> <span class="nf">get_file_parameter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">start_indicator</span><span class="p">,</span><span class="n">end_indicator</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">start_indicator</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">start_indicator</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">end_indicator</span><span class="p">)</span>
+    <span class="n">substring</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">substring</span>
+
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">all_files</span><span class="p">:</span>
+
+    <span class="c1"># Datei einlesen</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Feder aus Namen lesen</span>
+    <span class="n">Feder</span> <span class="o">=</span> <span class="n">get_file_parameter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;Feder_&quot;</span><span class="p">,</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Feder&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Feder</span>
+
+    <span class="c1"># Messnummer aus Namen lesen</span>
+    <span class="n">Messung</span> <span class="o">=</span> <span class="n">get_file_parameter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;Messung_&quot;</span><span class="p">,</span><span class="s2">&quot;.csv&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Messung&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Messung</span>
+
+    <span class="c1"># Dataframes anfügen</span>
+    <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Dataframe zusammenführen</span>
+<span class="n">Messungen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Messungen</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg (mm)</th>
+      <th>Kraft (N)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>75.000000</td>
+      <td>75.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.000000</td>
+      <td>3.418667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.559342</td>
+      <td>2.609478</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.500000</td>
+      <td>1.400000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.000000</td>
+      <td>3.100000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>7.500000</td>
+      <td>5.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>10.000000</td>
+      <td>9.200000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Messungen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Weg (mm)</th>
+      <th>Kraft (N)</th>
+      <th>Feder</th>
+      <th>Messung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.5</td>
+      <td>1.3</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.0</td>
+      <td>2.8</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.5</td>
+      <td>4.2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10.0</td>
+      <td>5.6</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>2.5</td>
+      <td>2.3</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>5.0</td>
+      <td>4.5</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>7.5</td>
+      <td>7.0</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>10.0</td>
+      <td>9.2</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>75 rows × 4 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plotten-des-neuen-dataframes-mit-seaborn">
+<h3>Plotten des neuen DataFrames mit <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code><a class="headerlink" href="#plotten-des-neuen-dataframes-mit-seaborn" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Zunächst wollen wir eine ähnliche Grafik wie vorhin erzeugen</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;Messung&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;tab10&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_whitegrid.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_15_0.svg" src="../_images/Daten-einlesen_15_0.svg" /></div>
+</div>
+<ul class="simple">
+<li><p>Man beachte die Anzahl an Codezeilen die notwendig waren um eine ähnliche Grafik zu erzeugen.</p></li>
+<li><p>Weiterhin werden Beschriftungen aus Achsen und Legenden aus dem Dataframe übernommen</p></li>
+</ul>
+<p>Als nächstes werden wir den Lineplot so verwenden, wie er standardmäßig von Seaborn erstellt wird. Dabei wird der Mittelwert über alle Messungen (jeweils für jede Feder) ermittelt und das mittels <code class="docutils literal notranslate"><span class="pre">Bootstrapping</span></code> ermittelte Konfidenzintervall (default sind 95%) geplottet</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;tab10&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (95% KI)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_ci.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_19_0.svg" src="../_images/Daten-einlesen_19_0.svg" /></div>
+</div>
+<p>Das Konfidenzintervall kann mit dem Parameter <code class="docutils literal notranslate"><span class="pre">ci</span></code> eingestellt werden. Mit <code class="docutils literal notranslate"><span class="pre">ci=sd</span></code> wird die Standardabweichung geplottet</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (sd)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_sd.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_21_0.svg" src="../_images/Daten-einlesen_21_0.svg" /></div>
+</div>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">setstyle</span></code> können verschiedene vordefinierte Stile verwendet werden</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">darkgrid</span></code>, <code class="docutils literal notranslate"><span class="pre">whitegrid</span></code>, <code class="docutils literal notranslate"><span class="pre">dark</span></code>, <code class="docutils literal notranslate"><span class="pre">white</span></code>, <code class="docutils literal notranslate"><span class="pre">ticks</span></code></p></li>
+</ul>
+<p>Nachfolgend mit <code class="docutils literal notranslate"><span class="pre">darkgrid</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (sd)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_sd_darkgrid.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_23_0.svg" src="../_images/Daten-einlesen_23_0.svg" /></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">white</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (sd)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_sd_white.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_25_0.svg" src="../_images/Daten-einlesen_25_0.svg" /></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">dark</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (sd)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_sd_dark.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_27_0.svg" src="../_images/Daten-einlesen_27_0.svg" /></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ticks</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (sd)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_sd_ticks.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_29_0.svg" src="../_images/Daten-einlesen_29_0.svg" /></div>
+</div>
+<p>Ein riesen Vorteil an der Verwendung von Seaborn ist, dass die Standardeinstellungen sehr oft bereits sehr gut aussehende Grafiken erzeugen und somit mit sehr wenig Zeilen code gearbeitet werden kann.</p>
+<p>Neben den Anpassungen des Aussehens über <code class="docutils literal notranslate"><span class="pre">set_style</span></code> kann auch die Größe der Schrift über <code class="docutils literal notranslate"><span class="pre">set_context</span></code> definiert werden, dabei gibt es folgende Möglichkeiten</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">paper</span></code> (Schrift klein)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notebook</span></code> (Schrift normal) (<strong>default</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">talk</span></code> (Schrift groß)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poster</span></code> (Schrift sehr groß)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">paper</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;paper&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (sd)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_sd_darkgrid_paper.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_33_0.svg" src="../_images/Daten-einlesen_33_0.svg" /></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">talk</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;talk&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (sd)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_sd_darkgrid_talk.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_35_0.svg" src="../_images/Daten-einlesen_35_0.svg" /></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">poster</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;poster&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s2">&quot;sd&quot;</span><span class="p">)</span>
+
+<span class="c1"># da Seaborn auf Matplotlib aufbaut können diese Befehle weiterhin verwendet werden</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Alle Messungen von Feder 1 bis 3 (sd)&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;03-Feder1bis3_Alle-Messungen_Seaborn_sd_darkgrid_talk.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_37_0.svg" src="../_images/Daten-einlesen_37_0.svg" /></div>
+</div>
+</div>
+</div>
+<div class="section" id="zusatzliche-seaborn-plots-mit-weiteren-parametern">
+<h2>Zusätzliche <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> plots mit weiteren Parametern<a class="headerlink" href="#zusatzliche-seaborn-plots-mit-weiteren-parametern" title="Permalink to this headline">¶</a></h2>
+<p>Um die Funktionen von Seaborn weiter zu verdeutlichen wurden zusätzliche Parameter in unser virtuelles Experiment eingefügt:</p>
+<ul class="simple">
+<li><p>Es werden nun 3 Federn jeweils 25 mal gemessen</p></li>
+<li><p>Dies wird jeweils von zwei verschiedenen Personen durchgeführt (Clara und Peter)</p></li>
+<li><p>Jeder Person nutzt jeweils zwei verschiedene Kraftmessdosen</p></li>
+</ul>
+<div class="section" id="messdaten-automatisiert-einlesen-mit-kategorien">
+<h3>Messdaten automatisiert einlesen mit Kategorien<a class="headerlink" href="#messdaten-automatisiert-einlesen-mit-kategorien" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">glob</span> <span class="c1"># Zur Bestimmung der Liste an Dateien nach Suchschema</span>
+
+<span class="n">all_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;Big_Feder*-Messung*.csv&quot;</span><span class="p">)</span> <span class="c1"># Liste aller Dateien die eingelesen werden sollen</span>
+
+<span class="n">li</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># dummy array um Dataframes zu sammeln</span>
+
+<span class="c1"># Funktion die Parameter aus Dateinamen liest </span>
+<span class="k">def</span> <span class="nf">get_file_parameter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">start_indicator</span><span class="p">,</span><span class="n">end_indicator</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">start_indicator</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">start_indicator</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">end_indicator</span><span class="p">)</span>
+    <span class="n">substring</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">substring</span>
+
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">all_files</span><span class="p">:</span>
+
+    <span class="c1"># Datei einlesen</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Feder aus Namen lesen</span>
+    <span class="n">Feder</span> <span class="o">=</span> <span class="n">get_file_parameter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;Big_Feder_&quot;</span><span class="p">,</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Feder&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Feder</span>
+
+    <span class="c1"># Person aus Namen lesen</span>
+    <span class="n">Person</span> <span class="o">=</span> <span class="n">get_file_parameter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;Person_&quot;</span><span class="p">,</span><span class="s2">&quot;-Messdose&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Person&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Person</span>
+
+    <span class="c1"># Messdose aus Namen lesen</span>
+    <span class="n">Messdose</span> <span class="o">=</span> <span class="n">get_file_parameter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;Messdose_&quot;</span><span class="p">,</span><span class="s2">&quot;-Messung&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Messdose&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Messdose</span>
+
+    <span class="c1"># Messnummer aus Namen lesen</span>
+    <span class="n">Messung</span> <span class="o">=</span> <span class="n">get_file_parameter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;Messung_&quot;</span><span class="p">,</span><span class="s2">&quot;.csv&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Messung&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Messung</span>
+
+    <span class="c1"># Dataframes anfügen</span>
+    <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Dataframe zusammenführen</span>
+<span class="n">Messungen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unser neuer Dataframe besitzt 1500 Reihen und 6 Spalten</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Messungen exportieren</span>
+<span class="n">Messungen</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Messungen_4Parameter.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotten-lineplot-bootstrapping">
+<h3>Plotten Lineplot (Bootstrapping)<a class="headerlink" href="#plotten-lineplot-bootstrapping" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;talk&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;04-Big-Feder-Weg-Kraft.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_46_0.svg" src="../_images/Daten-einlesen_46_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="plotten-lineplot-mit-facetgrid">
+<h3>Plotten Lineplot mit FacetGrid<a class="headerlink" href="#plotten-lineplot-mit-facetgrid" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Messungen</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span>  <span class="n">row</span><span class="o">=</span><span class="s2">&quot;Messdose&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map_dataframe</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft (N)&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">&quot;Weg (mm)&quot;</span><span class="p">,</span> <span class="s2">&quot;Kraft (N)&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;04-Big-Feder-Weg-Kraft-FacetGrid.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_48_0.svg" src="../_images/Daten-einlesen_48_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="maximalwerte-aus-messkurven-bestimmen">
+<h3>Maximalwerte aus Messkurven bestimmen<a class="headerlink" href="#maximalwerte-aus-messkurven-bestimmen" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Darstellung eines Wertes pro Messung besser als jede Kurve, daher wird hier nur der Maximalwert rausgezogen</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MaxWerte</span> <span class="o">=</span> <span class="n">Messungen</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Feder&#39;</span><span class="p">,</span><span class="s1">&#39;Person&#39;</span><span class="p">,</span><span class="s1">&#39;Messdose&#39;</span><span class="p">,</span><span class="s1">&#39;Messung&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Kraft (N)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">MaxWerte</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feder&#39;</span><span class="p">,</span><span class="s1">&#39;Person&#39;</span><span class="p">,</span><span class="s1">&#39;Messdose&#39;</span><span class="p">,</span><span class="s1">&#39;Messung&#39;</span><span class="p">,</span><span class="s1">&#39;Kraft_max (N)&#39;</span><span class="p">]</span>
+<span class="n">MaxWerte</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kraft_max (N)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>300.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>7.641333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.289490</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.900000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.800000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>7.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.100000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>19.100000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="maximalwerte-plotten-stripplot">
+<h3>Maximalwerte plotten (stripplot)<a class="headerlink" href="#maximalwerte-plotten-stripplot" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">MaxWerte</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft_max (N)&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span> <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;04-Big-Feder-KraftMax-Strip-Personen.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_52_0.svg" src="../_images/Daten-einlesen_52_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="maximalwerte-plotten-catplot-mit-stripplot">
+<h3>Maximalwerte plotten (catplot mit stripplot)<a class="headerlink" href="#maximalwerte-plotten-catplot-mit-stripplot" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Aufteilung mittels catplot</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft_max (N)&quot;</span><span class="p">,</span>
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;Messdose&quot;</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">MaxWerte</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;strip&quot;</span><span class="p">,</span> <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=.</span><span class="mi">7</span><span class="p">);</span> <span class="c1"># dodge=True bewirkt das Daten nicht übereinander geplottet werden</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;04-Big-Feder-KraftMax-CatPlot-Strip-Personen-Messdosen.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_54_0.svg" src="../_images/Daten-einlesen_54_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="maximalwerte-plotten-catplot-mit-boxplot">
+<h3>Maximalwerte plotten (catplot mit boxplot)<a class="headerlink" href="#maximalwerte-plotten-catplot-mit-boxplot" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft_max (N)&quot;</span><span class="p">,</span>
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;Messdose&quot;</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">MaxWerte</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=.</span><span class="mi">7</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;04-Big-Feder-KraftMax-CatPlot-Box-Personen-Messdosen.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_56_0.svg" src="../_images/Daten-einlesen_56_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="maximalwerte-plotten-catplot-mit-bar-plot">
+<h3>Maximalwerte plotten (catplot mit bar plot)<a class="headerlink" href="#maximalwerte-plotten-catplot-mit-bar-plot" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft_max (N)&quot;</span><span class="p">,</span>
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;Messdose&quot;</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">MaxWerte</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=.</span><span class="mi">7</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;04-Big-Feder-KraftMax-CatPlot-Bar-Personen-Messdosen.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_58_0.svg" src="../_images/Daten-einlesen_58_0.svg" /></div>
+</div>
+<p>tauschen Messdose / Person</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Feder&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Kraft_max (N)&quot;</span><span class="p">,</span>
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Messdose&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">MaxWerte</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=.</span><span class="mi">7</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;04-Big-Feder-KraftMax-CatPlot-Bar-Messdosen-Personen.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Daten-einlesen_60_0.svg" src="../_images/Daten-einlesen_60_0.svg" /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="filtern-nur-clara-und-messdose-1">
+<h1>Filtern (nur Clara und Messdose 1)<a class="headerlink" href="#filtern-nur-clara-und-messdose-1" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Clara_Messdose1</span> <span class="o">=</span> <span class="n">MaxWerte</span><span class="p">[(</span><span class="n">MaxWerte</span><span class="p">[</span><span class="s2">&quot;Person&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Clara&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">MaxWerte</span><span class="p">[</span><span class="s2">&quot;Messdose&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)]</span>
+<span class="n">Clara_Messdose1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Feder</th>
+      <th>Person</th>
+      <th>Messdose</th>
+      <th>Messung</th>
+      <th>Kraft_max (N)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>10</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>11</td>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>12</td>
+      <td>5.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>13</td>
+      <td>5.2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>3</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>5</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
+      <th>221</th>
+      <td>3</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>6</td>
+      <td>8.5</td>
+    </tr>
+    <tr>
+      <th>222</th>
+      <td>3</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>7</td>
+      <td>8.7</td>
+    </tr>
+    <tr>
+      <th>223</th>
+      <td>3</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>8</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
+      <th>224</th>
+      <td>3</td>
+      <td>Clara</td>
+      <td>1</td>
+      <td>9</td>
+      <td>8.9</td>
+    </tr>
+  </tbody>
+</table>
+<p>75 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="prufen-ob-filter-richtig-funktioniert-mit-unique">
+<h2>Prüfen ob Filter richtig funktioniert mit <code class="docutils literal notranslate"><span class="pre">.unique()</span></code><a class="headerlink" href="#prufen-ob-filter-richtig-funktioniert-mit-unique" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Clara_Messdose1</span><span class="p">[</span><span class="s2">&quot;Person&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Clara&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Clara_Messdose1</span><span class="p">[</span><span class="s2">&quot;Messdose&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;1&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="unique-fur-maxwerte-dataframe-anwenden">
+<h2><code class="docutils literal notranslate"><span class="pre">.unique()</span></code> für MaxWerte Dataframe anwenden<a class="headerlink" href="#unique-fur-maxwerte-dataframe-anwenden" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MaxWerte</span><span class="p">[</span><span class="s2">&quot;Person&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Clara&#39;, &#39;Peter&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03-Beispiel_A-Federn-Werte-einlesen"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../02-Beispiel_A-Federn-Werte-eintragen/Werte-Eintragen.html" title="previous page">Daten haendisch eingeben</a>
+    <a class='right-next' id="next-link" href="../04-Beispiel_B-Corona-JH/Corona_JohnHopkins.html" title="next page">WHO Daten einlesen</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Kaule<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Willkommen zum Datenvisualisierungs Kurs der HTWK &#8212; Datenvisualisierung mit Python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Einführung" href="01-Einleitung/Einleitung.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/HTWK_Zusatz_de_V_Black_sRGB.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Datenvisualisierung mit Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="#">
+   Willkommen zum Datenvisualisierungs Kurs der HTWK
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Einleitung/Einleitung.html">
+   Einführung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Einleitung/Einleitung.html#softwareubersich-python-matplotlib-jupyter-notebook-jupyterhub-jupyterlab">
+   Softwareübersich 🤯
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Python
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Jupyter
+    </span>
+    <span class="pre">
+     Notebook
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JupyterHub
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JupyterLab
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Einleitung/Einleitung.html#erste-schritte-in-jupyter-notebook">
+   Erste Schritte in Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Einleitung/Einfuehrung-Jupyter-Noteboks.html">
+   Einführung in Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Werte eintragen
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Beispiel_A-Federn-Werte-eintragen/Werte-Eintragen.html">
+   Daten haendisch eingeben
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Werte einlesen
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Beispiel_A-Federn-Werte-einlesen/Daten-einlesen.html">
+   Daten Einlesen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Beispiel_A-Federn-Werte-einlesen/Daten-einlesen.html#filtern-nur-clara-und-messdose-1">
+   Filtern (nur Clara und Messdose 1)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Corona JohnHopkins
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Beispiel_B-Corona-JH/Corona_JohnHopkins.html">
+   WHO Daten einlesen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Beispiel_B-Corona-JH/Corona_JohnHopkins.html#einlesen-der-aufbereitenden-daten">
+   Einlesen der aufbereitenden Daten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Beispiel_B-Corona-JH/Corona_JohnHopkins.html#plots">
+   Plots
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Corona RKI
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Beispiel_C-Corona-RKI/Corona_RKI.html">
+   RKI Corona Daten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Beispiel_C-Corona-RKI/Corona_RKI.html#plot-corona-fallzahlen-fur-deutschland-quelle-rki">
+   Plot Corona Fallzahlen für Deutschland (Quelle: RKI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Beispiel_C-Corona-RKI/Corona_RKI.html#inzidenzwert-fur-die-bundeslander-bestimmen">
+   Inzidenzwert für die Bundesländer bestimmen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Beispiel_C-Corona-RKI/Corona_RKI.html#plot-bundeslander">
+   Plot Bundesländer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Beispiel_C-Corona-RKI/Corona_RKI.html#plot-aktuelle-zahlen-bundeslander">
+   Plot Aktuelle Zahlen Bundesländer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-Beispiel_C-Corona-RKI/Corona_RKI.html#plot-7-tage-inzidenz-leipzig">
+   Plot 7 Tage Inzidenz Leipzig
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Wetterdaten Leipzig
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html">
+   Einlesen der Wetterdaten vom DWD
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#daten-aufbereiten">
+   Daten aufbereiten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1-mittelwert-uber-die-jahre-plotten">
+   Plot 1: Mittelwert über die Jahre plotten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1a-jahresmittelwerte-absolut">
+   Plot 1a: Jahresmittelwerte absolut
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1b-jahresmittelwerte-absolut-mit-rollendem-mittelwert">
+   Plot 1b: Jahresmittelwerte absolut mit rollendem Mittelwert
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1c-temperaturdifferenz-mit-rollendem-mittelwert">
+   Plot 1c: Temperaturdifferenz mit rollendem Mittelwert
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1d-nasa-daten-plotten">
+   Plot 1d: NASA Daten plotten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1d-temperaturdifferenz-mit-rollendem-mittelwert-nasa-daten">
+   Plot 1d: Temperaturdifferenz mit rollendem Mittelwert + NASA Daten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-1e-temperaturdifferenz-mit-konfidenzintervalle-mit-seaborn-und-rollendem-mittelwert">
+   Plot 1e: Temperaturdifferenz mit Konfidenzintervalle (mit
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+   ) und rollendem Mittelwert
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-2-temperaturverlauf-uber-die-monate">
+   Plot 2: Temperaturverlauf über die Monate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-2b-monatsverlauf-mit-standardabweichung-seaborn">
+   Plot 2b: Monatsverlauf mit Standardabweichung
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-2c-letzten-4-jahre-im-vergleich-zum-monatsverlauf-mit-standardabweichung-seaborn">
+   Plot 2c: letzten 4 Jahre im Vergleich zum Monatsverlauf mit Standardabweichung
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-3-mittlere-jahrestemperatur-im-vergleich-zur-minimalen-jahrestemperatur-scatter-mit-seaborn">
+   Plot 3: Mittlere Jahrestemperatur im Vergleich zur minimalen Jahrestemperatur (Scatter mit
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-3b-mittlere-jahrestemperatur-im-vergleich-zur-minimalen-jahresmindesttemperatur-scatter-mit-seaborn">
+   Plot 3b: Mittlere Jahrestemperatur im Vergleich zur minimalen Jahresmindesttemperatur (Scatter mit
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-3c-mittlere-jahrestemperatur-im-vergleich-zur-mittleren-mindesttemperatur-jan-feb-dez-scatter-mit-seaborn">
+   Plot 3c: Mittlere Jahrestemperatur im Vergleich zur mittleren Mindesttemperatur (Jan+Feb+Dez) (Scatter mit
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Seaborn
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Temperaturen.html#plot-4-regression-fur-jahre-seit-2010">
+   Plot 4: Regression für Jahre seit 2010
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Niederschlag.html">
+   Niederschlag
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Niederschlag.html#plot-1-jahreswerte">
+   Plot 1 : Jahreswerte
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Niederschlag.html#plot-1b-sommermonate">
+   Plot 1b : Sommermonate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Beispiel_D-Wetterdaten-Leipzig/Niederschlag.html#plot-2-monatswerte">
+   Plot 2 : Monatswerte
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weiterfuhrendes-material-links">
+   Weiterführendes Material (Links)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cheat-sheets">
+     Cheat Sheets:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#offizielle-dokumentationen">
+     offizielle Dokumentationen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#einsteiger-tutorials">
+     Einsteiger Tutorials:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-tutorials">
+     Advanced Tutorials:
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="willkommen-zum-datenvisualisierungs-kurs-der-htwk">
+<h1>Willkommen zum Datenvisualisierungs Kurs der HTWK<a class="headerlink" href="#willkommen-zum-datenvisualisierungs-kurs-der-htwk" title="Permalink to this headline">¶</a></h1>
+<p>Dies ist der Datenvisualisierungskurs der HTWK Leipzig. Viel Erfolg!</p>
+<div class="section" id="weiterfuhrendes-material-links">
+<h2>Weiterführendes Material (Links)<a class="headerlink" href="#weiterfuhrendes-material-links" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cheat-sheets">
+<h3>Cheat Sheets:<a class="headerlink" href="#cheat-sheets" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/matplotlib/cheatsheets/">📰 <strong>Matplotlib</strong> von Nicolas P. Rougier</a></p></li>
+<li><p><a class="reference external" href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf">📰 <strong>Matplotlib</strong> von DataChamp</a></p></li>
+<li><p><a class="reference external" href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Seaborn_Cheat_Sheet.pdf">📰 <strong>Seaborn</strong> von DataChamp</a></p></li>
+<li><p><a class="reference external" href="http://datacamp-community-prod.s3.amazonaws.com/dbed353d-2757-4617-8206-8767ab379ab3">📰 <strong>Pandas</strong> v1 von DataChamp</a></p></li>
+<li><p><a class="reference external" href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Pandas_Cheat_Sheet_2.pdf">📰 <strong>Pandas</strong> v2 von DataChamp</a></p></li>
+</ul>
+</div>
+<div class="section" id="offizielle-dokumentationen">
+<h3>offizielle Dokumentationen<a class="headerlink" href="#offizielle-dokumentationen" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html">📖 <strong>Matplotlib</strong> Dokumentation</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/tutorial.html">📖 <strong>Seaborn</strong> Dokumentation</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/">📖 <strong>Pandas</strong> Dokumentation</a></p></li>
+</ul>
+</div>
+<div class="section" id="einsteiger-tutorials">
+<h3>Einsteiger Tutorials:<a class="headerlink" href="#einsteiger-tutorials" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Matplotlib Tips</strong> von Kimberly Fessel <a class="reference external" href="https://www.youtube.com/watch?v=UUy6_ElQXBY&amp;list=PLtPIclEQf-3dJmAj3IsSRwRoLbX-n3J81">📽️YouTube Playlist</a> /  <a class="reference external" href="https://github.com/kimfetti/Videos/tree/master/Matplotlib_Tips">📁Jupyter Notebooks &#64;GitHub</a></p></li>
+<li><p><strong>Matplotlib Einsteiger Tutorial</strong> von Keith Galli <a class="reference external" href="https://youtu.be/0P7QnIQDBJY">📽️YouTube Video</a> /  <a class="reference external" href="https://github.com/KeithGalli/matplotlib_tutorial">📁Jupyter Notebooks &#64;GitHub</a></p></li>
+<li><p><strong>Intro to Seaborn</strong> von Kimberly Fessel <a class="reference external" href="https://www.youtube.com/playlist?list=PLtPIclEQf-3cG31dxSMZ8KTcDG7zYng1j">📽️YouTube Playlist</a> /  <a class="reference external" href="https://github.com/kimfetti/Videos/tree/master/Seaborn">📁Jupyter Notebooks &#64;GitHub</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/learn/data-visualization">🌐 <strong>Seaborn</strong> Tutorial von kaggle.com</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/learn/pandas">🌐 <strong>Pandas</strong> Tutorial von kaggle.com</a></p></li>
+<li><p><strong>Pandas Einsteiger Tutorial</strong> von Keith Galli <a class="reference external" href="https://youtu.be/vmEHCJofslg">📽️YouTube Video</a> /  <a class="reference external" href="https://github.com/KeithGalli/pandas">📁Jupyter Notebooks &#64;GitHub</a></p></li>
+</ul>
+</div>
+<div class="section" id="advanced-tutorials">
+<h3>Advanced Tutorials:<a class="headerlink" href="#advanced-tutorials" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Pandas Best Practices</strong> von Data School <a class="reference external" href="https://youtu.be/dPwLlJkSHLo">📽️YouTube Video</a> /  <a class="reference external" href="https://github.com/justmarkham/pandas-videos/blob/master/top_25_pandas_tricks.ipynb">📁Jupyter Notebooks &#64;GitHub</a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='right-next' id="next-link" href="01-Einleitung/Einleitung.html" title="next page">Einführung</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Kaule<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

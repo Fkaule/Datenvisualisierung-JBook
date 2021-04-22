@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "/home/fkaule/code/jupyterenvironment/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/fkaule/code/jupyterenvironment/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/fkaule/code/jupyterenvironment/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/fkaule/code/jupyterenvironment/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/fkaule/code/jupyterenvironment/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/home/fkaule/code/jupyterenvironment/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/fkaule/code/jupyterenvironment/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import glob # Zur Bestimmung der Liste an Dateien nach Suchschema
+from matplotlib import pyplot as plt
+
+Files_Feder1 = glob.glob("Feder_1-Messung*.csv")
+
+plt.xlabel("Weg [mm]")
+plt.ylabel("Kraft [N]")
+plt.grid()
+
+plt.title("Alle Messungen von Feder 1")
+for filename in Files_Feder1:
+
+    # Daten einlesen
+    df = pd.read_csv(filename, index_col=None, header=0)
+
+    # plotten
+    plt.plot(df["Weg (mm)"], df["Kraft (N)"], label=filename) 
+
+
+plt.legend() # muss nach plot kommen
+plt.savefig('03-Feder1_Alle-Messungen.png', bbox_inches='tight', dpi=200)
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[0;32m<ipython-input-1-2b3fe902a825>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;32mimport[0m [0mglob[0m [0;31m# Zur Bestimmung der Liste an Dateien nach Suchschema[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;32mfrom[0m [0mmatplotlib[0m [0;32mimport[0m [0mpyplot[0m [0;32mas[0m [0mplt[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;34m[0m[0m
+[1;32m      5[0m [0mFiles_Feder1[0m [0;34m=[0m [0mglob[0m[0;34m.[0m[0mglob[0m[0;34m([0m[0;34m"Feder_1-Messung*.csv"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mModuleNotFoundError[0m: No module named 'pandas'
+ModuleNotFoundError: No module named 'pandas'
+
