@@ -1,13 +1,3 @@
-- [Einführung](#einführung)
-- [Softwareübersich 🤯 `Python` / `Matplotlib` / `Jupyter Notebook` / `JupyterHub` / `JupyterLab`](#softwareübersich--python--matplotlib--jupyter-notebook--jupyterhub--jupyterlab)
-  - [Was ist ein `**Jupyter Notebook**` ?](#was-ist-ein-jupyter-notebook-)
-    - [1️⃣ `**Jupyter Notebooks` lokal auf dem eigenen Rechner\*\*](#1️⃣-jupyter-notebooks-lokal-auf-dem-eigenen-rechner)
-    - [2️⃣ `**JupyterHub**` **der HTWK-Leipzig (Fakultät IM) verwenden (Webzugang)**](#2️⃣-jupyterhub-der-htwk-leipzig-fakultät-im-verwenden-webzugang)
-  - [JuptyerHub](#juptyerhub)
-  - [JupyterLab](#jupyterlab)
-- [Erste Schritte in Jupyter Notebook](#erste-schritte-in-jupyter-notebook)
-  - [Vorbereitungen](#vorbereitungen)
-
 # Einführung
 
 > “In school we learn a lot about language and math. On the language side we learn how to put words together into sentences and stories. With math, we learn to make sense of numbers. But it’s rare that these two sides are paired. No one tells us how to tell stories with numbers … this leaves us poorly prepared for an important task that is increasingly in demand.” – Cole Nussbaumer Knaflic
