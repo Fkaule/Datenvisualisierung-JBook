@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einführung &#8212; Datenvisualisierung mit Python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Willkommen zum Datenvisualisierungs Kurs der HTWK" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Logo_MechSim_whiteBG_transparent.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Datenvisualisierung mit Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Willkommen zum Datenvisualisierungs Kurs der HTWK
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Einführung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#softwareubersich-python-matplotlib-jupyter-notebook-jupyterhub-jupyterlab">
+   Softwareübersich 🤯
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Python
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Jupyter
+    </span>
+    <span class="pre">
+     Notebook
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JupyterHub
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JupyterLab
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#erste-schritte-in-jupyter-notebook">
+   Erste Schritte in Jupyter Notebook
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Einleitung.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEinleitung.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Einführung
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#softwareubersich-python-matplotlib-jupyter-notebook-jupyterhub-jupyterlab">
+   Softwareübersich 🤯
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Python
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Jupyter
+    </span>
+    <span class="pre">
+     Notebook
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JupyterHub
+    </span>
+   </code>
+   /
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     JupyterLab
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#was-ist-ein-jupyter-notebook">
+     Was ist ein
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       **Jupyter
+      </span>
+      <span class="pre">
+       Notebook**
+      </span>
+     </code>
+     ?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyter-notebooks-lokal-auf-dem-eigenen-rechner">
+       1️⃣
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         **Jupyter
+        </span>
+        <span class="pre">
+         Notebooks
+        </span>
+       </code>
+       lokal auf dem eigenen Rechner**
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyterhub-der-htwk-leipzig-fakultat-im-verwenden-webzugang">
+       2️⃣
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         **JupyterHub**
+        </span>
+       </code>
+       <strong>
+        der HTWK-Leipzig (Fakultät IM) verwenden (Webzugang)
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#juptyerhub">
+     JuptyerHub
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterlab">
+     JupyterLab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erste-schritte-in-jupyter-notebook">
+   Erste Schritte in Jupyter Notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vorbereitungen">
+     Vorbereitungen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <ul class="simple">
+<li><p><a class="reference external" href="#einf%C3%BChrung">Einführung</a></p></li>
+<li><p><a class="reference external" href="#software%C3%BCbersich--python--matplotlib--jupyter-notebook--jupyterhub--jupyterlab">Softwareübersich 🤯 <code class="docutils literal notranslate"><span class="pre">Python</span></code> / <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> / <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> / <code class="docutils literal notranslate"><span class="pre">JupyterHub</span></code> / <code class="docutils literal notranslate"><span class="pre">JupyterLab</span></code></a></p>
+<ul>
+<li><p><a class="reference external" href="#was-ist-ein-jupyter-notebook-">Was ist ein <code class="docutils literal notranslate"><span class="pre">**Jupyter</span> <span class="pre">Notebook**</span></code> ?</a></p>
+<ul>
+<li><p><a class="reference external" href="#1%EF%B8%8F%E2%83%A3-jupyter-notebooks-lokal-auf-dem-eigenen-rechner">1️⃣ <code class="docutils literal notranslate"><span class="pre">**Jupyter</span> <span class="pre">Notebooks</span></code> lokal auf dem eigenen Rechner**</a></p></li>
+<li><p><a class="reference external" href="#2%EF%B8%8F%E2%83%A3-jupyterhub-der-htwk-leipzig-fakult%C3%A4t-im-verwenden-webzugang">2️⃣ <code class="docutils literal notranslate"><span class="pre">**JupyterHub**</span></code> <strong>der HTWK-Leipzig (Fakultät IM) verwenden (Webzugang)</strong></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#juptyerhub">JuptyerHub</a></p></li>
+<li><p><a class="reference external" href="#jupyterlab">JupyterLab</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#erste-schritte-in-jupyter-notebook">Erste Schritte in Jupyter Notebook</a></p>
+<ul>
+<li><p><a class="reference external" href="#vorbereitungen">Vorbereitungen</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="einfuhrung">
+<h1>Einführung<a class="headerlink" href="#einfuhrung" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>“In school we learn a lot about language and math. On the language side we learn how to put words together into sentences and stories. With math, we learn to make sense of numbers. But it’s rare that these two sides are paired. No one tells us how to tell stories with numbers … this leaves us poorly prepared for an important task that is increasingly in demand.” – Cole Nussbaumer Knaflic</p>
+</div></blockquote>
+<p>In diesem Kurs geht es darum <strong>Daten</strong> (z.B. aus Experiment/Simulation/Berechnung) zu <strong>visualisieren.</strong> Die Visualisierung dient dabei immer dem Zweck eine bestimmte <strong>Frage zu beantworten</strong>. Diese könnte zum Beispiel sein:</p>
+<p>Wie groß ist die <strong>jährliche Veränderung</strong> der <strong>Temperatur</strong> der <strong>erdnahen Atmosphäre</strong> <strong>und der Meere seit Beginn der Industrialisierung</strong>?</p>
+<p><img alt="" src="_images/NASA_global_mean.png" /></p>
+<p>[<a class="reference external" href="https://data.giss.nasa.gov/gistemp/graphs_v4/">von NASA</a>] Land-ocean temperature index, 1880 to present, with base period 1951-1980. The solid black line is the global annual mean and the solid red line is the five-year lowess smooth. The gray shading represents the total (LSAT and SST) annual uncertainty at a 95% confidence interval and is available for <a class="reference external" href="https://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/totalCI_ERA.csv">download</a>. [More information on the updated uncertainty model can be found here: <a class="reference external" href="https://pubs.giss.nasa.gov/abs/le05800h.html">Lenssen et al. (2019)</a>.]</p>
+<p><strong>LSAT</strong> = <strong>L</strong>and <strong>S</strong>urface <strong>A</strong>ir <strong>T</strong>emperature
+<strong>SST</strong> = <strong>S</strong>ea <strong>S</strong>urface <strong>T</strong>emperature</p>
+<p><strong>Eine gute Datenvisualisierung muss zusammen mit der Bildunterschrift folgende Kriterien erfüllen:</strong></p>
+<p>✅ <strong>lesbar / erkennbar</strong></p>
+<ul class="simple">
+<li><p><strong>Schriftgröße ausreichend groß</strong> und Schriftart lesbar</p></li>
+<li><p><strong>Farben</strong> und <strong>Kontrast</strong> hinsichtlich Unterscheidung von Kategorien und Lesbarkeit für Farbblinde geeignet</p></li>
+<li><p><strong>Linientypen</strong> und <strong>Liniendicke</strong> hinsichtlich Unterscheidung von Kategorien und Lesbarkeit geeignet</p></li>
+<li><p>ggf. wichtige Daten als Text in die Abbildung einbringen</p></li>
+</ul>
+<p>✅ <strong>verständlich</strong></p>
+<ul class="simple">
+<li><p><strong>Achsenbeschriftung mit Einheiten</strong> vorhanden und eindeutig</p></li>
+<li><p>Verwendung von <strong>Legenden</strong> und/oder <strong>zusätzlichem Textelementen um Daten eindeutig zu kennzeichnen</strong></p></li>
+<li><p><strong>Aussage der Datenvisualisierung</strong> muss zusammen <strong>mit Bildunterschrift und Titel</strong> (wenn vorhanden) <strong>ohne zusätzlichen Kontext ersichtlich</strong> sein</p></li>
+</ul>
+<p>✅ <strong>übersichtlich</strong></p>
+<ul class="simple">
+<li><p>Wenn nicht zwingend notwendig, <strong>nicht zu viele Variationen in eine Datenvisualisierung</strong>, ggf. lieber mehrere Abbildungen erstellen</p></li>
+</ul>
+<p><strong>Nehmen wir nun erneut NASA Daten diesmal mit der Unterscheidung nach Land und Ozean und prüfen nach unseren Kriterien:</strong></p>
+<p><img alt="" src="_images/NASA_global_mean_land_ocean.png" /></p>
+<p>[<a class="reference external" href="https://data.giss.nasa.gov/gistemp/graphs_v4/">von NASA</a>] Annual (thin lines) and five-year lowess smooth (thick lines) for the temperature anomalies (vs. 1951-1980) averaged over the Earth’s land area and sea surface temperature anomalies (vs. 1951-1980) averaged over the part of the ocean that is free of ice at all times (open ocean).</p>
+<p><strong>Anmerkungen</strong>:</p>
+<ul class="simple">
+<li><p>👍 Temperaturen der Ozeane mit blauer Farbe macht die Unterscheidung intuitiv einfach</p></li>
+<li><p>👍 <a class="reference external" href="https://data.giss.nasa.gov/gistemp/graphs_v4/">Auf der Webseite</a> können Datenpunkte interaktiv abgelesen werden</p></li>
+<li><p>👍 Datenpunkte zu jedem Jahr mit niedrigerer Farbintensität und Linienstärke im Vergleich zum 5-Jahres-Mittelwert, da Mittelwert die bessere Aussagekraft hat und dies somit besser hervorsteht</p></li>
+<li><p>👍 Im Vergleich zur oberen Abbildung wurde auf das Konfidenzintervall verzichtet, weil dies die Grafik ggf. sehr unübersichtlich gemacht hätte</p></li>
+</ul>
+<p>Eine der <strong>simpelsten</strong> und <strong>gleichzeitig effektivsten Formen der Datenvisualisierung</strong> hat der Klimatologe Ed Hawkins mit den sogenannten <strong><a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Warming Stripes (Klimastreifen)</a></strong> aufgezeigt**.** Er wollte den rapiden Temperaturanstieg der letzten Jahre veranschaulichen und hat die oben gezeigten Daten Farbcodiert.</p>
+<p><img alt="" src="_images/climate_stripes.png" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Warming stripes for 1850-2018 using the WMO annual global temperature dataset.</p>
+<p>Neben der eher unwissenschaftlichen Darstellung mit den Climate Stripes hat Hawkins auch weitere Darstellungen erzeugt, die definitiv ein Beispiel für eine sehr gelungene Datenvisualisierung sind:</p>
+<p><img alt="" src="_images/spiral_2018_WMO_large.gif" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Climate spiral for the WMO global temperature dataset.</p>
+<p><img alt="" src="_images/maparctic_sept_large.gif" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Arctic sea ice concentration from NSIDC for Septembers during 1979-2018.</p>
+<p>Hawkins hat seine Klimastreifen mit <a class="reference external" href="https://www.nature.com/articles/s41561-019-0400-0">Daten des PAGES2k Team</a> bis auf das Jahr 0 erweitert, was die Aussage meiner Meinung nach sogar noch besser darstellt.</p>
+<p><img alt="" src="_images/climate_stripes_from_year0.png" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Klimastreifen mit Daten der letzten 2019 Jahre</p>
+<p>Jedoch ist die Datenbasis der Jahre vor 1850 mit großen Unsicherheiten behaftet, was durch Konfidenzintervalle deutlich wird:</p>
+<p><img alt="" src="_images/pages2k_data.png" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Erderwärmung der letzten 2019 Jahre</p>
+<p>In dem letzten Bild wird auch gut gezeigt, wie man durch zusätzliche <strong>Farb-</strong> und <strong>Textelemente</strong> die Daten besser verstehen kann.</p>
+<p>Für interessierte hier noch weitere Beispiele für außergewöhnliche Datenvisualisierung (auch außerhalb der wissenschaftlichen Welt):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nytimes.com/interactive/2020/03/22/world/coronavirus-spread.html">How the Virus Got Out [New York Times]</a></p></li>
+<li><p><a class="reference external" href="https://www.reddit.com/r/dataisbeautiful/comments/gm1r3v/light_speed_is_fast_but_space_is_vast_oc/">Light speed is fast, but space is vast [O’Donoghue]</a></p></li>
+</ul>
+<p>Oben haben wir nun gesehen wie eine gute Datenvisualisierung aussehen kann und worauf es ankommt. Schauen wir nun einmal auf die verschiedenen Möglichkeiten die man dazu hat:</p>
+<p><img alt="" src="_images/overview.png" /></p>
+<p>[<a class="reference external" href="https://www.labnol.org/software/find-right-chart-type-for-your-data/6523/">Quelle</a>] Choose the Right Chart Type for your Data</p>
+<p>Es macht meiner Meinung nach keinen Sinn jeden Typ in einer solchen Übersicht nacheinander durchzugehen, da die <strong>Art der Diagramme, die man verwendet stark davon abhängen in welchem wissenschaftlichen Bereich man sich befindet</strong>.</p>
+<p>Um nun den Einstieg in unsere <strong>erste eigene Datenvisualisierung</strong> zu bekommen möchte ich mit Ihnen gerne ein <strong>fiktives Experiment</strong> auswerten um daran zu demonstrieren wie man bestimmte Daten am besten darstellt. Bevor wir damit jedoch anfangen können müssen wir einen kurzen Exkurs in die zu verwendete Software machen</p>
+</div>
+<div class="section" id="softwareubersich-python-matplotlib-jupyter-notebook-jupyterhub-jupyterlab">
+<h1>Softwareübersich 🤯 <code class="docutils literal notranslate"><span class="pre">Python</span></code> / <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> / <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> / <code class="docutils literal notranslate"><span class="pre">JupyterHub</span></code> / <code class="docutils literal notranslate"><span class="pre">JupyterLab</span></code><a class="headerlink" href="#softwareubersich-python-matplotlib-jupyter-notebook-jupyterhub-jupyterlab" title="Permalink to this headline">¶</a></h1>
+<p>Zur graphischen Darstellung benutzen wir die Programmiersprache <code class="docutils literal notranslate"><span class="pre">**Python**</span></code> und zunächst daraus die weit verbreitest Bibliothek zur graphischen Darstellung und zwar <code class="docutils literal notranslate"><span class="pre">**Matplotlib**</span></code>. Auf die Befehle die wir benötigen gehen wir gleich später in unserem ersten Beispiel ein.</p>
+<p>Als Umgebung in der wir unseren Programmcode schreiben, verwenden wir dafür sogenannte <code class="docutils literal notranslate"><span class="pre">**Jupyter</span> <span class="pre">Notebooks**</span></code></p>
+<div class="section" id="was-ist-ein-jupyter-notebook">
+<h2>Was ist ein <code class="docutils literal notranslate"><span class="pre">**Jupyter</span> <span class="pre">Notebook**</span></code> ?<a class="headerlink" href="#was-ist-ein-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code></strong> ist eine Client-Server-Anwendung der Non-Profit-Organisation <a class="reference external" href="http://jupyter.org/">Project Jupyter</a>, die 2015 veröffentlicht wurde.</p>
+<p>Hier die Hauptmerkmale Stichpunktartig zusammengefasst:</p>
+<ul class="simple">
+<li><p>wird im <strong>Browser</strong> gestartet <em>(kann aber auch z.B. mit VS Code verknüpft werden)</em></p></li>
+<li><p>verfügt über <strong>ausführbare Zellen</strong> (analog wie z.B. die Software <code class="docutils literal notranslate"><span class="pre">Mathematica</span></code>)</p></li>
+<li><p>Zwischen Zellen mit Code können <strong>Textelemente</strong> mit dem <strong><code class="docutils literal notranslate"><span class="pre">Markdown</span> <span class="pre">Syntax</span></code></strong> und sogar auch Bilder eingefügt werden. Dies hilft enorm um den entwickelten Code zu beschreiben und somit für andere Zugänglich zu machen z.B. für wissenschaftlichen Austausch</p></li>
+</ul>
+<p>Der Projektname „<strong>Jupyter</strong>“ geht auf die drei Kern-Programmiersprachen <code class="docutils literal notranslate"><span class="pre">Julia</span></code>, <code class="docutils literal notranslate"><span class="pre">Python</span></code> und <code class="docutils literal notranslate"><span class="pre">R</span></code> zurück.</p>
+<p>Nun gibt es mehrere Wege die <code class="docutils literal notranslate"><span class="pre">**Jupyter</span> <span class="pre">Notebooks**</span></code> zu verwenden:</p>
+<div class="section" id="jupyter-notebooks-lokal-auf-dem-eigenen-rechner">
+<h3>1️⃣ <code class="docutils literal notranslate"><span class="pre">**Jupyter</span> <span class="pre">Notebooks</span></code> lokal auf dem eigenen Rechner**<a class="headerlink" href="#jupyter-notebooks-lokal-auf-dem-eigenen-rechner" title="Permalink to this headline">¶</a></h3>
+<p>Der einfachste Weg ist sich <code class="docutils literal notranslate"><span class="pre">**Anaconda**</span></code> <a class="reference external" href="https://www.notion.so/Einf-hrung-APDL-IV-Post-Processing-2fa612432d3c4595af5207f034ffb26d">runterladen</a> (für Windows/Mac und Linux verfügbar) und installieren.</p>
+<p><code class="docutils literal notranslate"><span class="pre">**Anaconda</span></code>** ist eine Open-Source-Distribution für die Programmiersprachen <code class="docutils literal notranslate"><span class="pre">**Python**</span></code>und<code class="docutils literal notranslate"><span class="pre">**R</span></code>** welches <strong>unter anderem</strong> ein Web basiertes Frontend für <code class="docutils literal notranslate"><span class="pre">**Jupyter</span> <span class="pre">Notebooks**</span></code>und<code class="docutils literal notranslate"><span class="pre">**JupyterLab**</span></code> bereit hält.</p>
+<p>Wer gerne den <strong>Open Source Editor</strong> <code class="docutils literal notranslate"><span class="pre">VS</span> <span class="pre">Code</span></code> von Microsoft (<a class="reference external" href="https://www.notion.so/Einf-hrung-APDL-IV-Post-Processing-2fa612432d3c4595af5207f034ffb26d">Link</a>) benutzt, kann hier auch über eine Erweiterung <a class="reference external" href="https://pypi.org/project/jupyter/">Jupyter Package</a> auch seine Jupyter Notebooks dort bearbeiten. Danach mit <code class="docutils literal notranslate"><span class="pre">Strg</span></code>+<code class="docutils literal notranslate"><span class="pre">Shift</span></code>+<code class="docutils literal notranslate"><span class="pre">P</span></code> den Python Interepter auswählen und danach wieder mit <code class="docutils literal notranslate"><span class="pre">Strg</span></code>+<code class="docutils literal notranslate"><span class="pre">Shift</span></code>+<code class="docutils literal notranslate"><span class="pre">P</span></code> ein neues Jupyter Notebook anlegen.</p>
+</div>
+<div class="section" id="jupyterhub-der-htwk-leipzig-fakultat-im-verwenden-webzugang">
+<h3>2️⃣ <code class="docutils literal notranslate"><span class="pre">**JupyterHub**</span></code> <strong>der HTWK-Leipzig (Fakultät IM) verwenden (Webzugang)</strong><a class="headerlink" href="#jupyterhub-der-htwk-leipzig-fakultat-im-verwenden-webzugang" title="Permalink to this headline">¶</a></h3>
+<p>⭐ <strong>EMPFOHLEN FÜR ANFÄNGER</strong> ⭐</p>
+<p>Das ist der schnellste und einfachste Weg, da Sie sich hier nur mit Ihrem HTWK-Login anmelden müssen und sofort in der <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> Umgebung sind</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://jupyterhub.fim.htwk-leipzig.de/">https://jupyterhub.fim.htwk-leipzig.de/</a></p>
+</div>
+</div>
+<div class="section" id="juptyerhub">
+<h2>JuptyerHub<a class="headerlink" href="#juptyerhub" title="Permalink to this headline">¶</a></h2>
+<p>Ein <strong><code class="docutils literal notranslate"><span class="pre">JuptyerHub</span></code></strong> ist Multi-User-Server der mehrere Jupyter-Notebook-Instanzen miteinander verknüpft.</p>
+</div>
+<div class="section" id="jupyterlab">
+<h2>JupyterLab<a class="headerlink" href="#jupyterlab" title="Permalink to this headline">¶</a></h2>
+<p>Zusätzlich zu <code class="docutils literal notranslate"><span class="pre">**Jupyter</span> <span class="pre">Notebooks**</span></code> gibt es seit 2019 eine Weiterentwicklung die <code class="docutils literal notranslate"><span class="pre">**JupyterLab</span></code>** genannt wird. Diese soll auf lange Sicht das **<code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>** ablösen und bietet einige Features mehr.</p>
+<p><strong>Fassen wir noch mal kurz zusammen</strong>:</p>
+<p>Wir schreiben also unseren <code class="docutils literal notranslate"><span class="pre">**Python</span></code>** Code in <strong><code class="docutils literal notranslate"><span class="pre">Juypter</span> <span class="pre">Notebooks</span></code></strong>, da diese Umgebung uns die Möglichkeit bietet sehr übersichtlich zu arbeiten. Dazu loggen wir uns ins **<code class="docutils literal notranslate"><span class="pre">[JupyterHub</span></code>** der HTWK Leipzig](<a class="reference external" href="https://jupyterhub.fim.htwk-leipzig.de/">https://jupyterhub.fim.htwk-leipzig.de/</a>) ein.</p>
+</div>
+</div>
+<div class="section" id="erste-schritte-in-jupyter-notebook">
+<h1>Erste Schritte in Jupyter Notebook<a class="headerlink" href="#erste-schritte-in-jupyter-notebook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vorbereitungen">
+<h2>Vorbereitungen<a class="headerlink" href="#vorbereitungen" title="Permalink to this headline">¶</a></h2>
+<p>Loggen wir uns ins <strong>JupyterHub</strong> der HTWK-Leipzig ein.</p>
+<p>→ <a class="reference external" href="https://jupyterhub.fim.htwk-leipzig.de/">https://jupyterhub.fim.htwk-leipzig.de/</a></p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">New</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Folder</span></code> können Sie einen <strong>neuen Ordner</strong> anlegen</p>
+<p><img alt="" src="_images/neuer_Ordner.png" /></p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">die</span> <span class="pre">Auswahl</span> <span class="pre">des</span> <span class="pre">Ordners</span></code> und  <code class="docutils literal notranslate"><span class="pre">Rename</span></code> können Sie einen <strong>Ordner</strong> umbennnen</p>
+<p><img alt="" src="_images/Ordner_umbennen.png" /></p>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">New</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> legen Sie ein neues Notebook an</p>
+<p><img alt="" src="_images/new_python3_notebook.png" /></p>
+<p>Nun gehen wir in ein bereits <span class="xref myst">vorbereitetes Jupyter Notebook</span>  um dort den Syntax kennen zu lernen</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Willkommen zum Datenvisualisierungs Kurs der HTWK</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Kaule<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
