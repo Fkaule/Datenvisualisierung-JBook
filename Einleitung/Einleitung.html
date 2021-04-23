@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allgemeines zur Datenvisualisierung &#8212; Datenvisualisierung mit Python</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Einführung in Jupyter Notebooks" href="../JupyterNotebooks/Einf%C3%BChrung_JB.html" />
+    <link rel="prev" title="Startseite" href="../Startseite.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/Logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Datenvisualisierung mit Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Startseite.html">
+   Startseite
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Allgemeines zur Datenvisualisierung
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Jupyter Notebooks
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../JupyterNotebooks/Einf%C3%BChrung_JB.html">
+   Einführung in Jupyter Notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Matplotlib
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Matplotlib/Grundlagen.html">
+   Grundlagen
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Grundlagen.html">
+   Grundlagen
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Seaborn
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Seaborn/Grundlagen.html">
+   Grundlagen
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Altair
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Altair/Grundlagen.html">
+   Grundlagen
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Weiterführendes Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Weiterfuehrendes_Material.html">
+   Weiterführendes Material (Links)
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Einleitung/Einleitung.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEinleitung/Einleitung.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Einleitung/Einleitung.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="allgemeines-zur-datenvisualisierung">
+<h1>Allgemeines zur Datenvisualisierung<a class="headerlink" href="#allgemeines-zur-datenvisualisierung" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>“In school we learn a lot about language and math. On the language side we learn how to put words together into sentences and stories. With math, we learn to make sense of numbers. But it’s rare that these two sides are paired. No one tells us how to tell stories with numbers … this leaves us poorly prepared for an important task that is increasingly in demand.” – Cole Nussbaumer Knaflic</p>
+</div></blockquote>
+<p>In diesem Kurs geht es darum <strong>Daten</strong> (z.B. aus Experiment/Simulation/Berechnung) zu <strong>visualisieren.</strong> Die Visualisierung dient dabei immer dem Zweck eine bestimmte <strong>Frage zu beantworten</strong>. Diese könnte zum Beispiel sein:</p>
+<p>Wie groß ist die <strong>jährliche Veränderung</strong> der <strong>Temperatur</strong> der <strong>erdnahen Atmosphäre</strong> <strong>und der Meere seit Beginn der Industrialisierung</strong>?</p>
+<p><img alt="" src="../_images/NASA_global_mean.png" /></p>
+<p>[<a class="reference external" href="https://data.giss.nasa.gov/gistemp/graphs_v4/">von NASA</a>] Land-ocean temperature index, 1880 to present, with base period 1951-1980. The solid black line is the global annual mean and the solid red line is the five-year lowess smooth. The gray shading represents the total (LSAT and SST) annual uncertainty at a 95% confidence interval and is available for <a class="reference external" href="https://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/totalCI_ERA.csv">download</a>. [More information on the updated uncertainty model can be found here: <a class="reference external" href="https://pubs.giss.nasa.gov/abs/le05800h.html">Lenssen et al. (2019)</a>.]</p>
+<p><strong>LSAT</strong> = <strong>L</strong>and <strong>S</strong>urface <strong>A</strong>ir <strong>T</strong>emperature
+<strong>SST</strong> = <strong>S</strong>ea <strong>S</strong>urface <strong>T</strong>emperature</p>
+<p><strong>Eine gute Datenvisualisierung muss zusammen mit der Bildunterschrift folgende Kriterien erfüllen:</strong></p>
+<p>✅ <strong>lesbar / erkennbar</strong></p>
+<ul class="simple">
+<li><p><strong>Schriftgröße ausreichend groß</strong> und Schriftart lesbar</p></li>
+<li><p><strong>Farben</strong> und <strong>Kontrast</strong> hinsichtlich Unterscheidung von Kategorien und Lesbarkeit für Farbblinde geeignet</p></li>
+<li><p><strong>Linientypen</strong> und <strong>Liniendicke</strong> hinsichtlich Unterscheidung von Kategorien und Lesbarkeit geeignet</p></li>
+<li><p>ggf. wichtige Daten als Text in die Abbildung einbringen</p></li>
+</ul>
+<p>✅ <strong>verständlich</strong></p>
+<ul class="simple">
+<li><p><strong>Achsenbeschriftung mit Einheiten</strong> vorhanden und eindeutig</p></li>
+<li><p>Verwendung von <strong>Legenden</strong> und/oder <strong>zusätzlichem Textelementen um Daten eindeutig zu kennzeichnen</strong></p></li>
+<li><p><strong>Aussage der Datenvisualisierung</strong> muss zusammen <strong>mit Bildunterschrift und Titel</strong> (wenn vorhanden) <strong>ohne zusätzlichen Kontext ersichtlich</strong> sein</p></li>
+</ul>
+<p>✅ <strong>übersichtlich</strong></p>
+<ul class="simple">
+<li><p>Wenn nicht zwingend notwendig, <strong>nicht zu viele Variationen in eine Datenvisualisierung</strong>, ggf. lieber mehrere Abbildungen erstellen</p></li>
+</ul>
+<p><strong>Nehmen wir nun erneut NASA Daten diesmal mit der Unterscheidung nach Land und Ozean und prüfen nach unseren Kriterien:</strong></p>
+<p><img alt="" src="../_images/NASA_global_mean_land_ocean.png" /></p>
+<p>[<a class="reference external" href="https://data.giss.nasa.gov/gistemp/graphs_v4/">von NASA</a>] Annual (thin lines) and five-year lowess smooth (thick lines) for the temperature anomalies (vs. 1951-1980) averaged over the Earth’s land area and sea surface temperature anomalies (vs. 1951-1980) averaged over the part of the ocean that is free of ice at all times (open ocean).</p>
+<p><strong>Anmerkungen</strong>:</p>
+<ul class="simple">
+<li><p>👍 Temperaturen der Ozeane mit blauer Farbe macht die Unterscheidung intuitiv einfach</p></li>
+<li><p>👍 <a class="reference external" href="https://data.giss.nasa.gov/gistemp/graphs_v4/">Auf der Webseite</a> können Datenpunkte interaktiv abgelesen werden</p></li>
+<li><p>👍 Datenpunkte zu jedem Jahr mit niedrigerer Farbintensität und Linienstärke im Vergleich zum 5-Jahres-Mittelwert, da Mittelwert die bessere Aussagekraft hat und dies somit besser hervorsteht</p></li>
+<li><p>👍 Im Vergleich zur oberen Abbildung wurde auf das Konfidenzintervall verzichtet, weil dies die Grafik ggf. sehr unübersichtlich gemacht hätte</p></li>
+</ul>
+<p>Eine der <strong>simpelsten</strong> und <strong>gleichzeitig effektivsten Formen der Datenvisualisierung</strong> hat der Klimatologe Ed Hawkins mit den sogenannten <strong><a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Warming Stripes (Klimastreifen)</a></strong> aufgezeigt**.** Er wollte den rapiden Temperaturanstieg der letzten Jahre veranschaulichen und hat die oben gezeigten Daten Farbcodiert.</p>
+<p><img alt="" src="../_images/climate_stripes.png" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Warming stripes for 1850-2018 using the WMO annual global temperature dataset.</p>
+<p>Neben der eher unwissenschaftlichen Darstellung mit den Climate Stripes hat Hawkins auch weitere Darstellungen erzeugt, die definitiv ein Beispiel für eine sehr gelungene Datenvisualisierung sind:</p>
+<p><img alt="" src="../_images/spiral_2018_WMO_large.gif" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Climate spiral for the WMO global temperature dataset.</p>
+<p><img alt="" src="../_images/maparctic_sept_large.gif" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Arctic sea ice concentration from NSIDC for Septembers during 1979-2018.</p>
+<p>Hawkins hat seine Klimastreifen mit <a class="reference external" href="https://www.nature.com/articles/s41561-019-0400-0">Daten des PAGES2k Team</a> bis auf das Jahr 0 erweitert, was die Aussage meiner Meinung nach sogar noch besser darstellt.</p>
+<p><img alt="" src="../_images/climate_stripes_from_year0.png" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Klimastreifen mit Daten der letzten 2019 Jahre</p>
+<p>Jedoch ist die Datenbasis der Jahre vor 1850 mit großen Unsicherheiten behaftet, was durch Konfidenzintervalle deutlich wird:</p>
+<p><img alt="" src="../_images/pages2k_data.png" /></p>
+<p>[<a class="reference external" href="http://www.climate-lab-book.ac.uk/2018/2018-visualisation-update/">Ed Hawkins</a>] Erderwärmung der letzten 2019 Jahre</p>
+<p>In dem letzten Bild wird auch gut gezeigt, wie man durch zusätzliche <strong>Farb-</strong> und <strong>Textelemente</strong> die Daten besser verstehen kann.</p>
+<p>Für interessierte hier noch weitere Beispiele für außergewöhnliche Datenvisualisierung (auch außerhalb der wissenschaftlichen Welt):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nytimes.com/interactive/2020/03/22/world/coronavirus-spread.html">How the Virus Got Out [New York Times]</a></p></li>
+<li><p><a class="reference external" href="https://www.reddit.com/r/dataisbeautiful/comments/gm1r3v/light_speed_is_fast_but_space_is_vast_oc/">Light speed is fast, but space is vast [O’Donoghue]</a></p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Einleitung"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Startseite.html" title="previous page">Startseite</a>
+    <a class='right-next' id="next-link" href="../JupyterNotebooks/Einf%C3%BChrung_JB.html" title="next page">Einführung in Jupyter Notebooks</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Kaule<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
