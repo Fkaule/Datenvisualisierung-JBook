@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grundlagen &#8212; Datenvisualisierung mit Python</title>
+    <title>Übungen 1 &#8212; Datenvisualisierung mit Python</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Grundlagen" href="../Altair/Grundlagen.html" />
-    <link rel="prev" title="Grundlagen" href="../Pandas/Grundlagen.html" />
+    <link rel="next" title="Grundlagen" href="../Pandas/Grundlagen.html" />
+    <link rel="prev" title="Grundlagen" href="Grundlagen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -122,14 +122,14 @@
   Matplotlib
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Matplotlib/Grundlagen.html">
+  <a class="reference internal" href="Grundlagen.html">
    Grundlagen
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Matplotlib/Uebungen1.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Übungen 1
   </a>
  </li>
@@ -151,9 +151,9 @@
   Seaborn
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Seaborn/Grundlagen.html">
    Grundlagen
   </a>
  </li>
@@ -221,7 +221,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Seaborn/Grundlagen.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Matplotlib/Uebungen1.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -241,7 +241,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Fkaule/Datenvisualisierung-JBook/tree/main/issues/new?title=Issue%20on%20page%20%2FSeaborn/Grundlagen.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Fkaule/Datenvisualisierung-JBook/tree/main/issues/new?title=Issue%20on%20page%20%2FMatplotlib/Uebungen1.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -262,7 +262,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Datenvisualisierung-JBook/gh-pages?urlpath=tree/Seaborn/Grundlagen.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Datenvisualisierung-JBook/gh-pages?urlpath=tree/Matplotlib/Uebungen1.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -279,6 +279,38 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispiel-1">
+   Beispiel 1
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#daten">
+     Daten
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hinweise">
+     Hinweise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot">
+     Plot
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -287,8 +319,52 @@
         
               <div>
                 
-  <div class="section" id="grundlagen">
-<h1>Grundlagen<a class="headerlink" href="#grundlagen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ubungen-1">
+<h1>Übungen 1<a class="headerlink" href="#ubungen-1" title="Permalink to this headline">¶</a></h1>
+<p>Erstellen Sie mit Hilfe der Informationen aus dem <a class="reference internal" href="Grundlagen.html"><span class="doc std std-doc">Kapitel Grundlagen</span></a> folgende Grafiken:</p>
+<div class="alert alert-block alert-info">
+    Um <b>Hinweise</b> zu bekommen klicken Sie auf <b>click to show</b> in jeweiligen Abschnitt <b>Hinweise</b>
+</div>
+<div class="alert alert-block alert-info">
+    Um die <b>Lösung</b> zu bekommen klicken Sie auf <b>click to show</b> im jeweiligen Abschnitt <b>Plot</b>
+</div><div class="section" id="beispiel-1">
+<h2>Beispiel 1<a class="headerlink" href="#beispiel-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="daten">
+<h3>Daten<a class="headerlink" href="#daten" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="hinweise">
+<h3>Hinweise<a class="headerlink" href="#hinweise" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mit dem  Befehl `plt.plot()` plotten Sie</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot">
+<h3>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Uebungen1_7_0.png" src="../_images/Uebungen1_7_0.png" />
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -304,7 +380,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Seaborn"
+            path: "./Matplotlib"
         },
         predefinedOutput: true
     }
@@ -316,8 +392,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Pandas/Grundlagen.html" title="previous page">Grundlagen</a>
-    <a class='right-next' id="next-link" href="../Altair/Grundlagen.html" title="next page">Grundlagen</a>
+    <a class='left-prev' id="prev-link" href="Grundlagen.html" title="previous page">Grundlagen</a>
+    <a class='right-next' id="next-link" href="../Pandas/Grundlagen.html" title="next page">Grundlagen</a>
 
         </div>
         
