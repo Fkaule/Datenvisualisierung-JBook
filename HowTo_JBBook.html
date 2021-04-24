@@ -255,73 +255,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Jupyter Book erstellen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installation-initiales-einrichten">
-     Installation + initiales Einrichten:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Jupyter Book erstellen
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyter-book-auf-github-veroffentlichen">
-     Jupyter Book auf GitHub veröffentlichen
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inhalte-dem-main-branch-hinzufugen-dort-liegen-z-b-nur-die-jupyter-notebooks-und-nicht-die-html-seiten-des-jupyterbooks-das-kommt-im-punkt-x">
-       Inhalte dem
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         main
-        </span>
-       </code>
-       Branch hinzufügen (dort liegen z.B. nur die Jupyter Notebooks und nicht die html Seiten des JupyterBooks (das kommt im Punkt X))
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#jupterbook-mit-ghp-import-dem-git-repo-unter-dem-branch-gh-pages-hinzufugen-dort-liegen-die-html-seiten-des-jupyterbooks">
-       JupterBook mit
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         ghp-import
-        </span>
-       </code>
-       dem Git repo unter dem Branch
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         gh-pages
-        </span>
-       </code>
-       hinzufügen (dort liegen die html Seiten des JupyterBooks)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fur-anderungen">
-   Für Änderungen
-  </a>
- </li>
-</ul>
-
-        </nav>
-        
         </div>
     </div>
 </div>
@@ -333,63 +266,51 @@
   <div class="section" id="jupyter-book-erstellen">
 <h1>Jupyter Book erstellen<a class="headerlink" href="#jupyter-book-erstellen" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://jupyterbook.org/intro.html">Offizielle JupyterBook Dokumentation</a></p>
-<div class="section" id="installation-initiales-einrichten">
-<h2>Installation + initiales Einrichten:<a class="headerlink" href="#installation-initiales-einrichten" title="Permalink to this headline">¶</a></h2>
+<p><strong>Installation + initiales Einrichten:</strong></p>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Book</span></code> installieren mit <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">jupyter-book</span></code> (Unter Windows10 funktioniet dies nur mit Python 3.7, deswegen benutze ich Ubuntu 20.04 welches einwandfrei mit der aktuellen Pythonversion funktioniert)</p></li>
 <li><p>Verzeichnis erstellen (in diesem Beispiel <code class="docutils literal notranslate"><span class="pre">Datenvisualisierung</span></code>) und <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> und <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> ins Verzeichnis kopieren (hier z.B. welche die ich verwende <span class="xref myst">_config.yml</span> / <span class="xref myst">_toc.yml</span> )</p></li>
-<li><p>Einstellungen in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> bearbeiten</p></li>
-</ol>
+<li><p>Einstellungen in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> bearbeiten</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jupyterbook.org/customize/config.html">Hinweise zu _config.yml von der offiziellen Webseite</a></p></li>
 </ul>
-<ol class="simple">
-<li><p>Inhaltsverzeichnis (Notebooks+Markdown Dateien) in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> bearbeiten</p></li>
-</ol>
+</li>
+<li><p>Inhaltsverzeichnis (Notebooks+Markdown Dateien) in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> bearbeiten</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jupyterbook.org/customize/toc.html">Hinweise zu _toc.yml von der offiziellen Webseite</a></p></li>
 </ul>
-</div>
-<div class="section" id="id1">
-<h2>Jupyter Book erstellen<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Zum erstellen des Jupyter Books im übergeordneten Verzeichnis: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">Datenvisualisierung</span></code> (also über dem Verzeichnis “Datenvisualierung” welches im Punkt 2. erstellt wurde)</p></li>
+</li>
 </ol>
+<p><strong>Jupyter Book erstellen</strong></p>
+<ol class="simple">
+<li><p>Zum erstellen des Jupyter Books im übergeordneten Verzeichnis: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">Datenvisualisierung</span></code> (also über dem Verzeichnis “Datenvisualierung” welches im Punkt 2. erstellt wurde)</p>
 <ul class="simple">
 <li><p>unter <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code> kann das JupyterBook nun lokal betrachtet werden</p></li>
 </ul>
-</div>
-<div class="section" id="jupyter-book-auf-github-veroffentlichen">
-<h2>Jupyter Book auf GitHub veröffentlichen<a class="headerlink" href="#jupyter-book-auf-github-veroffentlichen" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="inhalte-dem-main-branch-hinzufugen-dort-liegen-z-b-nur-die-jupyter-notebooks-und-nicht-die-html-seiten-des-jupyterbooks-das-kommt-im-punkt-x">
-<h3>Inhalte dem <code class="docutils literal notranslate"><span class="pre">main</span></code> Branch hinzufügen (dort liegen z.B. nur die Jupyter Notebooks und nicht die html Seiten des JupyterBooks (das kommt im Punkt X))<a class="headerlink" href="#inhalte-dem-main-branch-hinzufugen-dort-liegen-z-b-nur-die-jupyter-notebooks-und-nicht-die-html-seiten-des-jupyterbooks-das-kommt-im-punkt-x" title="Permalink to this headline">¶</a></h3>
+</li>
+</ol>
+<p><strong>Jupyter Book auf GitHub veröffentlichen</strong></p>
+<p><strong>Inhalte dem <code class="docutils literal notranslate"><span class="pre">main</span></code> Branch hinzufügen (dort liegen z.B. nur die Jupyter Notebooks und nicht die html Seiten des JupyterBooks (das kommt im Punkt X))</strong></p>
 <ol class="simple">
 <li><p>Auf Github ein Online repo erstellen</p></li>
 <li><p>Anweisungen folgen unterhalb von <strong>…or create a new repository on the command line</strong></p></li>
 <li><p>Danach mit <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">filename</span></code> alle Dateien hochladen die zum bearbeiten verfügbar sein sollen (also vermutlich die JupyterNotebooks)</p></li>
 </ol>
-</div>
-<div class="section" id="jupterbook-mit-ghp-import-dem-git-repo-unter-dem-branch-gh-pages-hinzufugen-dort-liegen-die-html-seiten-des-jupyterbooks">
-<h3>JupterBook mit <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> dem Git repo unter dem Branch  <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>  hinzufügen (dort liegen die html Seiten des JupyterBooks)<a class="headerlink" href="#jupterbook-mit-ghp-import-dem-git-repo-unter-dem-branch-gh-pages-hinzufugen-dort-liegen-die-html-seiten-des-jupyterbooks" title="Permalink to this headline">¶</a></h3>
+<p><strong>JupterBook mit <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> dem Git repo unter dem Branch  <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>  hinzufügen (dort liegen die html Seiten des JupyterBooks)</strong></p>
 <ol class="simple">
 <li><p>ghp-import installieren mit <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ghp-import</span></code> (das läuft auch wieder auf Windows10)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code> im Arbeitsverzeichnis (also hier im Ordner Datenvisualisierung) ausführen</p></li>
-</ol>
+<li><p><code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code> im Arbeitsverzeichnis (also hier im Ordner Datenvisualisierung) ausführen</p>
 <ul class="simple">
 <li><p>Dadurch werden die Inhalte des JupyterBooks automatisch in den Branch <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> des Git-repo hochgeladen</p></li>
 </ul>
-<ol class="simple">
+</li>
 <li><p>Auf Github in den Einstellungen des Repo den Branch <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> als Standard setzen</p></li>
 <li><p>Unter <code class="docutils literal notranslate"><span class="pre">https://&lt;user&gt;.github.io/&lt;myonlinebook&gt;/</span></code> ist das Jupyter Book nun abrufbar</p></li>
 </ol>
-</div>
-</div>
-</div>
-<div class="section" id="fur-anderungen">
-<h1>Für Änderungen<a class="headerlink" href="#fur-anderungen" title="Permalink to this headline">¶</a></h1>
+<p><strong>Für Änderungen</strong></p>
 <ul class="simple">
 <li><p>neue Jupyter Notebooks (oder Markdown Files) in <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> eintragen</p></li>
-<li><p>mit <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">Datenvisualisierung</span></code> Jupyter Book erstellen</p></li>
+<li><p>mit <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">Datenvisualisierung</span></code> Jupyter Book erstellen (ggf. vorher lokal prüfen ob alles stimmt)</p></li>
 <li><p>mit <code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code> das JupyterBook auf Github pushen</p></li>
 <li><p>lokal können die Dateien wenn gewünscht auch dem main branch hinzugefügt und gepushed werden (wenn gewollt)</p></li>
 </ul>
