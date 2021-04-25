@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grundlagen &#8212; Datenvisualisierung mit Python</title>
+    <title>Matplotlib Übersicht &#8212; Datenvisualisierung mit Python</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Grundlagen" href="../Seaborn/Grundlagen.html" />
-    <link rel="prev" title="Übungen 1" href="../Matplotlib/Uebungen1.html" />
+    <link rel="next" title="Grundlagen" href="Grundlagen.html" />
+    <link rel="prev" title="Einführung in Jupyter Notebooks" href="../JupyterNotebooks/Einf%C3%BChrung_JB.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -122,19 +122,19 @@
   Matplotlib
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Matplotlib/Matplotlib_Uebersicht.html">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Matplotlib Übersicht
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Matplotlib/Grundlagen.html">
+  <a class="reference internal" href="Grundlagen.html">
    Grundlagen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Matplotlib/Uebungen1.html">
+  <a class="reference internal" href="Uebungen1.html">
    Übungen 1
   </a>
  </li>
@@ -144,9 +144,9 @@
   Pandas
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Grundlagen.html">
    Grundlagen
   </a>
  </li>
@@ -226,7 +226,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Pandas/Grundlagen.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Matplotlib/Matplotlib_Uebersicht.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -246,7 +246,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Fkaule/Datenvisualisierung-JBook/tree/main/issues/new?title=Issue%20on%20page%20%2FPandas/Grundlagen.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Fkaule/Datenvisualisierung-JBook/tree/main/issues/new?title=Issue%20on%20page%20%2FMatplotlib/Matplotlib_Uebersicht.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -267,7 +267,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Datenvisualisierung-JBook/gh-pages?urlpath=tree/Pandas/Grundlagen.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Datenvisualisierung-JBook/gh-pages?urlpath=tree/Matplotlib/Matplotlib_Uebersicht.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -284,6 +284,21 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubungen">
+   Übungen
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -292,8 +307,41 @@
         
               <div>
                 
-  <div class="section" id="grundlagen">
-<h1>Grundlagen<a class="headerlink" href="#grundlagen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="matplotlib-ubersicht">
+<h1>Matplotlib Übersicht<a class="headerlink" href="#matplotlib-ubersicht" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p><a class="reference external" href="Grundlagen.html#Daten">Daten</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="Grundlagen.html#Daten_eintragen">Daten eintragen</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Daten_von_Datei_einlesen">Daten von Datei einlesen</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Funktionen">Funktionen</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="Grundlagen.html#Import">Import der Matplotlib Bibliothek</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Scatter">Scatter/Linien Plot</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="Grundlagen.html#Linien">Linien (Typ , Farbe , Dicke)</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Marker">Marker (Typ , Farbe , Dicke)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="Grundlagen.html#Beschriftungen">Beschriftungen</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="Grundlagen.html#Achsenbeschriftung">Achsenbeschriftung</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Bildueberschrift">Bildüberschrift</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Legende">Legende</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="Grundlagen.html#WertebereichAchsen">Wertebereich der Achsen</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Gitter">Gitter</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Bildgroesse">Bildgröße</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Schriftgroesse">Schriftgröße</a></p></li>
+<li><p><a class="reference external" href="Grundlagen.html#Speichern">Bild speichern</a></p></li>
+</ol>
+<div class="section" id="ubungen">
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">¶</a></h2>
+<a href="Uebungen1.html#Uebung1">
+<img src="Uebung01.png" width=300/>
+</a></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -309,7 +357,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Pandas"
+            path: "./Matplotlib"
         },
         predefinedOutput: true
     }
@@ -321,8 +369,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Matplotlib/Uebungen1.html" title="previous page">Übungen 1</a>
-    <a class='right-next' id="next-link" href="../Seaborn/Grundlagen.html" title="next page">Grundlagen</a>
+    <a class='left-prev' id="prev-link" href="../JupyterNotebooks/Einf%C3%BChrung_JB.html" title="previous page">Einführung in Jupyter Notebooks</a>
+    <a class='right-next' id="next-link" href="Grundlagen.html" title="next page">Grundlagen</a>
 
         </div>
         
