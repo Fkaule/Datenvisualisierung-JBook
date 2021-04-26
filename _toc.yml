@@ -11,15 +11,17 @@
   file: JupyterNotebooks/JupyterNotebooks_Uebersicht
   sections:
   - title: Einführung
-    file: JupyterNotebooks/Einführung_JB
+    file: JupyterNotebooks/Einfuehrung
   - title: Jupyter Books
     file: JupyterNotebooks/HowTo_JBBook    
 
 - title: Python Basics
   file: Python-Basics/Python_Uebersicht
   sections:
-  - title: Grundlagen
-    file: Python-Basics/Grundlagen
+  - title: Schleifen
+    file: Python-Basics/Schleifen
+  - title: Funktionen
+    file: Python-Basics/Funktionen
 
 - title: Datenverarbeitung
   file: Datenverarbeitung/Datenverarbeitung_Uebersicht
@@ -30,12 +32,6 @@
     sections:
     - title: Grundlagen
       file: Datenverarbeitung/Pandas/Grundlagen
-      
-  - title: Numpy
-    file: Datenverarbeitung/Numpy/Numpy_Uebersicht
-    sections:
-    - title: Grundlagen
-      file: Datenverarbeitung/Numpy/Grundlagen
 
 - title: Datenvisualisierung
   file: Datenvisualisierung/Datenvisualisierung_Uebersicht
@@ -46,8 +42,8 @@
     sections:
     - title: Grundlagen
       file: Datenvisualisierung/Matplotlib/Grundlagen
-    - title: Übgungen 1
-      file: Datenvisualisierung/Matplotlib/Uebungen
+    - title: Übungen 1
+      file: Datenvisualisierung/Matplotlib/Uebungen1
 
   - title: Seaborn
     file: Datenvisualisierung/Seaborn/Seaborn_Uebersicht
@@ -60,3 +56,35 @@
     sections:
     - title: Grundlagen
       file: Datenvisualisierung/Altair/Grundlagen
+
+- title: Algebra
+  file: Algebra/Algebra_Uebersicht
+  chapters:
+  
+  - title: Numpy
+    file: Algebra/Numpy/Numpy_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: Algebra/Numpy/Grundlagen
+ 
+  - title: SciPy
+    file: Algebra/SciPy/SciPy_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: Algebra/SciPy/Grundlagen
+      
+  - title: SymPy
+    file: Algebra/SymPy/SymPy_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: Algebra/SymPy/Grundlagen
+      
+- title: Machine Learning
+  file: MachineLearning/MachineLearning_Uebersicht
+  chapters:
+  
+  - title: scikit-learn
+    file: MachineLearning/scikit-learn/scikit-learn_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: MachineLearning/scikit-learn/Grundlagen
