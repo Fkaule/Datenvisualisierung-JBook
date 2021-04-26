@@ -97,7 +97,7 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="JupyterNotebooks/Einf%C3%BChrung_JB.html">
+    <a class="reference internal" href="JupyterNotebooks/Einfuehrung.html">
      1.1. Einführung
     </a>
    </li>
@@ -116,8 +116,13 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="Python-Basics/Grundlagen.html">
-     2.1. Grundlagen
+    <a class="reference internal" href="Python-Basics/Schleifen.html">
+     2.1. Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python-Basics/Funktionen.html">
+     2.2. Funktionen
     </a>
    </li>
   </ul>
@@ -143,20 +148,6 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="Datenverarbeitung/Numpy/Numpy_Uebersicht.html">
-     3.2. Numpy
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="Datenverarbeitung/Numpy/Grundlagen.html">
-       3.2.1. Grundlagen
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -173,7 +164,12 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="Datenvisualisierung/Matplotlib/Grundlagen.html">
-       4.1.1.1. Grundlagen
+       4.1.1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Datenvisualisierung/Matplotlib/Uebungen1.html">
+       4.1.2. Übungen 1
       </a>
      </li>
     </ul>
@@ -202,6 +198,80 @@
      <li class="toctree-l3">
       <a class="reference internal" href="Datenvisualisierung/Altair/Grundlagen.html">
        4.3.1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="Algebra/Algebra_Uebersicht.html">
+   5. Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="Algebra/Numpy/Numpy_Uebersicht.html">
+     5.1. Numpy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="Algebra/Numpy/Grundlagen.html">
+       5.1.1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="Algebra/SciPy/SciPy_Uebersicht.html">
+     5.2. SciPy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="Algebra/SciPy/Grundlagen.html">
+       5.2.1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="Algebra/SymPy/SymPy_Uebersicht.html">
+     5.3. SymPy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="Algebra/SymPy/Grundlagen.html">
+       5.3.1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="MachineLearning/MachineLearning_Uebersicht.html">
+   6. Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="MachineLearning/scikit-learn/scikit-learn_Uebersicht.html">
+     6.1. scikit-learn
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="MachineLearning/scikit-learn/Grundlagen.html">
+       6.1.1. Grundlagen
       </a>
      </li>
     </ul>
@@ -303,13 +373,27 @@
                 
   <div class="section" id="startseite">
 <h1>Startseite<a class="headerlink" href="#startseite" title="Permalink to this headline">¶</a></h1>
-<p>In diesem Kurs erwarten sie folgende Inhalte:</p>
-<ul class="simple">
-<li><p>Jupyter Notebooks</p></li>
-<li><p>Datenverarbeitung</p></li>
-<li><p>Datenvisualisierung</p></li>
-</ul>
-<p>Der Kurs ist als <a class="reference external" href="https://fkaule.github.io/Python_for_Engineers/">Jupyter Book</a> veröffentlicht und Notebooks befinden sich <a class="reference external" href="https://github.com/Fkaule/Python_for_Engineers/tree/main">hier (Git repo:main)</a></p>
+<p>Dies ist eine <strong>Zusammenfassung von Werkzeugen</strong> für ingenieurstechnische Fragestellung unterteilt in folgende Gebiete:</p>
+<ol class="simple">
+<li><p><strong>Jupyter Notebooks</strong>
+| <a class="reference internal" href="JupyterNotebooks/Einfuehrung.html"><span class="doc std std-doc">Einführung</span></a></p></li>
+<li><p><strong>Python Basics</strong>
+| <a class="reference internal" href="Python-Basics/Schleifen.html"><span class="doc std std-doc">Schleifen</span></a>
+| <a class="reference internal" href="Python-Basics/Funktionen.html"><span class="doc std std-doc">Funktionen</span></a></p></li>
+<li><p><strong>Datenverarbeitung</strong>
+| <a class="reference internal" href="Datenverarbeitung/Pandas/Pandas_Uebersicht.html"><span class="doc std std-doc">Pandas</span></a></p></li>
+<li><p><strong>Datenvisualisierung</strong>
+| <a class="reference internal" href="Datenvisualisierung/Matplotlib/Matplotlib_Uebersicht.html"><span class="doc std std-doc">Matplotlib</span></a>
+| <a class="reference internal" href="Datenvisualisierung/Seaborn/Seaborn_Uebersicht.html"><span class="doc std std-doc">Seaborn</span></a>
+| <a class="reference internal" href="Datenvisualisierung/Altair/Altair_Uebersicht.html"><span class="doc std std-doc">Altair</span></a></p></li>
+<li><p><strong>Algebra</strong>
+| <a class="reference internal" href="Algebra/Numpy/Numpy_Uebersicht.html"><span class="doc std std-doc">NumPy</span></a>
+| <a class="reference internal" href="Algebra/SciPy/SciPy_Uebersicht.html"><span class="doc std std-doc">SciPy</span></a>
+| <a class="reference internal" href="Algebra/SymPy/SymPy_Uebersicht.html"><span class="doc std std-doc">SymPy</span></a></p></li>
+<li><p><strong>Maschine Learning</strong>
+| <a class="reference internal" href="MachineLearning/scikit-learn/scikit-learn_Uebersicht.html"><span class="doc std std-doc">scikit-learn</span></a></p></li>
+</ol>
+<p>Der Inhalt ist als <a class="reference external" href="https://fkaule.github.io/Python_for_Engineers/">Jupyter Book</a> veröffentlicht und Notebooks befinden sich <a class="reference external" href="https://github.com/Fkaule/Python_for_Engineers/tree/main">hier (Git repo:main)</a></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
