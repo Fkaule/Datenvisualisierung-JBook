@@ -1,33 +1,62 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: Readme
 
-- part: Einleitung
-  chapters:
-    - file: Einleitung/Einleitung
-    
-- part: Jupyter Notebooks
-  chapters:
-    - file: JupyterNotebooks/Einführung_JB
-   
-- part: Matplotlib
-  chapters:
-    - file: Matplotlib/Grundlagen
-   
-- part: Pandas
-  chapters:
-    - file: Pandas/Grundlagen
+- title: Startseite
+  file: Readme
+ 
+  numbered: true
 
-- part: Seaborn
-  chapters:
-    - file: Seaborn/Grundlagen
-    
-- part: Altair
-  chapters:
-    - file: Altair/Grundlagen
+- title: Jupyter Notebooks
+  file: JupyterNotebooks/JupyterNotebooks_Uebersicht
+  sections:
+  - title: Einführung
+    file: JupyterNotebooks/Einführung_JB
+  - title: Jupyter Books
+    file: JupyterNotebooks/HowTo_JBBook    
 
+- title: Python Basics
+  file: Python-Basics/Python_Uebersicht
+  sections:
+  - title: Grundlagen
+    file: Python-Basics/Grundlagen
 
-- part: Weiterführendes Material
+- title: Datenverarbeitung
+  file: Datenverarbeitung/Datenverarbeitung_Uebersicht
   chapters:
-    - file: Weiterfuehrendes_Material
+  
+  - title: Pandas
+    file: Datenverarbeitung/Pandas/Pandas_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: Datenverarbeitung/Pandas/Grundlagen
+      
+  - title: Numpy
+    file: Datenverarbeitung/Numpy/Numpy_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: Datenverarbeitung/Numpy/Grundlagen
+
+- title: Datenvisualisierung
+  file: Datenvisualisierung/Datenvisualisierung_Uebersicht
+  chapters:
+  
+  - title: Matplotlib
+    file: Datenvisualisierung/Matplotlib/Matplotlib_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: Datenvisualisierung/Matplotlib/Grundlagen
+    - title: Übgungen 1
+      file: Datenvisualisierung/Matplotlib/Uebungen
+
+  - title: Seaborn
+    file: Datenvisualisierung/Seaborn/Seaborn_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: Datenvisualisierung/Seaborn/Grundlagen
+  
+  - title: Altair
+    file: Datenvisualisierung/Altair/Altair_Uebersicht
+    sections:
+    - title: Grundlagen
+      file: Datenvisualisierung/Altair/Grundlagen
