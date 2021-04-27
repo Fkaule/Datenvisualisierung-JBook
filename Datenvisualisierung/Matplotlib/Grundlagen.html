@@ -621,40 +621,185 @@ default=1</p>
 <p><a id='Achsenbeschriftung'></a></p>
 <div class="section" id="achsenbeschriftung">
 <h3><span class="section-number">4.1.1.4.1. </span>Achsenbeschriftung<a class="headerlink" href="#achsenbeschriftung" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel(&quot;</span> <span class="pre">&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylabel(&quot;</span> <span class="pre">&quot;)</span></code></p></li>
+</ul>
+<p>bzw.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.set_xlabel(&quot;</span> <span class="pre">&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.set_ylabel(&quot;</span> <span class="pre">&quot;)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">markevery</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Weg [mm]&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Kraft [N]&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Grundlagen_16_0.png" src="../../_images/Grundlagen_16_0.png" />
+</div>
+</div>
 <p><a id='Bildueberschrift'></a></p>
 </div>
 <div class="section" id="bilduberschrift">
 <h3><span class="section-number">4.1.1.4.2. </span>Bildüberschrift<a class="headerlink" href="#bilduberschrift" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.title(&quot;</span> <span class="pre">&quot;)</span></code></p></li>
+</ul>
+<p>bzw.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.set_title(&quot;</span> <span class="pre">&quot;)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">markevery</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Erster Plot&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Grundlagen_18_0.png" src="../../_images/Grundlagen_18_0.png" />
+</div>
+</div>
 <p><a id='Legende'></a></p>
 </div>
 <div class="section" id="legende">
 <h3><span class="section-number">4.1.1.4.3. </span>Legende<a class="headerlink" href="#legende" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Position</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label='</span> <span class="pre">'</span></code> Bennenung im plot Befehl</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> Legende anzeigen</p></li>
 </ul>
+<div class="alert alert-block alert-danger">
+<b>ToDo</b> Legenden Positionen
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Messung 1&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">markevery</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Messung 2&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Erster Plot&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Grundlagen_20_0.png" src="../../_images/Grundlagen_20_0.png" />
+</div>
+</div>
 <p><a id='WertebereichAchsen'></a></p>
 </div>
 </div>
 <div class="section" id="wertebereich-der-achsen">
 <h2><span class="section-number">4.1.1.5. </span>Wertebereich der Achsen<a class="headerlink" href="#wertebereich-der-achsen" title="Permalink to this headline">¶</a></h2>
+<p>beide Werte vorgeben:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlim(x1,x2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylim(y1,y2)</span></code></p></li>
+</ul>
+<p>nur einen Wert vorgeben:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlim(left=x1)</span></code> oder <code class="docutils literal notranslate"><span class="pre">plt.xlim(right=x2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylim(bottom=y1)</span></code> oder <code class="docutils literal notranslate"><span class="pre">plt.xlim(top=y2)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">markevery</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Grundlagen_22_0.png" src="../../_images/Grundlagen_22_0.png" />
+</div>
+</div>
 <p><a id='Gitter'></a></p>
 </div>
 <div class="section" id="gitter">
 <h2><span class="section-number">4.1.1.6. </span>Gitter<a class="headerlink" href="#gitter" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.grid()</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">markevery</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Grundlagen_24_0.png" src="../../_images/Grundlagen_24_0.png" />
+</div>
+</div>
 <p><a id='Bildgroesse'></a></p>
 </div>
 <div class="section" id="bildgrosze">
 <h2><span class="section-number">4.1.1.7. </span>Bildgröße<a class="headerlink" href="#bildgrosze" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-block alert-info">
+<b>Hinweis:</b> Befehl muss vor dem plotten kommen
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">plt.figure(figsize=(8,5))</span></code> - Größe in inces (Default: 6,4)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">markevery</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Grundlagen_26_0.png" src="../../_images/Grundlagen_26_0.png" />
+</div>
+</div>
 <p><a id='Schriftgroesse'></a></p>
 </div>
 <div class="section" id="schriftgrosze">
 <h2><span class="section-number">4.1.1.8. </span>Schriftgröße<a class="headerlink" href="#schriftgrosze" title="Permalink to this headline">¶</a></h2>
-<p>global und individuell</p>
+<div class="alert alert-block alert-info">
+<b>Hinweis:</b> globaler Paramter bleibt für alle weitern Plots aktiv können aber mit ( <b>mpl.rcParams.update(mpl.rcParamsDefault</b> ) zurückgesetzt werden.
+</div>
+<p>global:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.rcParams.update({'font.size':</span> <span class="pre">20})</span></code></p></li>
+</ul>
+<p>individuell:</p>
+<div class="alert alert-block alert-danger">
+<b>ToDo</b>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">});</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">markevery</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Grundlagen_28_0.png" src="../../_images/Grundlagen_28_0.png" />
+</div>
+</div>
 <p><a id='Speichern'></a></p>
 </div>
 <div class="section" id="bild-speichern">
 <h2><span class="section-number">4.1.1.9. </span>Bild speichern<a class="headerlink" href="#bild-speichern" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plt.savefig('Name.png',</span> <span class="pre">bbox_inches='tight',</span> <span class="pre">dpi=150)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">markevery</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Name.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Grundlagen_30_0.png" src="../../_images/Grundlagen_30_0.png" />
+</div>
+</div>
 </div>
 </div>
 
