@@ -32,6 +32,8 @@
     sections:
     - title: Grundlagen
       file: Datenverarbeitung/Pandas/Grundlagen
+    - title: Externes Infomaterial
+      file: Datenverarbeitung/Pandas/external_Links
 
 - title: Datenvisualisierung
   file: Datenvisualisierung/Datenvisualisierung_Uebersicht
@@ -44,18 +46,24 @@
       file: Datenvisualisierung/Matplotlib/Grundlagen
     - title: Übungen 1
       file: Datenvisualisierung/Matplotlib/Uebungen1
+    - title: Externes Infomaterial
+      file: Datenvisualisierung/Matplotlib/external_Links
 
   - title: Seaborn
     file: Datenvisualisierung/Seaborn/Seaborn_Uebersicht
     sections:
     - title: Grundlagen
       file: Datenvisualisierung/Seaborn/Grundlagen
-  
+    - title: Externes Infomaterial
+      file: Datenvisualisierung/Seaborn/external_Links
+
   - title: Altair
     file: Datenvisualisierung/Altair/Altair_Uebersicht
     sections:
     - title: Grundlagen
       file: Datenvisualisierung/Altair/Grundlagen
+    - title: Externes Infomaterial
+      file: Datenvisualisierung/Altair/external_Links
 
 - title: Algebra
   file: Algebra/Algebra_Uebersicht
