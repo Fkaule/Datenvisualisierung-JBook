@@ -32,6 +32,8 @@
     sections:
     - title: Grundlagen
       file: Datenverarbeitung/Pandas/Grundlagen
+    - title: Fallstudie RKI-Coronazahlen
+      file: Datenverarbeitung/Pandas/Corona_RKI
     - title: Externes Infomaterial
       file: Datenverarbeitung/Pandas/external_Links
 
