@@ -1,6 +1,6 @@
 # Startseite
 
-Dies ist eine **Zusammenfassung von Werkzeugen** für ingenieurstechnische Fragestellung unterteilt in folgende Gebiete:
+Dies ist eine **Zusammenfassung von Werkzeugen** für ingenieurstechnische Fragestellung unterteilt in folgende Gebiete: 
 
 1. **Jupyter Notebooks**
 | [Einführung](JupyterNotebooks/Einfuehrung.ipynb)
