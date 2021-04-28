@@ -1,0 +1,1265 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.1.2. Fallstudie RKI Corona Daten</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.1.3. Externes Infomaterial" href="external_Links.html" />
+    <link rel="prev" title="3.1.1. Grundlagen" href="Grundlagen.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/Logo.png" class="logo" alt="logo">
+  
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Readme.html">
+   Startseite
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../JupyterNotebooks/JupyterNotebooks_Uebersicht.html">
+   1. Jupyter Notebooks
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../JupyterNotebooks/Einfuehrung.html">
+     1.1. Einführung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../JupyterNotebooks/HowTo_JBBook.html">
+     1.2. Jupyter Books
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Python-Basics/Python_Uebersicht.html">
+   2. Python Basics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Python-Basics/Schleifen.html">
+     2.1. Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Python-Basics/Funktionen.html">
+     2.2. Funktionen
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../Datenverarbeitung_Uebersicht.html">
+   3. Datenverarbeitung
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="Pandas_Uebersicht.html">
+     3.1. Pandas
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="Grundlagen.html">
+       3.1.1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       3.1.2. Fallstudie RKI-Coronazahlen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="external_Links.html">
+       3.1.3. Externes Infomaterial
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Datenvisualisierung/Datenvisualisierung_Uebersicht.html">
+   4. Datenvisualisierung
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Datenvisualisierung/Matplotlib/Matplotlib_Uebersicht.html">
+     4.1. Matplotlib
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Datenvisualisierung/Matplotlib/Grundlagen.html">
+       4.1.1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Datenvisualisierung/Matplotlib/Uebungen1.html">
+       4.1.2. Übungen 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Datenvisualisierung/Matplotlib/external_Links.html">
+       4.1.3. Externes Infomaterial
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Datenvisualisierung/Seaborn/Seaborn_Uebersicht.html">
+     4.2. Seaborn
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Datenvisualisierung/Seaborn/Grundlagen.html">
+       4.2.1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Datenvisualisierung/Seaborn/external_Links.html">
+       4.2.2. Externes Infomaterial
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Datenvisualisierung/Altair/Altair_Uebersicht.html">
+     4.3. Altair
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Datenvisualisierung/Altair/Grundlagen.html">
+       4.3.1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Datenvisualisierung/Altair/external_Links.html">
+       4.3.2. Externes Infomaterial
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Algebra/Algebra_Uebersicht.html">
+   5. Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Algebra/Numpy/Numpy_Uebersicht.html">
+     5.1. Numpy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Algebra/Numpy/Grundlagen.html">
+       5.1.1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Algebra/SciPy/SciPy_Uebersicht.html">
+     5.2. SciPy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Algebra/SciPy/Grundlagen.html">
+       5.2.1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Algebra/SymPy/SymPy_Uebersicht.html">
+     5.3. SymPy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Algebra/SymPy/Grundlagen.html">
+       5.3.1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../MachineLearning/MachineLearning_Uebersicht.html">
+   6. Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../MachineLearning/scikit-learn/scikit-learn_Uebersicht.html">
+     6.1. scikit-learn
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../MachineLearning/scikit-learn/Grundlagen.html">
+       6.1.1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Datenverarbeitung/Pandas/Corona_RKI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/Fkaule/Python_for_Engineers/tree/main"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/Fkaule/Python_for_Engineers/tree/main/issues/new?title=Issue%20on%20page%20%2FDatenverarbeitung/Pandas/Corona_RKI.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Python_for_Engineers/gh-pages?urlpath=tree/Datenverarbeitung/Pandas/Corona_RKI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#daten-einlesen">
+   3.1.2.1. Daten einlesen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#falle-fur-gesamtdeutschland-bestimmen">
+   3.1.2.2. Fälle für Gesamtdeutschland bestimmen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bundesland-rausfiltern">
+   3.1.2.3. Bundesland rausfiltern
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tage-inizidenz">
+     3.1.2.3.1. 7 Tage Inizidenz
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#daten-aus-dem-letzten-tag">
+     3.1.2.3.2. Daten aus dem letzten Tag
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-mit-seaborn">
+     3.1.2.3.3. Plot mit
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       seaborn
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leipzig-rausfiltern">
+   3.1.2.4. Leipzig rausfiltern
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-mit-matplotlib">
+     3.1.2.4.1. plot mit
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="fallstudie-rki-corona-daten">
+<h1><span class="section-number">3.1.2. </span>Fallstudie RKI Corona Daten<a class="headerlink" href="#fallstudie-rki-corona-daten" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="daten-einlesen">
+<h2><span class="section-number">3.1.2.1. </span>Daten einlesen<a class="headerlink" href="#daten-einlesen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">link</span><span class="o">=</span><span class="s2">&quot;https://opendata.arcgis.com/datasets/dd4580c810204019a7b8eb3e0b329dd6_0.csv&quot;</span>
+<span class="n">RKI_komplett</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RKI_komplett</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ObjectId</th>
+      <th>IdBundesland</th>
+      <th>Bundesland</th>
+      <th>Landkreis</th>
+      <th>Altersgruppe</th>
+      <th>Geschlecht</th>
+      <th>AnzahlFall</th>
+      <th>AnzahlTodesfall</th>
+      <th>Meldedatum</th>
+      <th>IdLandkreis</th>
+      <th>Datenstand</th>
+      <th>NeuerFall</th>
+      <th>NeuerTodesfall</th>
+      <th>Refdatum</th>
+      <th>NeuGenesen</th>
+      <th>AnzahlGenesen</th>
+      <th>IstErkrankungsbeginn</th>
+      <th>Altersgruppe2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1786799</th>
+      <td>1786800</td>
+      <td>16</td>
+      <td>Thüringen</td>
+      <td>LK Altenburger Land</td>
+      <td>A80+</td>
+      <td>W</td>
+      <td>5</td>
+      <td>0</td>
+      <td>2021/04/21 00:00:00+00</td>
+      <td>16077</td>
+      <td>28.04.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2021/04/21 00:00:00+00</td>
+      <td>-9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+    <tr>
+      <th>1786800</th>
+      <td>1786801</td>
+      <td>16</td>
+      <td>Thüringen</td>
+      <td>LK Altenburger Land</td>
+      <td>A80+</td>
+      <td>W</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2021/04/22 00:00:00+00</td>
+      <td>16077</td>
+      <td>28.04.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2021/04/22 00:00:00+00</td>
+      <td>-9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+    <tr>
+      <th>1786801</th>
+      <td>1786802</td>
+      <td>16</td>
+      <td>Thüringen</td>
+      <td>LK Altenburger Land</td>
+      <td>A80+</td>
+      <td>W</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2021/04/23 00:00:00+00</td>
+      <td>16077</td>
+      <td>28.04.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2021/04/23 00:00:00+00</td>
+      <td>-9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+    <tr>
+      <th>1786802</th>
+      <td>1786803</td>
+      <td>16</td>
+      <td>Thüringen</td>
+      <td>LK Altenburger Land</td>
+      <td>A80+</td>
+      <td>W</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2021/04/26 00:00:00+00</td>
+      <td>16077</td>
+      <td>28.04.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2021/04/26 00:00:00+00</td>
+      <td>-9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+    <tr>
+      <th>1786803</th>
+      <td>1786804</td>
+      <td>16</td>
+      <td>Thüringen</td>
+      <td>LK Altenburger Land</td>
+      <td>unbekannt</td>
+      <td>W</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2021/04/06 00:00:00+00</td>
+      <td>16077</td>
+      <td>28.04.2021, 00:00 Uhr</td>
+      <td>0</td>
+      <td>-9</td>
+      <td>2021/04/06 00:00:00+00</td>
+      <td>-9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Nicht übermittelt</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="falle-fur-gesamtdeutschland-bestimmen">
+<h2><span class="section-number">3.1.2.2. </span>Fälle für Gesamtdeutschland bestimmen<a class="headerlink" href="#falle-fur-gesamtdeutschland-bestimmen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RKI_Deutschland</span> <span class="o">=</span> <span class="n">RKI_komplett</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;AnzahlFall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sum&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">],</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">RKI_Deutschland</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">,</span><span class="s1">&#39;Neue Fallzahlen&#39;</span><span class="p">]</span>
+<span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Mittelwert (7 Tage)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Mittelwert (7 Tage)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Mittelwert (7 Tage)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s2">&quot;Faelle gesamt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RKI_Deutschland</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="n">RKI_Deutschland</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;RKI_Corona_Deutschland.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RKI_Deutschland</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Meldedatum</th>
+      <th>Neue Fallzahlen</th>
+      <th>Neue Fallzahlen Mittelwert (7 Tage)</th>
+      <th>Faelle gesamt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>441</th>
+      <td>2021-04-23 00:00:00+00:00</td>
+      <td>22873</td>
+      <td>20670</td>
+      <td>3276582</td>
+    </tr>
+    <tr>
+      <th>442</th>
+      <td>2021-04-24 00:00:00+00:00</td>
+      <td>17820</td>
+      <td>20687</td>
+      <td>3294402</td>
+    </tr>
+    <tr>
+      <th>443</th>
+      <td>2021-04-25 00:00:00+00:00</td>
+      <td>8597</td>
+      <td>20652</td>
+      <td>3302999</td>
+    </tr>
+    <tr>
+      <th>444</th>
+      <td>2021-04-26 00:00:00+00:00</td>
+      <td>11309</td>
+      <td>20505</td>
+      <td>3314308</td>
+    </tr>
+    <tr>
+      <th>445</th>
+      <td>2021-04-27 00:00:00+00:00</td>
+      <td>17841</td>
+      <td>19051</td>
+      <td>3332149</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="bundesland-rausfiltern">
+<h2><span class="section-number">3.1.2.3. </span>Bundesland rausfiltern<a class="headerlink" href="#bundesland-rausfiltern" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RKI_Bundesland</span> <span class="o">=</span> <span class="n">RKI_komplett</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">,</span><span class="s1">&#39;Bundesland&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;AnzahlFall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sum&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">RKI_Bundesland</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Meldedatum&quot;</span><span class="p">,</span><span class="s2">&quot;Bundesland&quot;</span><span class="p">,</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span>
+<span class="n">RKI_Bundesland</span><span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">RKI_Bundesland</span><span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">],</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">RKI_Bundesland</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;RKI_Corona_Bundeslaender.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">RKI_Bundesland</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Meldedatum</th>
+      <th>Bundesland</th>
+      <th>Neue Fallzahlen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-01-07 00:00:00+00:00</td>
+      <td>Nordrhein-Westfalen</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-01-19 00:00:00+00:00</td>
+      <td>Berlin</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-01-23 00:00:00+00:00</td>
+      <td>Saarland</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-01-25 00:00:00+00:00</td>
+      <td>Nordrhein-Westfalen</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-01-28 00:00:00+00:00</td>
+      <td>Bayern</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6634</th>
+      <td>2021-04-27 00:00:00+00:00</td>
+      <td>Saarland</td>
+      <td>189</td>
+    </tr>
+    <tr>
+      <th>6635</th>
+      <td>2021-04-27 00:00:00+00:00</td>
+      <td>Sachsen</td>
+      <td>1022</td>
+    </tr>
+    <tr>
+      <th>6636</th>
+      <td>2021-04-27 00:00:00+00:00</td>
+      <td>Sachsen-Anhalt</td>
+      <td>479</td>
+    </tr>
+    <tr>
+      <th>6637</th>
+      <td>2021-04-27 00:00:00+00:00</td>
+      <td>Schleswig-Holstein</td>
+      <td>352</td>
+    </tr>
+    <tr>
+      <th>6638</th>
+      <td>2021-04-27 00:00:00+00:00</td>
+      <td>Thüringen</td>
+      <td>814</td>
+    </tr>
+  </tbody>
+</table>
+<p>6639 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="tage-inizidenz">
+<h3><span class="section-number">3.1.2.3.1. </span>7 Tage Inizidenz<a class="headerlink" href="#tage-inizidenz" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Bundeslaender</span> <span class="o">=</span> <span class="n">RKI_Bundesland</span><span class="p">[</span><span class="s2">&quot;Bundesland&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">li</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Bundeslaender</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">RKI_Bundesland</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">RKI_Bundesland</span><span class="p">[</span><span class="s2">&quot;Bundesland&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Mittelwert (7 Tage)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Summe (7 Tage)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Mittelwert (7 Tage)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Mittelwert (7 Tage)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Summe (7 Tage)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Summe (7 Tage)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Faelle gesamt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+    
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Brandenburg&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">2521893</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Nordrhein-Westfalen&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">17947221</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Baden-Württemberg&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">11100394</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Saarland&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">986887</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Sachsen&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">4071971</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Bayern&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">13124737</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Niedersachsen&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">7993608</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Hessen&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">6288080</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Rheinland-Pfalz&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">4093903</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Schleswig-Holstein&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">2903773</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Hamburg&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">1847253</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Bremen&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">681202</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">3669491</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Mecklenburg-Vorpommern&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">1608138</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Thüringen&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">2133378</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;Sachsen-Anhalt&quot;</span><span class="p">:</span>
+        <span class="n">Einwohner</span><span class="o">=</span><span class="mi">2194782</span>
+    
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Summe (7 Tage)&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">Einwohner</span><span class="o">*</span><span class="mi">100000</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Dataframe zusammenführen</span>
+<span class="n">Bundeslaender_RM7</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Bundeslaender_RM7</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="daten-aus-dem-letzten-tag">
+<h3><span class="section-number">3.1.2.3.2. </span>Daten aus dem letzten Tag<a class="headerlink" href="#daten-aus-dem-letzten-tag" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Bundeslaender_RM7_lastday</span><span class="o">=</span><span class="n">Bundeslaender_RM7</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">Bundeslaender_RM7</span><span class="p">[</span><span class="s2">&quot;Meldedatum&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">Bundeslaender_RM7</span><span class="p">[</span><span class="s2">&quot;Meldedatum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Bundeslaender_RM7_lastday</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-mit-seaborn">
+<h3><span class="section-number">3.1.2.3.3. </span>Plot mit <code class="docutils literal notranslate"><span class="pre">seaborn</span></code><a class="headerlink" href="#plot-mit-seaborn" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">show_values_on_bars</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">h_v</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">space2</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_show_on_single_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">h_v</span> <span class="o">==</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+                <span class="n">_x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="n">_y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_y</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">())</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span> 
+        <span class="k">elif</span> <span class="n">h_v</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+                <span class="n">_x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">space</span><span class="p">)</span>
+                <span class="n">_y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_y</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">space2</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">())</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">axs</span><span class="p">):</span>
+            <span class="n">_show_on_single_plot</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_show_on_single_plot</span><span class="p">(</span><span class="n">axs</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Bundeslaender_RM7_lastday</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;Bundesland&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">)</span>
+
+<span class="n">show_values_on_bars</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span> <span class="c1"># Zahlen hinzufügen</span>
+
+<span class="c1"># title</span>
+<span class="n">last_date</span> <span class="o">=</span> <span class="n">Bundeslaender_RM7_lastday</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># letztes Datum als Datenstand</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Corona Fallzahlen am &quot;</span><span class="o">+</span><span class="n">last_date</span><span class="o">+</span><span class="s2">&quot; (Quelle: RKI)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Label</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Bundeslaender_RKI-Coronazahlen_Stand&#39;</span><span class="o">+</span><span class="n">last_date</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Corona_RKI_14_0.png" src="../../_images/Corona_RKI_14_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="leipzig-rausfiltern">
+<h2><span class="section-number">3.1.2.4. </span>Leipzig rausfiltern<a class="headerlink" href="#leipzig-rausfiltern" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Leipzig</span> <span class="o">=</span> <span class="n">RKI_komplett</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">RKI_komplett</span><span class="p">[</span><span class="s2">&quot;Landkreis&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;SK Leipzig&quot;</span><span class="p">]</span>
+<span class="n">Leipzig</span> <span class="o">=</span> <span class="n">Leipzig</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;AnzahlFall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sum&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">Leipzig</span><span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">Leipzig</span><span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">],</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Leipzig</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Meldedatum&#39;</span><span class="p">,</span><span class="s1">&#39;Neue Fallzahlen&#39;</span><span class="p">]</span>
+<span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Mittelwert (7 Tage)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Summe (7 Tage)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Faelle gesamt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="n">Einwohner</span> <span class="o">=</span> <span class="mi">605407</span>  <span class="c1"># Quelle: https://www.leipzig.de/news/news/leipzig-hat-jetzt-605407-einwohner/</span>
+<span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen Summe (7 Tage)&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">Einwohner</span><span class="o">*</span><span class="mi">100000</span>
+<span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Leipzig</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;RKI_Corona_Leipzig.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">Leipzig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Meldedatum</th>
+      <th>Neue Fallzahlen</th>
+      <th>Neue Fallzahlen Mittelwert (7 Tage)</th>
+      <th>Neue Fallzahlen Summe (7 Tage)</th>
+      <th>Faelle gesamt</th>
+      <th>7 Tage Indizdenz</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-03-06 00:00:00+00:00</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-03-08 00:00:00+00:00</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-03-10 00:00:00+00:00</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-03-11 00:00:00+00:00</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-03-12 00:00:00+00:00</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>16</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>338</th>
+      <td>2021-04-23 00:00:00+00:00</td>
+      <td>86</td>
+      <td>102</td>
+      <td>714</td>
+      <td>19974</td>
+      <td>118.0</td>
+    </tr>
+    <tr>
+      <th>339</th>
+      <td>2021-04-24 00:00:00+00:00</td>
+      <td>91</td>
+      <td>105</td>
+      <td>741</td>
+      <td>20065</td>
+      <td>122.0</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>2021-04-25 00:00:00+00:00</td>
+      <td>57</td>
+      <td>107</td>
+      <td>751</td>
+      <td>20122</td>
+      <td>124.0</td>
+    </tr>
+    <tr>
+      <th>341</th>
+      <td>2021-04-26 00:00:00+00:00</td>
+      <td>38</td>
+      <td>105</td>
+      <td>740</td>
+      <td>20160</td>
+      <td>122.0</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>2021-04-27 00:00:00+00:00</td>
+      <td>113</td>
+      <td>95</td>
+      <td>665</td>
+      <td>20273</td>
+      <td>110.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>343 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="plot-mit-matplotlib">
+<h3><span class="section-number">3.1.2.4.1. </span>plot mit <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#plot-mit-matplotlib" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">dates</span>
+<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">tkr</span> 
+
+<span class="c1"># Allgemein</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-darkgrid&#39;</span><span class="p">)</span> <span class="c1"># default stil einstellen (auch andere stile z.B. auch &quot;seaborn-darkgrid&quot; möglich )</span>
+
+<span class="c1"># Set Figure</span>
+<span class="n">fig</span> <span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Plot 1 : ax1 - neue Fälle</span>
+
+<span class="c1"># Plot</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Meldedatum&quot;</span><span class="p">],</span><span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Meldedatum&quot;</span><span class="p">],</span> <span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Neue Fallzahlen&quot;</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">facecolor</span> <span class="o">=</span><span class="s1">&#39;tab:gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">99</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Neue Fälle&quot;</span><span class="p">)</span> 
+
+<span class="c1"># Plot 2 : ax2 - Fälle kumuliert</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="c1"># Plot</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;Meldedatum&quot;</span><span class="p">],</span><span class="n">Leipzig</span><span class="p">[</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;7 Tage Indizdenz&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">99</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Legenden</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+
+<span class="c1"># Zahlen der y-Achse Tausend mit Komma trennen</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">tkr</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="nb">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;,&quot;</span><span class="p">)))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">tkr</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="nb">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;,&quot;</span><span class="p">)))</span>
+
+<span class="c1"># Farben der zwei y-Achsen anpassen (mit Beschriftung)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Neue Fälle&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:gray&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fälle letzte 7 Tage/100.000 EW&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;tab:gray&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span> 
+
+<span class="c1"># y ticks Anpassen</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span> <span class="c1"># Achse 2 Limits</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span> <span class="c1"># Achse 1 Limits</span>
+
+<span class="n">nticks</span><span class="o">=</span><span class="mi">5</span> <span class="c1"># Anzahl Ticks für Achse 1 und 2</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">tkr</span><span class="o">.</span><span class="n">LinearLocator</span><span class="p">(</span><span class="n">nticks</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">tkr</span><span class="o">.</span><span class="n">LinearLocator</span><span class="p">(</span><span class="n">nticks</span><span class="p">))</span>
+
+<span class="c1"># x ticks Anpassen</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">MonthLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># jeden Monat ein Tick</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%b %y&#39;</span><span class="p">))</span> <span class="c1"># Darstellung Monatsnamekurz + Jahr</span>
+
+<span class="c1"># x Tick Schrift Formatierung (Variante 1: eigene Einstellungen)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">();</span> <span class="c1"># labels auslesen um diese noch mal zu formatieren</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span> <span class="c1"># Labels drehen</span>
+
+<span class="c1"># x Tick Schrift Formatierung (Variante 2: automatisch)</span>
+<span class="c1">#fig.autofmt_xdate()</span>
+
+<span class="c1"># title</span>
+<span class="n">last_date</span> <span class="o">=</span> <span class="n">Leipzig</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># letztes Datum als Datenstand</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Corona Fallzahlen für Leipzig (Quelle: RKI , Stand:&quot;</span><span class="o">+</span><span class="n">last_date</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Leipzig_RKI-Coronazahlen_Stand&#39;</span><span class="o">+</span><span class="n">last_date</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Corona_RKI_18_0.png" src="../../_images/Corona_RKI_18_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Datenverarbeitung/Pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Grundlagen.html" title="previous page"><span class="section-number">3.1.1. </span>Grundlagen</a>
+    <a class='right-next' id="next-link" href="external_Links.html" title="next page"><span class="section-number">3.1.3. </span>Externes Infomaterial</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Kaule<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
