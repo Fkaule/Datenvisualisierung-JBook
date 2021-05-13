@@ -5,10 +5,10 @@
 - title: Startseite
   file: Readme
  
-  numbered: true
-
 - title: Jupyter Notebooks
   file: JupyterNotebooks/JupyterNotebooks_Uebersicht
+
+  numbered: 2
   sections:
   - title: Einführung
     file: JupyterNotebooks/Einfuehrung
@@ -17,6 +17,8 @@
 
 - title: Python Basics
   file: Python-Basics/Python_Uebersicht
+  
+  numbered: 2
   sections:
   - title: Schleifen
     file: Python-Basics/Schleifen
@@ -25,10 +27,12 @@
 
 - title: Datenverarbeitung
   file: Datenverarbeitung/Datenverarbeitung_Uebersicht
-  chapters:
   
+  chapters:
   - title: Pandas
     file: Datenverarbeitung/Pandas/Pandas_Uebersicht
+    
+    numbered: 2
     sections:
     - title: Grundlagen
       file: Datenverarbeitung/Pandas/Grundlagen
@@ -39,10 +43,12 @@
 
 - title: Datenvisualisierung
   file: Datenvisualisierung/Datenvisualisierung_Uebersicht
+
   chapters:
-  
   - title: Matplotlib
     file: Datenvisualisierung/Matplotlib/Matplotlib_Uebersicht
+    
+    numbered: 2
     sections:
     - title: Grundlagen
       file: Datenvisualisierung/Matplotlib/Grundlagen
@@ -53,6 +59,7 @@
 
   - title: Seaborn
     file: Datenvisualisierung/Seaborn/Seaborn_Uebersicht
+    numbered: 2
     sections:
     - title: Grundlagen
       file: Datenvisualisierung/Seaborn/Grundlagen
@@ -61,6 +68,7 @@
 
   - title: Altair
     file: Datenvisualisierung/Altair/Altair_Uebersicht
+    numbered: 2
     sections:
     - title: Grundlagen
       file: Datenvisualisierung/Altair/Grundlagen
@@ -69,32 +77,40 @@
 
 - title: Algebra
   file: Algebra/Algebra_Uebersicht
-  chapters:
   
+  chapters:  
   - title: Numpy
     file: Algebra/Numpy/Numpy_Uebersicht
+    
+    numbered: 2
     sections:
     - title: Grundlagen
       file: Algebra/Numpy/Grundlagen
  
   - title: SciPy
     file: Algebra/SciPy/SciPy_Uebersicht
+    
+    numbered: 2
     sections:
     - title: Grundlagen
       file: Algebra/SciPy/Grundlagen
       
   - title: SymPy
     file: Algebra/SymPy/SymPy_Uebersicht
+    
+    numbered: 2
     sections:
     - title: Grundlagen
       file: Algebra/SymPy/Grundlagen
       
 - title: Machine Learning
   file: MachineLearning/MachineLearning_Uebersicht
-  chapters:
   
+  chapters:  
   - title: scikit-learn
     file: MachineLearning/scikit-learn/scikit-learn_Uebersicht
+    
+    numbered: 2
     sections:
     - title: Grundlagen
       file: MachineLearning/scikit-learn/Grundlagen
