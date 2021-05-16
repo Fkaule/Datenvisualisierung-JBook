@@ -20,6 +20,14 @@
   
   numbered: 2
   sections:
+  - title: Listen
+    file: Python-Basics/Lists
+  - title: Tuples
+    file: Python-Basics/Tuples
+  - title: Sets
+    file: Python-Basics/Sets
+  - title: Dictonaries
+    file: Python-Basics/Dictonaries
   - title: Schleifen
     file: Python-Basics/Schleifen
   - title: Funktionen
