@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Basics</title>
+    <title>2. Tuples</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Lists" href="Lists.html" />
-    <link rel="prev" title="2. Jupyter Book erstellen" href="../JupyterNotebooks/HowTo_JBBook.html" />
+    <link rel="next" title="3. Sets" href="Sets.html" />
+    <link rel="prev" title="1. Lists" href="Lists.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -112,17 +112,17 @@
   </i>
  </li>
  <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="Python_Uebersicht.html">
    Python Basics
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="Lists.html">
      1. Listen
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Tuples.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      2. Tuples
     </a>
    </li>
@@ -368,7 +368,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Python-Basics/Python_Uebersicht.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Python-Basics/Tuples.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -388,7 +388,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Fkaule/Python_for_Engineers/tree/main/issues/new?title=Issue%20on%20page%20%2FPython-Basics/Python_Uebersicht.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Fkaule/Python_for_Engineers/tree/main/issues/new?title=Issue%20on%20page%20%2FPython-Basics/Tuples.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -409,7 +409,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Python_for_Engineers/gh-pages?urlpath=tree/Python-Basics/Python_Uebersicht.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Python_for_Engineers/gh-pages?urlpath=tree/Python-Basics/Tuples.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -426,6 +426,31 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuples-definieren">
+   2.1. Tuples definieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lange-des-tuples-bestimmen">
+   2.2. Länge des Tuples bestimmen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuple-elemente-abrufen">
+   2.3. Tuple-Elemente abrufen
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -434,11 +459,180 @@
         
               <div>
                 
-  <div class="section" id="python-basics">
-<h1>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this headline">¶</a></h1>
-<div class="alert alert-block alert-danger">
-<b>ToDo:</b> Übersicht erstellen
-</div><div class="toctree-wrapper compound">
+  <div class="section" id="tuples">
+<h1><span class="section-number">2. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Tuples</span></code> verhalten sich analog wie <code class="docutils literal notranslate"><span class="pre">Listen</span></code>, nur dass diese nicht geändert werden können.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tuples</span></code> werden mit <code class="docutils literal notranslate"><span class="pre">runden</span> <span class="pre">Klammern</span> <span class="pre">()</span></code> definiert und Elemente werden durch ein <code class="docutils literal notranslate"><span class="pre">Komma</span> <span class="pre">,</span></code> getrennt</p></li>
+</ul>
+<div class="section" id="tuples-definieren">
+<h2><span class="section-number">2.1. </span>Tuples definieren<a class="headerlink" href="#tuples-definieren" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">leeres</span> <span class="pre">Tuple</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span> <span class="o">=</span> <span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>()
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mit</span> <span class="pre">Inhalt</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;USA&quot;</span><span class="p">,</span><span class="s2">&quot;Frankreich&quot;</span><span class="p">,</span><span class="s2">&quot;Schweden&quot;</span><span class="p">,</span><span class="s2">&quot;Polen&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Zahlen</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Zahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 2, 1, 5, 6)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lange-des-tuples-bestimmen">
+<h2><span class="section-number">2.2. </span>Länge des Tuples bestimmen<a class="headerlink" href="#lange-des-tuples-bestimmen" title="Permalink to this headline">¶</a></h2>
+<p>mit <code class="docutils literal notranslate"><span class="pre">len()</span></code> wird die Anzahl der Elemente einer Liste bestimmt</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">Zahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tuple-elemente-abrufen">
+<h2><span class="section-number">2.3. </span>Tuple-Elemente abrufen<a class="headerlink" href="#tuple-elemente-abrufen" title="Permalink to this headline">¶</a></h2>
+<p>Der <code class="docutils literal notranslate"><span class="pre">Index</span></code> der Listelemente beginnt bei 0</p>
+<p><code class="docutils literal notranslate"><span class="pre">erstes</span> <span class="pre">Element:</span> <span class="pre">[0]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;USA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">zweites</span> <span class="pre">Element:</span> <span class="pre">[1]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Frankreich&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">letztes</span> <span class="pre">Element:</span> <span class="pre">[-1]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Polen&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">vorletztes</span> <span class="pre">Element:</span> <span class="pre">[-1]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Schweden&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Erstes</span> <span class="pre">bis</span> <span class="pre">drittes</span> <span class="pre">Element</span> <span class="pre">[0:3]</span></code> <br>
+<strong>erste Indexzahl ist inklusive, die zweite ist exklusive!!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Alle</span> <span class="pre">ab</span> <span class="pre">dem</span> <span class="pre">zweiten</span> <span class="pre">Element</span></code> [1:]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Alle</span> <span class="pre">bis</span> <span class="pre">zum</span> <span class="pre">zweiten</span> <span class="pre">Element</span></code> [:2]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;USA&#39;, &#39;Frankreich&#39;)
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -467,8 +661,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../JupyterNotebooks/HowTo_JBBook.html" title="previous page"><span class="section-number">2. </span>Jupyter Book erstellen</a>
-    <a class='right-next' id="next-link" href="Lists.html" title="next page"><span class="section-number">1. </span>Lists</a>
+    <a class='left-prev' id="prev-link" href="Lists.html" title="previous page"><span class="section-number">1. </span>Lists</a>
+    <a class='right-next' id="next-link" href="Sets.html" title="next page"><span class="section-number">3. </span>Sets</a>
 
         </div>
         

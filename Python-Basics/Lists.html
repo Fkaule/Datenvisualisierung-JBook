@@ -1,0 +1,1086 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Lists</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Tuples" href="Tuples.html" />
+    <link rel="prev" title="Python Basics" href="Python_Uebersicht.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/Logo.png" class="logo" alt="logo">
+  
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Readme.html">
+   Startseite
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../JupyterNotebooks/JupyterNotebooks_Uebersicht.html">
+   Jupyter Notebooks
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../JupyterNotebooks/Einfuehrung.html">
+     1. Einführung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../JupyterNotebooks/HowTo_JBBook.html">
+     2. Jupyter Books
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="Python_Uebersicht.html">
+   Python Basics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1. Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tuples.html">
+     2. Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sets.html">
+     3. Sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Dictonaries.html">
+     4. Dictonaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Schleifen.html">
+     5. Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Funktionen.html">
+     6. Funktionen
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Datenverarbeitung/Datenverarbeitung_Uebersicht.html">
+   Datenverarbeitung
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../Datenverarbeitung/Pandas/Pandas_Uebersicht.html">
+     Pandas
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenverarbeitung/Pandas/Grundlagen.html">
+       1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenverarbeitung/Pandas/Corona_RKI.html">
+       2. Fallstudie RKI-Coronazahlen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenverarbeitung/Pandas/external_Links.html">
+       3. Externes Infomaterial
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Datenvisualisierung/Datenvisualisierung_Uebersicht.html">
+   Datenvisualisierung
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../Datenvisualisierung/Matplotlib/Matplotlib_Uebersicht.html">
+     Matplotlib
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenvisualisierung/Matplotlib/Grundlagen.html">
+       1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenvisualisierung/Matplotlib/Uebungen1.html">
+       2. Übungen 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenvisualisierung/Matplotlib/external_Links.html">
+       3. Externes Infomaterial
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../Datenvisualisierung/Seaborn/Seaborn_Uebersicht.html">
+     Seaborn
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenvisualisierung/Seaborn/Grundlagen.html">
+       1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenvisualisierung/Seaborn/external_Links.html">
+       2. Externes Infomaterial
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../Datenvisualisierung/Altair/Altair_Uebersicht.html">
+     Altair
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenvisualisierung/Altair/Grundlagen.html">
+       1. Grundlagen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Datenvisualisierung/Altair/external_Links.html">
+       2. Externes Infomaterial
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Algebra/Algebra_Uebersicht.html">
+   Algebra
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../Algebra/Numpy/Numpy_Uebersicht.html">
+     Numpy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Algebra/Numpy/Grundlagen.html">
+       1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../Algebra/SciPy/SciPy_Uebersicht.html">
+     SciPy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Algebra/SciPy/Grundlagen.html">
+       1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../Algebra/SymPy/SymPy_Uebersicht.html">
+     SymPy
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Algebra/SymPy/Grundlagen.html">
+       1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../MachineLearning/MachineLearning_Uebersicht.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../MachineLearning/scikit-learn/scikit-learn_Uebersicht.html">
+     scikit-learn
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../MachineLearning/scikit-learn/Grundlagen.html">
+       1. Grundlagen
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Python-Basics/Lists.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/Fkaule/Python_for_Engineers/tree/main"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/Fkaule/Python_for_Engineers/tree/main/issues/new?title=Issue%20on%20page%20%2FPython-Basics/Lists.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Python_for_Engineers/gh-pages?urlpath=tree/Python-Basics/Lists.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-definieren">
+   1.1. Listen definieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lange-der-listen-bestimmen">
+   1.2. Länge der Listen bestimmen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#index-des-elements-in-liste-bestimmen">
+   1.3. Index des Elements in Liste bestimmen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-elemente-abrufen">
+   1.4. Listen-Elemente abrufen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-elemente-hinzufugen">
+   1.5. Listen-Elemente hinzufügen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-elemente-entfernen">
+   1.6. Listen-Elemente entfernen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-sortierten">
+   1.7. Listen sortierten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sonderfall-string-in-list-umwandeln">
+   1.8. Sonderfall:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     string
+    </span>
+   </code>
+   in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     List
+    </span>
+   </code>
+   umwandeln
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prufen-ob-element-in-liste-ist-membership-test">
+   1.9. Prüfen ob Element in Liste ist (Membership test)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schleifen-uber-listen">
+   1.10. Schleifen über Listen
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lists">
+<h1><span class="section-number">1. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lists</span></code> werden mit <code class="docutils literal notranslate"><span class="pre">eckigen</span> <span class="pre">Klammern</span> <span class="pre">[]</span></code> definiert und Elemente werden durch ein <code class="docutils literal notranslate"><span class="pre">Komma</span> <span class="pre">,</span></code> getrennt</p></li>
+</ul>
+<div class="section" id="listen-definieren">
+<h2><span class="section-number">1.1. </span>Listen definieren<a class="headerlink" href="#listen-definieren" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">leere</span> <span class="pre">Liste</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mit</span> <span class="pre">Inhalt</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;USA&quot;</span><span class="p">,</span><span class="s2">&quot;Frankreich&quot;</span><span class="p">,</span><span class="s2">&quot;Schweden&quot;</span><span class="p">,</span><span class="s2">&quot;Polen&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Zahlen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Zahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 2, 1, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lange-der-listen-bestimmen">
+<h2><span class="section-number">1.2. </span>Länge der Listen bestimmen<a class="headerlink" href="#lange-der-listen-bestimmen" title="Permalink to this headline">¶</a></h2>
+<p>mit <code class="docutils literal notranslate"><span class="pre">len()</span></code> wird die Anzahl der Elemente einer Liste bestimmt</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">Zahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="index-des-elements-in-liste-bestimmen">
+<h2><span class="section-number">1.3. </span>Index des Elements in Liste bestimmen<a class="headerlink" href="#index-des-elements-in-liste-bestimmen" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">index()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;Frankreich&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="listen-elemente-abrufen">
+<h2><span class="section-number">1.4. </span>Listen-Elemente abrufen<a class="headerlink" href="#listen-elemente-abrufen" title="Permalink to this headline">¶</a></h2>
+<p>Der <code class="docutils literal notranslate"><span class="pre">Index</span></code> der Listelemente beginnt bei 0</p>
+<p><code class="docutils literal notranslate"><span class="pre">erstes</span> <span class="pre">Element:</span> <span class="pre">[0]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;USA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">zweites</span> <span class="pre">Element:</span> <span class="pre">[1]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Frankreich&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">letztes</span> <span class="pre">Element:</span> <span class="pre">[-1]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Polen&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">vorletztes</span> <span class="pre">Element:</span> <span class="pre">[-1]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Schweden&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Erstes</span> <span class="pre">bis</span> <span class="pre">drittes</span> <span class="pre">Element</span> <span class="pre">[0:3]</span></code> <br>
+<strong>erste Indexzahl ist inklusive, die zweite ist exklusive!!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Alle</span> <span class="pre">ab</span> <span class="pre">dem</span> <span class="pre">zweiten</span> <span class="pre">Element</span></code> [1:]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Alle</span> <span class="pre">bis</span> <span class="pre">zum</span> <span class="pre">zweiten</span> <span class="pre">Element</span></code> [:2]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;USA&#39;, &#39;Frankreich&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="listen-elemente-hinzufugen">
+<h2><span class="section-number">1.5. </span>Listen-Elemente hinzufügen<a class="headerlink" href="#listen-elemente-hinzufugen" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">append()</span></code> mit einem Element</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Schweiz&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">append()</span></code> mit zwei Elementen (also einer neuen Liste) <br>
+<strong>Erstellt eine List innerhalb einer Liste!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span><span class="s1">&#39;China&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, [&#39;Japan&#39;, &#39;China&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">extend()</span></code> mit einem Listenelement –&gt; gleiche Ergebnis wie mit <code class="docutils literal notranslate"><span class="pre">append()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;Ukraine&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, [&#39;Japan&#39;, &#39;China&#39;], &#39;Ukraine&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">extend()</span></code> mit zwei Listenelementen –&gt; fügt auch mehrere Element hinzu ohne Liste innerhalb einer Liste zu erstellen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;Mexiko&#39;</span><span class="p">,</span><span class="s1">&#39;Kanada&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, [&#39;Japan&#39;, &#39;China&#39;], &#39;Ukraine&#39;, &#39;Mexiko&#39;, &#39;Kanada&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">insert()</span></code> fügt ein Element an einer definierten Position hinzu</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vor insert: &#39;</span><span class="p">,</span><span class="n">Laender</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Laender</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Südafkrika&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nach insert: &#39;</span><span class="p">,</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vor insert:  [&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, [&#39;Japan&#39;, &#39;China&#39;], &#39;Ukraine&#39;, &#39;Mexiko&#39;, &#39;Kanada&#39;] 
+
+nach insert:  [&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Südafkrika&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, [&#39;Japan&#39;, &#39;China&#39;], &#39;Ukraine&#39;, &#39;Mexiko&#39;, &#39;Kanada&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="listen-elemente-entfernen">
+<h2><span class="section-number">1.6. </span>Listen-Elemente entfernen<a class="headerlink" href="#listen-elemente-entfernen" title="Permalink to this headline">¶</a></h2>
+<p>mit <code class="docutils literal notranslate"><span class="pre">remove</span></code> kann ein Element entfernt werden</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vor remove: &#39;</span><span class="p">,</span><span class="n">Laender</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Laender</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Südafkrika&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nach remove: &#39;</span><span class="p">,</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vor remove:  [&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Südafkrika&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, [&#39;Japan&#39;, &#39;China&#39;], &#39;Ukraine&#39;, &#39;Mexiko&#39;, &#39;Kanada&#39;] 
+
+nach remove:  [&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, [&#39;Japan&#39;, &#39;China&#39;], &#39;Ukraine&#39;, &#39;Mexiko&#39;, &#39;Kanada&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pop()</span></code> entfernt Element mit dem jeweiligen Index und gibt diese gleich aus</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vor pop: &#39;</span><span class="p">,</span><span class="n">Laender</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Laender_dropped</span> <span class="o">=</span> <span class="n">Laender</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;entferntes Element: &#39;</span><span class="p">,</span><span class="n">Laender_dropped</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nach pop: &#39;</span><span class="p">,</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vor pop:  [&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, [&#39;Japan&#39;, &#39;China&#39;], &#39;Ukraine&#39;, &#39;Mexiko&#39;, &#39;Kanada&#39;] 
+
+entferntes Element:  [&#39;Japan&#39;, &#39;China&#39;] 
+
+nach pop:  [&#39;USA&#39;, &#39;Frankreich&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Schweiz&#39;, &#39;Ukraine&#39;, &#39;Mexiko&#39;, &#39;Kanada&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="listen-sortierten">
+<h2><span class="section-number">1.7. </span>Listen sortierten<a class="headerlink" href="#listen-sortierten" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">reverse()</span></code> invertiert die Reihenfolge</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Kanada&#39;, &#39;Mexiko&#39;, &#39;Ukraine&#39;, &#39;Schweiz&#39;, &#39;Polen&#39;, &#39;Schweden&#39;, &#39;Frankreich&#39;, &#39;USA&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sort()</span></code> sortiert aufsteigend</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Frankreich&#39;, &#39;Kanada&#39;, &#39;Mexiko&#39;, &#39;Polen&#39;, &#39;Schweden&#39;, &#39;Schweiz&#39;, &#39;USA&#39;, &#39;Ukraine&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Zahlen</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Zahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 4, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sort(reverse=True)</span></code> sortiert absteigend</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Laender</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Laender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ukraine&#39;, &#39;USA&#39;, &#39;Schweiz&#39;, &#39;Schweden&#39;, &#39;Polen&#39;, &#39;Mexiko&#39;, &#39;Kanada&#39;, &#39;Frankreich&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Zahlen</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Zahlen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 5, 4, 2, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sonderfall-string-in-list-umwandeln">
+<h2><span class="section-number">1.8. </span>Sonderfall: <code class="docutils literal notranslate"><span class="pre">string</span></code> in <code class="docutils literal notranslate"><span class="pre">List</span></code> umwandeln<a class="headerlink" href="#sonderfall-string-in-list-umwandeln" title="Permalink to this headline">¶</a></h2>
+<p>Um ein string kann es hilfreich sein diesen mit <code class="docutils literal notranslate"><span class="pre">split()</span></code> in eine Liste aufzuteilen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datum</span><span class="o">=</span><span class="s2">&quot;20.01.1996&quot;</span>
+<span class="n">Datum</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;20&#39;, &#39;01&#39;, &#39;1996&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tag</span> <span class="o">=</span> <span class="n">Datum</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Monat</span> <span class="o">=</span> <span class="n">Datum</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Jahr</span> <span class="o">=</span> <span class="n">Datum</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Tag</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Monat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Jahr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+01
+1996
+</pre></div>
+</div>
+</div>
+</div>
+<p>mit <code class="docutils literal notranslate"><span class="pre">join()</span></code> können diese dann wieder zusammengefügt werden</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">Tag</span><span class="p">,</span><span class="n">Monat</span><span class="p">,</span><span class="n">Jahr</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;20.01.1996&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>oder auch:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datum</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;20&#39;, &#39;01&#39;, &#39;1996&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="prufen-ob-element-in-liste-ist-membership-test">
+<h2><span class="section-number">1.9. </span>Prüfen ob Element in Liste ist (Membership test)<a class="headerlink" href="#prufen-ob-element-in-liste-ist-membership-test" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-block alert-warning">
+<b>Hinweis:</b> für diese Art von Abfragen sind  `sets` deutlich effizienter
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Schweden&#39;</span> <span class="ow">in</span> <span class="n">Laender</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Deutschland&#39;</span> <span class="ow">in</span> <span class="n">Laender</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="schleifen-uber-listen">
+<h2><span class="section-number">1.10. </span>Schleifen über Listen<a class="headerlink" href="#schleifen-uber-listen" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ohne</span> <span class="pre">Index</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">Land</span> <span class="ow">in</span> <span class="n">Laender</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Land</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukraine
+USA
+Schweiz
+Schweden
+Polen
+Mexiko
+Kanada
+Frankreich
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mit</span> <span class="pre">Index</span></code> mit Hilfe von <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">Land</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">Laender</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">Land</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Ukraine
+1 USA
+2 Schweiz
+3 Schweden
+4 Polen
+5 Mexiko
+6 Kanada
+7 Frankreich
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Python-Basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Python_Uebersicht.html" title="previous page">Python Basics</a>
+    <a class='right-next' id="next-link" href="Tuples.html" title="next page"><span class="section-number">2. </span>Tuples</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Felix Kaule<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
