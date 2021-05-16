@@ -8,6 +8,11 @@ Dies ist eine **Zusammenfassung von Werkzeugen** für ingenieurstechnische Frage
 1. **Python Basics**
 | [Schleifen](Python-Basics/Schleifen.ipynb)
 | [Funktionen](Python-Basics/Funktionen.ipynb)
+| [Lists](Python-Basics/Lists.ipynb)
+| [Tuples](Python-Basics/Tuples.ipynb)
+| [Sets](Python-Basics/Sets.ipynb)
+| [Dictonaries](Python-Basics/Dictonaries.ipynb)
+
 
 1. **Datenverarbeitung**
 | [Pandas](Datenverarbeitung/Pandas/Pandas_Uebersicht.ipynb)
