@@ -14,6 +14,7 @@
     file: JupyterNotebooks/Einfuehrung
   - title: Jupyter Books
     file: JupyterNotebooks/HowTo_JBBook    
+    
 
 - title: Python Basics
   file: Python-Basics/Python_Uebersicht
@@ -122,3 +123,14 @@
     sections:
     - title: Grundlagen
       file: MachineLearning/scikit-learn/Grundlagen
+      
+- title: Beispiele aus der Lehre
+  file: Beispiele_Lehre/Lehrbeispiele_Uebersicht
+  
+  chapters:  
+  - title: FEM
+    file: Beispiele_Lehre/FEM/FEM_Uebersicht
+    
+    sections:
+    - title: Federsysteme
+      file: Beispiele_Lehre/FEM/Federsysteme/Uebung-Federsysteme
