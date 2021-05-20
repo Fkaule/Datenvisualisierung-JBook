@@ -457,15 +457,15 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notwendige-python-bilbiotheken-importieren-funktionen-definieren">
+   notwendige Python Bilbiotheken importieren / Funktionen definieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#losung-ohne-verwendung-von-listen-ubersichtlicher">
    Lösung ohne Verwendung von Listen (übersichtlicher)
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notwendige-python-bilbiotheken-importieren">
-     notwendige Python Bilbiotheken importieren
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#steifigkeitsmatritzen-elemente">
      Steifigkeitsmatritzen (Elemente)
@@ -510,41 +510,36 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     notwendige Python Bilbiotheken importieren
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
      Steifigkeitsmatritzen (Elemente)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id3">
      Freiheitsgrade (System)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id4">
      Inzidenzmatritzen (Elemente)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id5">
      Steifigkeitsmatrix (System)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id6">
      Freiheitsgrade (System)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id7">
      Freiheitsgrade (Elemente)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id8">
      Federkräfte (Elemente)
     </a>
    </li>
@@ -574,18 +569,64 @@
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(c_1=2k\)</span> , <span class="math notranslate nohighlight">\(c_2=4k\)</span> , <span class="math notranslate nohighlight">\(c_3=k\)</span> , <span class="math notranslate nohighlight">\(f_1=3F\)</span> , <span class="math notranslate nohighlight">\(f_2=-F\)</span></p></li>
 </ul>
+<div class="section" id="notwendige-python-bilbiotheken-importieren-funktionen-definieren">
+<h2>notwendige Python Bilbiotheken importieren / Funktionen definieren<a class="headerlink" href="#notwendige-python-bilbiotheken-importieren-funktionen-definieren" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bibliotheken</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">array_to_latex</span> <span class="k">as</span> <span class="nn">a2l</span> <span class="c1"># wenn nicht vorhanden: !pip install array_to_latex </span>
+
+<span class="c1"># Numpy Arrays in LaTex konvertieren und als LaTeX ausgeben</span>
+<span class="k">def</span> <span class="nf">pretty_print</span><span class="p">(</span><span class="n">variablename</span><span class="p">,</span><span class="n">array</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span> <span class="c1"># laTeX Code als Output darstellen</span>
+    <span class="c1"># Anpassung ob Array oder nur ein Wert</span>
+    <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># Anpassung Ausgabeformat für Integer Werte</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:6.0f}</span><span class="s1">&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:6.2f}</span><span class="s1">&#39;</span>
+        <span class="n">latex_code</span> <span class="o">=</span> <span class="n">a2l</span><span class="o">.</span><span class="n">to_ltx</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">frmt</span> <span class="o">=</span> <span class="nb">format</span><span class="p">,</span> <span class="n">arraytype</span> <span class="o">=</span> <span class="s1">&#39;pmatrix&#39;</span><span class="p">,</span> <span class="n">print_out</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">print_str</span> <span class="o">=</span> <span class="s2">&quot; </span><span class="se">\\</span><span class="s2">begin</span><span class="si">{aligned}</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%s</span><span class="s2"> </span><span class="se">\\</span><span class="s2">end</span><span class="si">{aligned}</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">variablename</span><span class="p">,</span> <span class="n">latex_code</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>       
+        <span class="n">print_str</span> <span class="o">=</span> <span class="s2">&quot; </span><span class="se">\\</span><span class="s2">begin</span><span class="si">{aligned}</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%f</span><span class="s2"> </span><span class="se">\\</span><span class="s2">end</span><span class="si">{aligned}</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">variablename</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="n">print_str</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="losung-ohne-verwendung-von-listen-ubersichtlicher">
 <h2>Lösung ohne Verwendung von Listen (übersichtlicher)<a class="headerlink" href="#losung-ohne-verwendung-von-listen-ubersichtlicher" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-block alert-info">
 <b>Hinweis:</b> Da keine Listen verwendet werden ist  der Code übersichtlicher, jedoch sind Anpassungen aufwendiger. Weiter unten wird ein Lösungsweg mit der Verwendung von Listen aufgezeigt
 </div>
-<div class="section" id="notwendige-python-bilbiotheken-importieren">
-<h3>notwendige Python Bilbiotheken importieren<a class="headerlink" href="#notwendige-python-bilbiotheken-importieren" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bibliotheken</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">array_to_latex</span> <span class="k">as</span> <span class="nn">a2l</span> <span class="c1"># wenn nicht vorhanden: !pip install array_to_latex </span>
+
+<span class="c1">#np.array in LaTex konvertieren und ausgeben</span>
+<span class="k">def</span> <span class="nf">pretty_print</span><span class="p">(</span><span class="n">variablename</span><span class="p">,</span><span class="n">array</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span> <span class="c1"># laTeX Code als Output darstellen</span>
+    <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+
+        <span class="c1"># adjust print format if values are integer</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:6.0f}</span><span class="s1">&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:6.2f}</span><span class="s1">&#39;</span>
+
+        <span class="n">latex_code</span> <span class="o">=</span> <span class="n">a2l</span><span class="o">.</span><span class="n">to_ltx</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">frmt</span> <span class="o">=</span> <span class="nb">format</span><span class="p">,</span> <span class="n">arraytype</span> <span class="o">=</span> <span class="s1">&#39;pmatrix&#39;</span><span class="p">,</span> <span class="n">print_out</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">print_str</span> <span class="o">=</span> <span class="s2">&quot; </span><span class="se">\\</span><span class="s2">begin</span><span class="si">{aligned}</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%s</span><span class="s2"> </span><span class="se">\\</span><span class="s2">end</span><span class="si">{aligned}</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">variablename</span><span class="p">,</span> <span class="n">latex_code</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>       
+        <span class="n">print_str</span> <span class="o">=</span> <span class="s2">&quot; </span><span class="se">\\</span><span class="s2">begin</span><span class="si">{aligned}</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%f</span><span class="s2"> </span><span class="se">\\</span><span class="s2">end</span><span class="si">{aligned}</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">variablename</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">display</span><span class="p">(</span><span class="n">Latex</span><span class="p">(</span><span class="n">print_str</span><span class="p">))</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -616,26 +657,28 @@
 <span class="n">Ke_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="o">*</span> <span class="n">c3</span>
 
 <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementsteifigkeitsmatrix K1 :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ke_1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementsteifigkeitsmatrix K2 :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ke_2</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementsteifigkeitsmatrix K3 :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ke_3</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;Ke_1&quot;</span><span class="p">,</span><span class="n">Ke_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;Ke_2&quot;</span><span class="p">,</span><span class="n">Ke_2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;Ke_3&quot;</span><span class="p">,</span><span class="n">Ke_3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elementsteifigkeitsmatrix K1 :
- [[ 2 -2]
- [-2  2]] 
-
-Elementsteifigkeitsmatrix K2 :
- [[ 4 -4]
- [-4  4]] 
-
-Elementsteifigkeitsmatrix K3 :
- [[ 1 -1]
- [-1  1]] 
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} Ke_1 = \begin{pmatrix}
+       2  &amp;     -2 \\
+     -2  &amp;       2 
+\end{pmatrix}\end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} Ke_2 = \begin{pmatrix}
+       4  &amp;     -4 \\
+     -4  &amp;       4 
+\end{pmatrix}\end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} Ke_3 = \begin{pmatrix}
+       1  &amp;     -1 \\
+     -1  &amp;       1 
+\end{pmatrix}\end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -649,20 +692,20 @@ Elementsteifigkeitsmatrix K3 :
 <b>Hinweis:</b> Da wir numerisch rechnen, setzen wir F=1
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lastvektor</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Lastvektor</span>
 <span class="n">q_sys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lastvektor:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">q_sys</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;q_</span><span class="si">{sys}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">q_sys</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lastvektor:
- [[ 3]
- [-1]]
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} q_{sys} = \begin{pmatrix}
+       3 \\
+     -1 
+\end{pmatrix}\end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -688,26 +731,28 @@ Elementsteifigkeitsmatrix K3 :
 <span class="n">inz_3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span> <span class="c1">#Lambda_3</span>
 
 <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inzidenzmatrix 1 :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">inz_1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inzidenzmatrix 2 :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">inz_2</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inzidenzmatrix 3 :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">inz_3</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;\Lambda_1&quot;</span><span class="p">,</span><span class="n">inz_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;\Lambda_2&quot;</span><span class="p">,</span><span class="n">inz_2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;\Lambda_3&quot;</span><span class="p">,</span><span class="n">inz_3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inzidenzmatrix 1 :
- [[0 1]
- [0 0]] 
-
-Inzidenzmatrix 2 :
- [[1 0]
- [0 1]] 
-
-Inzidenzmatrix 3 :
- [[1 0]
- [0 0]] 
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} \Lambda_1 = \begin{pmatrix}
+       0  &amp;       1 \\
+       0  &amp;       0 
+\end{pmatrix}\end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} \Lambda_2 = \begin{pmatrix}
+       1  &amp;       0 \\
+       0  &amp;       1 
+\end{pmatrix}\end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} \Lambda_3 = \begin{pmatrix}
+       1  &amp;       0 \\
+       0  &amp;       0 
+\end{pmatrix}\end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -722,16 +767,16 @@ Inzidenzmatrix 3 :
 
 <span class="n">K_sys</span><span class="o">=</span> <span class="n">Ksyspart_1</span> <span class="o">+</span> <span class="n">Ksyspart_2</span> <span class="o">+</span> <span class="n">Ksyspart_3</span>
 <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gesamtsteifigkeitsmatrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">K_sys</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;K_</span><span class="si">{sys}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">K_sys</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gesamtsteifigkeitsmatrix:
- [[ 5 -4]
- [-4  6]]
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} K_{sys} = \begin{pmatrix}
+       5  &amp;     -4 \\
+     -4  &amp;       6 
+\end{pmatrix}\end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -742,23 +787,28 @@ Inzidenzmatrix 3 :
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_sys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">K_sys</span><span class="p">,</span> <span class="n">q_sys</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Systemfreiheitsgrade p_sys:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;p_</span><span class="si">{sys}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">)</span>
 
 <span class="c1">#Ausgabe der Lösung</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung: p_1 =&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung: p_2 =&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung:&quot;</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;p_</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;p_</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Systemfreiheitsgrade p_sys:
- [[1. ]
- [0.5]] 
-
-Lösung: p_1 = [1.]
-Lösung: p_2 = [0.5]
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} p_{sys} = \begin{pmatrix}
+    1.00\\
+    0.50
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lösung:
 </pre></div>
 </div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} p_{1} = 1.000000 \end{aligned}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} p_{2} = 0.500000 \end{aligned}\]</div>
 </div>
 </div>
 </div>
@@ -771,26 +821,28 @@ Lösung: p_2 = [0.5]
 <span class="n">pe_3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">inz_3</span><span class="p">,</span><span class="n">p_sys</span><span class="p">)</span>
 
 <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementfreiheitsgrad 1:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">pe_1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementfreiheitsgrad 2:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">pe_2</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementfreiheitsgrad 3:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">pe_3</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;pe_</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">pe_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;pe_</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">pe_2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;pe_</span><span class="si">{3}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">pe_3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elementfreiheitsgrad 1:
- [[0.5]
- [0. ]] 
-
-Elementfreiheitsgrad 2:
- [[1. ]
- [0.5]] 
-
-Elementfreiheitsgrad 3:
- [[1.]
- [0.]] 
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} pe_{1} = \begin{pmatrix}
+    0.50\\
+    0.00
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} pe_{2} = \begin{pmatrix}
+    1.00\\
+    0.50
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} pe_{3} = \begin{pmatrix}
+    1.00\\
+    0.00
+\end{pmatrix} \end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -803,18 +855,23 @@ Elementfreiheitsgrad 3:
 <span class="n">Ne_3</span> <span class="o">=</span> <span class="n">c3</span><span class="o">*</span><span class="p">(</span><span class="n">pe_3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">pe_3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1">#Ausgabe der Lösung</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung: Federkraft N_1:&quot;</span><span class="p">,</span><span class="n">Ne_1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung: Federkraft N_2:&quot;</span><span class="p">,</span><span class="n">Ne_2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung: Federkraft N_3:&quot;</span><span class="p">,</span><span class="n">Ne_3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung:&quot;</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;N_</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ne_1</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;N_</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ne_2</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;N_</span><span class="si">{3}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ne_3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lösung: Federkraft N1: [1.]
-Lösung: Federkraft N2: [2.]
-Lösung: Federkraft N3: [1.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lösung:
 </pre></div>
 </div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} N_{1} = 1.000000 \end{aligned}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} N_{2} = 2.000000 \end{aligned}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} N_{3} = 1.000000 \end{aligned}\]</div>
 </div>
 </div>
 </div>
@@ -825,17 +882,7 @@ Lösung: Federkraft N3: [1.]
 <b>Hinweis:</b> Die Verwendung von Listen sieht kompliziert aus, vereinfacht aber die Eingabe, weil weniger geändert werden muss
 </div>
 <div class="section" id="id2">
-<h3>notwendige Python Bilbiotheken importieren<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id3">
-<h3>Steifigkeitsmatritzen (Elemente)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>Steifigkeitsmatritzen (Elemente)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\(Ke_1\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
 2k &amp; -2k \\ 
 -2k &amp; 2k \\ 
@@ -863,29 +910,31 @@ Lösung: Federkraft N3: [1.]
     <span class="n">Ke_i</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span><span class="o">*</span><span class="n">c</span>
     <span class="n">Ke</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ke_i</span><span class="p">)</span>
     <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementsteifigkeitsmatrix &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ke_i</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ke_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ke_i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elementsteifigkeitsmatrix  1 :
- [[ 2 -2]
- [-2  2]] 
-
-Elementsteifigkeitsmatrix  2 :
- [[ 4 -4]
- [-4  4]] 
-
-Elementsteifigkeitsmatrix  3 :
- [[ 1 -1]
- [-1  1]] 
-</pre></div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} Ke_1 = \begin{pmatrix}
+       2  &amp;     -2 \\
+     -2  &amp;       2 
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} Ke_2 = \begin{pmatrix}
+       4  &amp;     -4 \\
+     -4  &amp;       4 
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} Ke_3 = \begin{pmatrix}
+       1  &amp;     -1 \\
+     -1  &amp;       1 
+\end{pmatrix} \end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>Freiheitsgrade (System)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Freiheitsgrade (System)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\(q_{sys}\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
 3F \\ 
 -F \\ 
@@ -898,21 +947,21 @@ Elementsteifigkeitsmatrix  3 :
 <span class="n">q_sys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lastvektor:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">q_sys</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;q_</span><span class="si">{sys}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">q_sys</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lastvektor:
- [[ 3]
- [-1]]
-</pre></div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} q_{sys} = \begin{pmatrix}
+       3 \\
+     -1 
+\end{pmatrix} \end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id5">
-<h3>Inzidenzmatritzen (Elemente)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Inzidenzmatritzen (Elemente)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><img alt="" src="../../../_images/Inzidenzmatritzen.png" /></p>
 <p><span class="math notranslate nohighlight">\(\Lambda_1\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
 0 &amp; 1 \\ 
@@ -935,29 +984,31 @@ Elementsteifigkeitsmatrix  3 :
 
 <span class="c1">#Ausgabe zur optischen Kontrolle</span>
 <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">for</span> <span class="n">inz_i</span> <span class="ow">in</span> <span class="n">inz</span><span class="p">:</span> <span class="n">i</span><span class="o">+=</span><span class="mi">1</span><span class="p">;</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inzidenzmatrix&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">inz_i</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">inz_i</span> <span class="ow">in</span> <span class="n">inz</span><span class="p">:</span> <span class="n">i</span><span class="o">+=</span><span class="mi">1</span><span class="p">;</span><span class="n">pretty_print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;\Lambda_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">inz_i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inzidenzmatrix 1 :
- [[0 1]
- [0 0]] 
-
-Inzidenzmatrix 2 :
- [[1 0]
- [0 1]] 
-
-Inzidenzmatrix 3 :
- [[1 0]
- [0 0]] 
-</pre></div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} \Lambda_1 = \begin{pmatrix}
+       0  &amp;       1 \\
+       0  &amp;       0 
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} \Lambda_2 = \begin{pmatrix}
+       1  &amp;       0 \\
+       0  &amp;       1 
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} \Lambda_3 = \begin{pmatrix}
+       1  &amp;       0 \\
+       0  &amp;       0 
+\end{pmatrix} \end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>Steifigkeitsmatrix (System)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Steifigkeitsmatrix (System)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\( K_{sys} = \sum_{e=1}^3 {\Lambda^e}^T {K^e} {\Lambda^e} \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -970,48 +1021,53 @@ Inzidenzmatrix 3 :
 <span class="n">K_sys</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">K_i</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gesamtsteifigkeitsmatrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">K_sys</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;K_</span><span class="si">{sys}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">K_sys</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gesamtsteifigkeitsmatrix:
- [[ 5 -4]
- [-4  6]]
-</pre></div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} K_{sys} = \begin{pmatrix}
+       5  &amp;     -4 \\
+     -4  &amp;       6 
+\end{pmatrix} \end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>Freiheitsgrade (System)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>Freiheitsgrade (System)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>lösen von <span class="math notranslate nohighlight">\(p_{sys}\)</span> : <br>
 <span class="math notranslate nohighlight">\(K_{sys} p_{sys} = q_{sys}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_sys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">K_sys</span><span class="p">,</span> <span class="n">q_sys</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Systemfreiheitsgrade p_sys:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pretty_print</span><span class="p">(</span><span class="s2">&quot;p_</span><span class="si">{sys}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">)</span>
 
 <span class="c1">#Ausgabe der Lösung</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung: p_1 =&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung: p_2 =&quot;</span><span class="p">,</span><span class="n">p_sys</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung:&quot;</span><span class="p">)</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">p_sys_i</span> <span class="ow">in</span> <span class="n">p_sys</span><span class="p">:</span> <span class="n">i</span><span class="o">+=</span><span class="mi">1</span><span class="p">;</span><span class="n">pretty_print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">p_sys_i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Systemfreiheitsgrade p_sys:
- [[1. ]
- [0.5]] 
-
-Lösung: p_1 = [1.]
-Lösung: p_2 = [0.5]
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} p_{sys} = \begin{pmatrix}
+    1.00\\
+    0.50
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lösung:
 </pre></div>
 </div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} p_1 = 1.000000 \end{aligned}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} p_2 = 0.500000 \end{aligned}\]</div>
 </div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3>Freiheitsgrade (Elemente)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Freiheitsgrade (Elemente)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pe</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># leere Liste anlegen</span>
@@ -1020,49 +1076,56 @@ Lösung: p_2 = [0.5]
     <span class="n">pe_i</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">inz</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">p_sys</span><span class="p">)</span>
     <span class="n">pe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pe_i</span><span class="p">)</span>
     <span class="c1">#Ausgabe zur optischen Kontrolle</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementfreiheitsgrad &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">pe_i</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pe_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">pe_i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elementfreiheitsgrad  0 :
- [[0.5]
- [0. ]] 
-
-Elementfreiheitsgrad  1 :
- [[1. ]
- [0.5]] 
-
-Elementfreiheitsgrad  2 :
- [[1.]
- [0.]] 
-</pre></div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} pe_1 = \begin{pmatrix}
+    0.50\\
+    0.00
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} pe_2 = \begin{pmatrix}
+    1.00\\
+    0.50
+\end{pmatrix} \end{aligned}\end{split}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{aligned} pe_3 = \begin{pmatrix}
+    1.00\\
+    0.00
+\end{pmatrix} \end{aligned}\end{split}\]</div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id9">
-<h3>Federkräfte (Elemente)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>Federkräfte (Elemente)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ne</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># leere Liste anlegen</span>
 <span class="n">i</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># Laufvariable</span>
 <span class="c1"># Schleife mit allen Einträgen in c_list</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung:&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">c_list</span><span class="p">:</span>
     <span class="n">i</span><span class="o">+=</span><span class="mi">1</span> <span class="c1"># Laufvariable + 1</span>
     <span class="n">Ne_i</span><span class="o">=</span><span class="n">c</span><span class="o">*</span><span class="p">(</span><span class="n">pe</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">pe</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># ersten Listenindex = 0 (deswegen) i-1)</span>
     <span class="n">Ne</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ne_i</span><span class="p">)</span>
     <span class="c1">#Ausgabe der Lösung</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lösung: Federkraft N_&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;=&quot;</span><span class="p">,</span><span class="n">Ne_i</span><span class="p">)</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;N_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">Ne_i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lösung: Federkraft N_ 1 = [1.]
-Lösung: Federkraft N_ 2 = [2.]
-Lösung: Federkraft N_ 3 = [1.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lösung:
 </pre></div>
 </div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} N_1 = 1.000000 \end{aligned}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} N_2 = 2.000000 \end{aligned}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{aligned} N_3 = 1.000000 \end{aligned}\]</div>
 </div>
 </div>
 </div>
