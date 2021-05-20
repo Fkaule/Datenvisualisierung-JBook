@@ -492,6 +492,8 @@
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">init_printing</span>
+<span class="n">init_printing</span><span class="p">()</span> 
 </pre></div>
 </div>
 </div>
@@ -554,8 +556,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle A Em \frac{d^{2}}{d x^{2}} u{\left(x \right)} = - A g \rho\]</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_8_0.png" src="../../../_images/3-FEM-Stab-Uebung_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -566,8 +567,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle u{\left(0 \right)} = 0\]</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_9_0.png" src="../../../_images/3-FEM-Stab-Uebung_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -585,8 +585,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle u{\left(x \right)} = C_{1} + \frac{x \left(C_{2} Em - \frac{g \rho x}{2}\right)}{Em}\]</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_11_0.png" src="../../../_images/3-FEM-Stab-Uebung_11_0.png" />
 </div>
 </div>
 <p>Die Konstanten können über die Randbedingungen mit <code class="docutils literal notranslate"><span class="pre">solve</span></code> bestimmt werden</p>
@@ -600,9 +599,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{C1: 0, C2: L*g*rho/Em}
-</pre></div>
-</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_13_0.png" src="../../../_images/3-FEM-Stab-Uebung_13_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -613,8 +610,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle u{\left(x \right)} = \frac{x \left(L g \rho - \frac{g \rho x}{2}\right)}{Em}\]</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_14_0.png" src="../../../_images/3-FEM-Stab-Uebung_14_0.png" />
 </div>
 </div>
 <p>Die maximale Auslenkung ist dann</p>
@@ -625,8 +621,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle u{\left(500 \right)} = 4.81303125 \cdot 10^{-5}\]</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_16_0.png" src="../../../_images/3-FEM-Stab-Uebung_16_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -638,7 +633,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 <div class="cell_output docutils container">
 <img alt="../../../_images/3-FEM-Stab-Uebung_17_0.png" src="../../../_images/3-FEM-Stab-Uebung_17_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1475de3ac70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x217280b2f40&gt;
 </pre></div>
 </div>
 </div>
@@ -652,8 +647,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left( x \mapsto A Em \left(- \frac{g \rho x}{2 Em} + \frac{L g \rho - \frac{g \rho x}{2}}{Em}\right) \right)\]</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_19_0.png" src="../../../_images/3-FEM-Stab-Uebung_19_0.png" />
 </div>
 </div>
 <p>Die resultierende Kraft an der Lagerung ergibt sich zu</p>
@@ -664,8 +658,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 302.411672329962\]</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_21_0.png" src="../../../_images/3-FEM-Stab-Uebung_21_0.png" />
 </div>
 </div>
 <p>Damit ergibt sich die Spannung aus</p>
@@ -677,8 +670,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle Em \left(- \frac{g \rho x}{2 Em} + \frac{L g \rho - \frac{g \rho x}{2}}{Em}\right)\]</div>
+<img alt="../../../_images/3-FEM-Stab-Uebung_23_0.png" src="../../../_images/3-FEM-Stab-Uebung_23_0.png" />
 </div>
 </div>
 <p>Und die grafische Darstellung des Spannungsverlaufes</p>
@@ -690,7 +682,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 <div class="cell_output docutils container">
 <img alt="../../../_images/3-FEM-Stab-Uebung_25_0.png" src="../../../_images/3-FEM-Stab-Uebung_25_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x147638bcdc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x21729846a60&gt;
 </pre></div>
 </div>
 </div>
