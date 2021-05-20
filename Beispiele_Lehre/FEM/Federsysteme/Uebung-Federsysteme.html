@@ -574,11 +574,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bibliotheken</span>
-
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">array_to_latex</span> <span class="k">as</span> <span class="nn">a2l</span> <span class="c1"># wenn nicht vorhanden: !pip install array_to_latex </span>
 
-<span class="c1"># Numpy Arrays in LaTex konvertieren und als LaTeX ausgeben</span>
+<span class="c1"># Funktionen</span>
 <span class="k">def</span> <span class="nf">pretty_print</span><span class="p">(</span><span class="n">variablename</span><span class="p">,</span><span class="n">array</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span> <span class="c1"># laTeX Code als Output darstellen</span>
     <span class="c1"># Anpassung ob Array oder nur ein Wert</span>
@@ -632,17 +631,9 @@
 </div>
 <div class="section" id="steifigkeitsmatritzen-elemente">
 <h3>Steifigkeitsmatritzen (Elemente)<a class="headerlink" href="#steifigkeitsmatritzen-elemente" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(Ke_1\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-2k &amp; -2k \\ 
--2k &amp; 2k \\ 
-\end{array}\right)\)</span></p>
-<p><span class="math notranslate nohighlight">\(Ke_2\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-4k &amp; -4k \\ 
--4k &amp; 4k \\ 
-\end{array}\right)\)</span></p>
-<p><span class="math notranslate nohighlight">\(Ke_3\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-1k &amp; -1k \\ 
--1k &amp; 1k \\ 
+<p><span class="math notranslate nohighlight">\(K^e\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
+c^e &amp; -c^e \\ 
+-c^e &amp; c^e \\ 
 \end{array}\right)\)</span></p>
 <div class="alert alert-block alert-info">
 <b>Hinweis:</b> Da wir numerisch rechnen, setzen wir k=1
@@ -685,8 +676,8 @@
 <div class="section" id="freiheitsgrade-system">
 <h3>Freiheitsgrade (System)<a class="headerlink" href="#freiheitsgrade-system" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\(q_{sys}\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-3F \\ 
--F \\ 
+q_1 \\ 
+q_2 \\ 
 \end{array}\right)\)</span></p>
 <div class="alert alert-block alert-info">
 <b>Hinweis:</b> Da wir numerisch rechnen, setzen wir F=1
@@ -712,18 +703,6 @@
 <div class="section" id="inzidenzmatritzen-elemente">
 <h3>Inzidenzmatritzen (Elemente)<a class="headerlink" href="#inzidenzmatritzen-elemente" title="Permalink to this headline">¶</a></h3>
 <p><img alt="" src="../../../_images/Inzidenzmatritzen.png" /></p>
-<p><span class="math notranslate nohighlight">\(\Lambda_1\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-0 &amp; 1 \\ 
-0 &amp; 0 \\ 
-\end{array}\right)\)</span></p>
-<p><span class="math notranslate nohighlight">\(\Lambda_2\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-1 &amp; 0 \\ 
-0 &amp; 1 \\ 
-\end{array}\right)\)</span></p>
-<p><span class="math notranslate nohighlight">\(\Lambda_3\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-1 &amp; 0 \\ 
-0 &amp; 0 \\ 
-\end{array}\right)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inz_1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span> <span class="c1">#Lambda_1</span>
@@ -883,17 +862,9 @@
 </div>
 <div class="section" id="id2">
 <h3>Steifigkeitsmatritzen (Elemente)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p><span class="math notranslate nohighlight">\(Ke_1\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-2k &amp; -2k \\ 
--2k &amp; 2k \\ 
-\end{array}\right)\)</span></p>
-<p><span class="math notranslate nohighlight">\(Ke_2\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-4k &amp; -4k \\ 
--4k &amp; 4k \\ 
-\end{array}\right)\)</span></p>
-<p><span class="math notranslate nohighlight">\(Ke_3\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-1k &amp; -1k \\ 
--1k &amp; 1k \\ 
+<p><span class="math notranslate nohighlight">\(Ke_i\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
+c_i &amp; -c_i \\ 
+-c_i &amp; c_i \\ 
 \end{array}\right)\)</span></p>
 <div class="alert alert-block alert-info">
 <b>Hinweis:</b> Da wir numerisch rechnen, setzen wir k=1
@@ -936,8 +907,8 @@
 <div class="section" id="id3">
 <h3>Freiheitsgrade (System)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\(q_{sys}\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-3F \\ 
--F \\ 
+q_1 \\ 
+q_2 \\ 
 \end{array}\right)\)</span></p>
 <div class="alert alert-block alert-info">
 <b>Hinweis:</b> Da wir numerisch rechnen, setzen wir F=1
@@ -963,18 +934,6 @@
 <div class="section" id="id4">
 <h3>Inzidenzmatritzen (Elemente)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><img alt="" src="../../../_images/Inzidenzmatritzen.png" /></p>
-<p><span class="math notranslate nohighlight">\(\Lambda_1\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-0 &amp; 1 \\ 
-0 &amp; 0 \\ 
-\end{array}\right)\)</span></p>
-<p><span class="math notranslate nohighlight">\(\Lambda_2\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-1 &amp; 0 \\ 
-0 &amp; 1 \\ 
-\end{array}\right)\)</span></p>
-<p><span class="math notranslate nohighlight">\(\Lambda_3\)</span> = <span class="math notranslate nohighlight">\(\left(\begin{array}{rrr} 
-1 &amp; 0 \\ 
-0 &amp; 0 \\ 
-\end{array}\right)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inz</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># leere Liste anlegen</span>
