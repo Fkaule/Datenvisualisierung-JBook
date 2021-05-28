@@ -63,6 +63,8 @@
       file: Datenvisualisierung/Matplotlib/Grundlagen
     - title: Übungen 1
       file: Datenvisualisierung/Matplotlib/Uebungen1
+    - title: LaTeX Formeln/Schriftart
+      file: Datenvisualisierung/Matplotlib/LaTeX
     - title: Externes Infomaterial
       file: Datenvisualisierung/Matplotlib/external_Links
 
@@ -134,3 +136,5 @@
     sections:
     - title: Federsysteme
       file: Beispiele_Lehre/FEM/Federsysteme/Uebung-Federsysteme
+    - title: Stab unter Eigenlast
+      file: Beispiele_Lehre/FEM/Stab_Eigenlast/3-FEM-Stab-Uebung
