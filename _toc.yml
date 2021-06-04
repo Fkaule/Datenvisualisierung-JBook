@@ -133,8 +133,17 @@
   - title: FEM
     file: Beispiele_Lehre/FEM/FEM_Uebersicht
     
+    numbered: 2
     sections:
     - title: Federsysteme
       file: Beispiele_Lehre/FEM/Federsysteme/Uebung-Federsysteme
     - title: Stab unter Eigenlast
       file: Beispiele_Lehre/FEM/Stab_Eigenlast/3-FEM-Stab-Uebung
+
+  - title: Bauteilbewertung
+    file: Beispiele_Lehre/Bauteilbewertung/Bauteilbewertung_Uebersicht
+    
+    numbered: 2
+    sections:
+    - title: Groesseneffekt
+      file: Beispiele_Lehre/Bauteilbewertung/Groesseneffekt/Groesseneffekt
