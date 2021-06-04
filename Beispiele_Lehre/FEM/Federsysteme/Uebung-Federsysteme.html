@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung Federsysteme</title>
+    <title>1. Übung Federsysteme</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,7 +57,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Normalkraftstab unter Eigenlast" href="../Stab_Eigenlast/3-FEM-Stab-Uebung.html" />
+    <link rel="next" title="2. Normalkraftstab unter Eigenlast" href="../Stab_Eigenlast/3-FEM-Stab-Uebung.html" />
     <link rel="prev" title="FEM Übersicht" href="../FEM_Uebersicht.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -347,12 +347,26 @@
     <ul class="current collapse-ul">
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Federsysteme
+       1. Federsysteme
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../Stab_Eigenlast/3-FEM-Stab-Uebung.html">
-       Stab unter Eigenlast
+       2. Stab unter Eigenlast
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Bauteilbewertung/Bauteilbewertung_Uebersicht.html">
+     Bauteilbewertung
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Bauteilbewertung/Groesseneffekt/Groesseneffekt.html">
+       1. Groesseneffekt
       </a>
      </li>
     </ul>
@@ -469,12 +483,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notwendige-python-bilbiotheken-importieren-funktionen-definieren">
-   notwendige Python Bilbiotheken importieren / Funktionen definieren
+   1.1. notwendige Python Bilbiotheken importieren / Funktionen definieren
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#losung-ohne-verwendung-von-listen-ubersichtlicher">
-   Lösung ohne Verwendung von Listen (übersichtlicher)
+   1.2. Lösung ohne Verwendung von Listen (übersichtlicher)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -516,7 +530,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#losung-mit-der-verwendung-von-listen-fortgeschritten">
-   Lösung mit der Verwendung von Listen (Fortgeschritten)
+   1.3. Lösung mit der Verwendung von Listen (Fortgeschritten)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -569,7 +583,7 @@
               <div>
                 
   <div class="section" id="ubung-federsysteme">
-<h1>Übung Federsysteme<a class="headerlink" href="#ubung-federsysteme" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Übung Federsysteme<a class="headerlink" href="#ubung-federsysteme" title="Permalink to this headline">¶</a></h1>
 <p><img alt="" src="../../../_images/Uebung-Federsysteme.png" /></p>
 <p><strong>Gesucht:</strong> <br></p>
 <ul class="simple">
@@ -581,7 +595,7 @@
 <li><p><span class="math notranslate nohighlight">\(c_1=2k\)</span> , <span class="math notranslate nohighlight">\(c_2=4k\)</span> , <span class="math notranslate nohighlight">\(c_3=k\)</span> , <span class="math notranslate nohighlight">\(f_1=3F\)</span> , <span class="math notranslate nohighlight">\(f_2=-F\)</span></p></li>
 </ul>
 <div class="section" id="notwendige-python-bilbiotheken-importieren-funktionen-definieren">
-<h2>notwendige Python Bilbiotheken importieren / Funktionen definieren<a class="headerlink" href="#notwendige-python-bilbiotheken-importieren-funktionen-definieren" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>notwendige Python Bilbiotheken importieren / Funktionen definieren<a class="headerlink" href="#notwendige-python-bilbiotheken-importieren-funktionen-definieren" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bibliotheken</span>
@@ -609,7 +623,7 @@
 </div>
 </div>
 <div class="section" id="losung-ohne-verwendung-von-listen-ubersichtlicher">
-<h2>Lösung ohne Verwendung von Listen (übersichtlicher)<a class="headerlink" href="#losung-ohne-verwendung-von-listen-ubersichtlicher" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Lösung ohne Verwendung von Listen (übersichtlicher)<a class="headerlink" href="#losung-ohne-verwendung-von-listen-ubersichtlicher" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-block alert-info">
 <b>Hinweis:</b> Da keine Listen verwendet werden ist  der Code übersichtlicher, jedoch sind Anpassungen aufwendiger. Weiter unten wird ein Lösungsweg mit der Verwendung von Listen aufgezeigt
 </div>
@@ -867,7 +881,7 @@ q_2 \\
 </div>
 </div>
 <div class="section" id="losung-mit-der-verwendung-von-listen-fortgeschritten">
-<h2>Lösung mit der Verwendung von Listen (Fortgeschritten)<a class="headerlink" href="#losung-mit-der-verwendung-von-listen-fortgeschritten" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Lösung mit der Verwendung von Listen (Fortgeschritten)<a class="headerlink" href="#losung-mit-der-verwendung-von-listen-fortgeschritten" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-block alert-info">
 <b>Hinweis:</b> Die Verwendung von Listen sieht kompliziert aus, vereinfacht aber die Eingabe, weil weniger geändert werden muss
 </div>
@@ -1128,7 +1142,7 @@ q_2 \\
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../FEM_Uebersicht.html" title="previous page">FEM Übersicht</a>
-    <a class='right-next' id="next-link" href="../Stab_Eigenlast/3-FEM-Stab-Uebung.html" title="next page">Normalkraftstab unter Eigenlast</a>
+    <a class='right-next' id="next-link" href="../Stab_Eigenlast/3-FEM-Stab-Uebung.html" title="next page"><span class="section-number">2. </span>Normalkraftstab unter Eigenlast</a>
 
         </div>
         
