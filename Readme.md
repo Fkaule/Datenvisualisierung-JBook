@@ -37,7 +37,7 @@ Dies ist eine **Zusammenfassung von Werkzeugen** für ingenieurstechnische Frage
 | [Stab unter Eigenlast](Beispiele_Lehre/FEM/Stab_Eigenlast/3-FEM-Stab-Uebung.ipynb)
 
 1. **Bauteilbewertung**
-| [Größeneffekt](Beispiele_Lehre/Bauteilbewertung/Groesseneffekt/Groesseneffekt.ipynb)
+| [Bestimmung effektives Volumen](Beispiele_Lehre/Bauteilbewertung/Groesseneffekt/Groesseneffekt.ipynb)
 
 
 Der Inhalt ist als [Jupyter Book](https://fkaule.github.io/Python_for_Engineers/) veröffentlicht und Notebooks befinden sich [hier (Git repo:main)](https://github.com/Fkaule/Python_for_Engineers/tree/main)
