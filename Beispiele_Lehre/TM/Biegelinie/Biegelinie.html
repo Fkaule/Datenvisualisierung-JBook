@@ -571,10 +571,17 @@
 </div>
 </div>
 <p>Integrationskonstanten mit Hilfe von Randbedingungen bestimmen</p>
+<ul class="simple">
+<li><p>u(x=0) = 0 -&gt; muss umgestellt werden das Gleichung == 0 (ist bereits erfolgt)</p></li>
+<li><p>u’(x=0) = 0 -&gt; muss umgestellt werden das Gleichung == 0 (ist bereits erfolgt)</p></li>
+</ul>
+<div class="alert alert-block alert-info">
+<b>Hinweis zum Umstellung der Gleichung ==0:</b> Wäre die Randbedingung u(x=L)=1 so müsste stehen: u.rhs.subs(x,L)-1
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bed1</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">0</span>
-<span class="n">bed2</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bed1</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">bed2</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">solve</span><span class="p">([</span><span class="n">bed1</span><span class="p">,</span><span class="n">bed2</span><span class="p">])</span>
 <span class="n">C</span>
 </pre></div>
