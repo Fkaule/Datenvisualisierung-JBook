@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Normalkraftstab unter Eigenlast</title>
+    <title>1. Herleitung</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -53,10 +53,9 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="FEM Übersicht" href="../TM_Uebersicht.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -91,7 +90,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../../JupyterNotebooks/JupyterNotebooks_Uebersicht.html">
    Jupyter Notebooks
@@ -333,23 +332,23 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../../Lehrbeispiele_Uebersicht.html">
    Beispiele aus der Lehre
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../FEM_Uebersicht.html">
+    <a class="reference internal" href="../../FEM/FEM_Uebersicht.html">
      FEM
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../Federsysteme/Uebung-Federsysteme.html">
+      <a class="reference internal" href="../../FEM/Federsysteme/Uebung-Federsysteme.html">
        1. Federsysteme
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Stab_Eigenlast/3-FEM-Stab-Uebung.html">
+      <a class="reference internal" href="../../FEM/Stab_Eigenlast/3-FEM-Stab-Uebung.html">
        2. Stab unter Eigenlast
       </a>
      </li>
@@ -371,13 +370,13 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../TM/TM_Uebersicht.html">
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="../TM_Uebersicht.html">
      Technische Mechanik
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../TM/Biegelinie/Biegelinie.html">
+    <ul class="current collapse-ul">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        1. Biegelinie
       </a>
      </li>
@@ -429,7 +428,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/Beispiele_Lehre/FEM/Stab/3-FEM-Stab-Übung.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/Beispiele_Lehre/TM/Biegelinie/Biegelinie.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -449,7 +448,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Fkaule/Python_for_Engineers/tree/main/issues/new?title=Issue%20on%20page%20%2FBeispiele_Lehre/FEM/Stab/3-FEM-Stab-Übung.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Fkaule/Python_for_Engineers/tree/main/issues/new?title=Issue%20on%20page%20%2FBeispiele_Lehre/TM/Biegelinie/Biegelinie.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -470,7 +469,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Python_for_Engineers/gh-pages?urlpath=tree/Beispiele_Lehre/FEM/Stab/3-FEM-Stab-Übung.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Fkaule/Python_for_Engineers/gh-pages?urlpath=tree/Beispiele_Lehre/TM/Biegelinie/Biegelinie.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -487,28 +486,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabenstellung">
-   Aufgabenstellung
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-a">
-     Lösung a)
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-        </nav>
-        
         </div>
     </div>
 </div>
@@ -517,98 +494,35 @@
         
               <div>
                 
-  <div class="cell docutils container">
+  <div class="section" id="herleitung">
+<h1><span class="section-number">1. </span>Herleitung<a class="headerlink" href="#herleitung" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../../_images/Biegelinie1.png" /></p>
+<p>Imports</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">init_printing</span>
+<span class="n">init_printing</span><span class="p">()</span> 
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="normalkraftstab-unter-eigenlast">
-<h1>Normalkraftstab unter Eigenlast<a class="headerlink" href="#normalkraftstab-unter-eigenlast" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="aufgabenstellung">
-<h2>Aufgabenstellung<a class="headerlink" href="#aufgabenstellung" title="Permalink to this headline">¶</a></h2>
-<p>Gegeben ist ein hängender Normalkraftstab mit zylindrischem Querschnitt unter Eigenlast.</p>
-<p><img alt="" src="Beispiele_Lehre/FEM/Stab/Aufgabenstellung.png" /></p>
-<p>a)
-Zunächst verschaffen wir uns die exakte Lösung für das dargestellte Normalkraftproblem mit konstanter Dehnsteifigkeit und linear anwachsender Linienlast:</p>
-<ol class="simple">
-<li><p>Lösen Sie die Differentialgleichung des Normalkraftstabes <span class="math notranslate nohighlight">\((EA u(x)')'=-q_x(x)\)</span>
-mit den Randbedingungen
-<span class="math notranslate nohighlight">\(u(0)=0\)</span> und
-<span class="math notranslate nohighlight">\(u'(L)=0\)</span>.</p></li>
-<li><p>Stellen Sie den Verlauf von <span class="math notranslate nohighlight">\(u(x)\)</span> grafisch dar mit dem “Plot[]” Befehl.</p></li>
-<li><p>Ermitteln Sie die Normalkraft <span class="math notranslate nohighlight">\(N(x)\)</span> (über <span class="math notranslate nohighlight">\(N(x)= E A u'(x))\)</span>  sowie den Spannungsverlauf <span class="math notranslate nohighlight">\(\sigma(x)\)</span> und stellen den Verlauf üben den Stab dar.</p></li>
-</ol>
-<p>b)
-Modellieren Sie das Problem in ANSYS und berechnen Sie ebenso den
-Verschiebungsverlauf <span class="math notranslate nohighlight">\(u(x)\)</span> und
-Spannungsverlauf <span class="math notranslate nohighlight">\(\sigma(x)\)</span>.
-Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Variieren Sie die Elementanzahl im Modell.</p>
-<p>Geg.:<br />
-<span class="math notranslate nohighlight">\(g=9,81\,\)</span>m/s^2<br />
-<span class="math notranslate nohighlight">\(\rho=7850\,\)</span>kg/m^3<br />
-<span class="math notranslate nohighlight">\(E=200.000\,\)</span>GPa<br />
-<span class="math notranslate nohighlight">\(A=2500\pi\)</span><br />
-<span class="math notranslate nohighlight">\(L=500\,\)</span>mm</p>
-<div class="section" id="losung-a">
-<h3>Lösung a)<a class="headerlink" href="#losung-a" title="Permalink to this headline">¶</a></h3>
+<p>Differentialgleichung definieren</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">Em</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">L</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x g Em rho A L&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="p">[(</span><span class="n">A</span><span class="p">,</span><span class="mi">50</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),(</span><span class="n">L</span><span class="p">,</span><span class="mi">500</span><span class="p">),(</span><span class="n">rho</span><span class="p">,</span><span class="mf">7.85</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">)),(</span><span class="n">Em</span><span class="p">,</span><span class="mi">200000</span><span class="p">),(</span><span class="n">g</span><span class="p">,</span><span class="mf">9.81</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span><span class="bp">cls</span><span class="o">=</span><span class="n">Function</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dglg</span><span class="o">=</span><span class="n">Eq</span><span class="p">(</span><span class="n">Em</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">rho</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="p">,</span><span class="n">I</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">F</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;E I x L F&#39;</span><span class="p">)</span>
+<span class="n">u</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span><span class="bp">cls</span><span class="o">=</span><span class="n">Function</span><span class="p">)</span>
+<span class="n">M</span><span class="o">=</span><span class="n">F</span><span class="o">*</span><span class="n">L</span><span class="o">+</span><span class="n">F</span><span class="o">*</span><span class="n">x</span>
+<span class="n">dglg</span><span class="o">=</span><span class="n">Eq</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">*</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">M</span><span class="p">)</span>
 <span class="n">dglg</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle A Em \frac{d^{2}}{d x^{2}} u{\left(x \right)} = - A g \rho\]</div>
+<img alt="../../../_images/Biegelinie_4_0.png" src="../../../_images/Biegelinie_4_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rb1</span><span class="o">=</span><span class="n">Eq</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">rb1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle u{\left(0 \right)} = 0\]</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">du</span><span class="o">=</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Differentialgleichung lösen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">=</span><span class="n">dsolve</span><span class="p">(</span><span class="n">dglg</span><span class="p">,</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -617,26 +531,24 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle u{\left(x \right)} = C_{1} + \frac{x \left(C_{2} Em - \frac{g \rho x}{2}\right)}{Em}\]</div>
+<img alt="../../../_images/Biegelinie_6_0.png" src="../../../_images/Biegelinie_6_0.png" />
 </div>
 </div>
-<p>Die Konstanten können über die Randbedingungen mit <code class="docutils literal notranslate"><span class="pre">solve</span></code> bestimmt werden</p>
+<p>Integrationskonstanten mit Hilfe von Randbedingungen bestimmen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bed1</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">0</span>
-<span class="n">bed2</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">0</span>
+<span class="n">bed2</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">0</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">solve</span><span class="p">([</span><span class="n">bed1</span><span class="p">,</span><span class="n">bed2</span><span class="p">])</span>
 <span class="n">C</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{C1: 0, C2: L*g*rho/Em}
-</pre></div>
+<img alt="../../../_images/Biegelinie_8_0.png" src="../../../_images/Biegelinie_8_0.png" />
 </div>
 </div>
-</div>
+<p>Integrationskonstanten einsetzen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
@@ -645,88 +557,42 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle u{\left(x \right)} = \frac{x \left(L g \rho - \frac{g \rho x}{2}\right)}{Em}\]</div>
+<img alt="../../../_images/Biegelinie_10_0.png" src="../../../_images/Biegelinie_10_0.png" />
 </div>
 </div>
-<p>Die maximale Auslenkung ist dann</p>
+<p>Gleichung vereinfachen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle u{\left(500 \right)} = 4.81303125 \cdot 10^{-5}\]</div>
+<img alt="../../../_images/Biegelinie_12_0.png" src="../../../_images/Biegelinie_12_0.png" />
 </div>
 </div>
+<p>Daten einsetzen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ux</span> <span class="o">=</span> <span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">ux</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="p">[(</span><span class="n">F</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="n">L</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="n">E</span><span class="p">,</span><span class="mf">210e3</span><span class="p">),(</span><span class="n">I</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">ux</span> <span class="o">=</span> <span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">ux</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3-FEM-Stab-Übung_17_0.png" src="../../../_images/3-FEM-Stab-Übung_17_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1475de3ac70&gt;
-</pre></div>
+<img alt="../../../_images/Biegelinie_14_0.png" src="../../../_images/Biegelinie_14_0.png" />
 </div>
 </div>
-</div>
-<p>Die Normalkraft errechnet sich aus der Ableitung der Verschiebungsfunktion</p>
+<p>plotten</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nex</span><span class="o">=</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Em</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">Nex</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">ux</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">)));</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left( x \mapsto A Em \left(- \frac{g \rho x}{2 Em} + \frac{L g \rho - \frac{g \rho x}{2}}{Em}\right) \right)\]</div>
-</div>
-</div>
-<p>Die resultierende Kraft an der Lagerung ergibt sich zu</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">(</span><span class="n">Nex</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 302.411672329962\]</div>
-</div>
-</div>
-<p>Damit ergibt sich die Spannung aus</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sigex</span><span class="o">=</span><span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">Nex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">A</span><span class="p">)</span>
-<span class="n">Sigex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle Em \left(- \frac{g \rho x}{2 Em} + \frac{L g \rho - \frac{g \rho x}{2}}{Em}\right)\]</div>
-</div>
-</div>
-<p>Und die grafische Darstellung des Spannungsverlaufes</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">Sigex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/3-FEM-Stab-Übung_25_0.png" src="../../../_images/3-FEM-Stab-Übung_25_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x147638bcdc0&gt;
-</pre></div>
-</div>
-</div>
-</div>
+<img alt="../../../_images/Biegelinie_16_0.png" src="../../../_images/Biegelinie_16_0.png" />
 </div>
 </div>
 </div>
@@ -744,7 +610,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Beispiele_Lehre\FEM\Stab"
+            path: "./Beispiele_Lehre\TM\Biegelinie"
         },
         predefinedOutput: true
     }
@@ -756,6 +622,7 @@ Vergleichen Sie die Maximalwerte und Verläufe mit den exakten Lösungen.  Varii
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="../TM_Uebersicht.html" title="previous page">FEM Übersicht</a>
 
         </div>
         
