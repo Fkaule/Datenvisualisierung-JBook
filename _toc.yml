@@ -147,3 +147,11 @@
     sections:
     - title: Bestimmung effektives Volumen
       file: Beispiele_Lehre/Bauteilbewertung/Groesseneffekt/Groesseneffekt
+
+  - title: Technische Mechanik
+    file: Beispiele_Lehre/TM/TM_Uebersicht
+    
+    numbered: 2
+    sections:
+    - title: Biegelinie
+      file: Beispiele_Lehre/TM/Biegelinie/Biegelinie
