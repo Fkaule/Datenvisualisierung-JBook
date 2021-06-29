@@ -55,7 +55,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="FEM Übersicht" href="../TM_Uebersicht.html" />
+    <link rel="prev" title="Technische Mechanik Übersicht" href="../TM_Uebersicht.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -510,16 +510,52 @@
 <p>Differentialgleichung definieren</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="p">,</span><span class="n">I</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">F</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;E I x L F&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="p">,</span><span class="n">Iy</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">F</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;E I_y x L F M&#39;</span><span class="p">)</span>
 <span class="n">u</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span><span class="bp">cls</span><span class="o">=</span><span class="n">Function</span><span class="p">)</span>
-<span class="n">M</span><span class="o">=</span><span class="n">F</span><span class="o">*</span><span class="n">L</span><span class="o">+</span><span class="n">F</span><span class="o">*</span><span class="n">x</span>
-<span class="n">dglg</span><span class="o">=</span><span class="n">Eq</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">*</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">M</span><span class="p">)</span>
+<span class="n">dglg</span><span class="o">=</span><span class="n">Eq</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">Iy</span><span class="o">*</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">M</span><span class="p">)</span>
 <span class="n">dglg</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../../../_images/Biegelinie_4_0.png" src="../../../_images/Biegelinie_4_0.png" />
+</div>
+</div>
+<p>Momentenverlauf</p>
+<p><img alt="" src="../../../_images/Biegelinie2.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">=</span><span class="n">F</span><span class="o">*</span><span class="n">L</span><span class="o">+</span><span class="n">F</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Falls nicht klar ist wie man auf die Gleichung kommt, hier eine mögliche Herleitung:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># y(x=0) = FL</span>
+<span class="n">x1</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">y1</span><span class="o">=</span><span class="n">F</span><span class="o">*</span><span class="n">L</span> 
+
+<span class="c1"># y(x=L) = 0</span>
+<span class="n">x2</span><span class="o">=</span><span class="n">L</span>
+<span class="n">y2</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">y1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die komplette Differentialgleichung lautet dann wie folgt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dglg</span><span class="o">=</span><span class="n">Eq</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">Iy</span><span class="o">*</span><span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">M</span><span class="p">)</span>
+<span class="n">dglg</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Biegelinie_10_0.png" src="../../../_images/Biegelinie_10_0.png" />
 </div>
 </div>
 <p>Differentialgleichung lösen</p>
@@ -531,7 +567,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Biegelinie_6_0.png" src="../../../_images/Biegelinie_6_0.png" />
+<img alt="../../../_images/Biegelinie_12_0.png" src="../../../_images/Biegelinie_12_0.png" />
 </div>
 </div>
 <p>Integrationskonstanten mit Hilfe von Randbedingungen bestimmen</p>
@@ -545,7 +581,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Biegelinie_8_0.png" src="../../../_images/Biegelinie_8_0.png" />
+<img alt="../../../_images/Biegelinie_14_0.png" src="../../../_images/Biegelinie_14_0.png" />
 </div>
 </div>
 <p>Integrationskonstanten einsetzen</p>
@@ -557,7 +593,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Biegelinie_10_0.png" src="../../../_images/Biegelinie_10_0.png" />
+<img alt="../../../_images/Biegelinie_16_0.png" src="../../../_images/Biegelinie_16_0.png" />
 </div>
 </div>
 <p>Gleichung vereinfachen</p>
@@ -568,20 +604,20 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Biegelinie_12_0.png" src="../../../_images/Biegelinie_12_0.png" />
+<img alt="../../../_images/Biegelinie_18_0.png" src="../../../_images/Biegelinie_18_0.png" />
 </div>
 </div>
 <p>Daten einsetzen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="p">[(</span><span class="n">F</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="n">L</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="n">E</span><span class="p">,</span><span class="mf">210e3</span><span class="p">),(</span><span class="n">I</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="p">[(</span><span class="n">F</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="n">L</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="n">E</span><span class="p">,</span><span class="mf">210e3</span><span class="p">),(</span><span class="n">Iy</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
 <span class="n">ux</span> <span class="o">=</span> <span class="n">Lambda</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="n">ux</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Biegelinie_14_0.png" src="../../../_images/Biegelinie_14_0.png" />
+<img alt="../../../_images/Biegelinie_20_0.png" src="../../../_images/Biegelinie_20_0.png" />
 </div>
 </div>
 <p>plotten</p>
@@ -592,7 +628,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/Biegelinie_16_0.png" src="../../../_images/Biegelinie_16_0.png" />
+<img alt="../../../_images/Biegelinie_22_0.png" src="../../../_images/Biegelinie_22_0.png" />
 </div>
 </div>
 </div>
@@ -622,7 +658,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../TM_Uebersicht.html" title="previous page">FEM Übersicht</a>
+    <a class='left-prev' id="prev-link" href="../TM_Uebersicht.html" title="previous page">Technische Mechanik Übersicht</a>
 
         </div>
         
