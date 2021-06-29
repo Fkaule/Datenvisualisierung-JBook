@@ -53,6 +53,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="prev" title="Technische Mechanik Übersicht" href="../TM_Uebersicht.html" />
@@ -615,6 +617,15 @@
 </div>
 </div>
 <p>Daten einsetzen</p>
+<p>Will man die das Ergebnis grafisch darstellen, so muss man Werte einsetzen</p>
+<p>Beispieldaten:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F=5N\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L=10mm\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E=210000MPa\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(I_y=1mm^4\)</span></p></li>
+</ul>
+<p>Das Ergebnis ist dann in den Einheiten in denen die Beispieldaten gegeben sind (also hier in mm)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="p">[(</span><span class="n">F</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="n">L</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="n">E</span><span class="p">,</span><span class="mf">210e3</span><span class="p">),(</span><span class="n">Iy</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
