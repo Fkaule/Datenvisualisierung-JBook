@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. LaTeX in Matplotlib</title>
+    <title>LaTeX in Matplotlib</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,8 +57,6 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Externes Infomaterial" href="external_Links.html" />
-    <link rel="prev" title="2. Übungen 1" href="Uebungen1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,7 +91,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../JupyterNotebooks/JupyterNotebooks_Uebersicht.html">
    Jupyter Notebooks
@@ -185,16 +183,16 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../Datenvisualisierung_Uebersicht.html">
    Datenvisualisierung
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active collapsible-parent">
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="Matplotlib_Uebersicht.html">
      Matplotlib
     </a>
-    <ul class="current collapse-ul">
+    <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="Grundlagen.html">
        1. Grundlagen
@@ -205,9 +203,9 @@
        2. Übungen 1
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       3. LaTeX Formeln/Schriftart
+     <li class="toctree-l3">
+      <a class="reference internal" href="scientific_plots.html">
+       3. Plots im wissenschaftlichem Stil
       </a>
      </li>
      <li class="toctree-l3">
@@ -377,12 +375,7 @@
     <a class="reference internal" href="../../Beispiele_Lehre/TM/TM_Uebersicht.html">
      Technische Mechanik
     </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../Beispiele_Lehre/TM/Biegelinie/Biegelinie.html">
-       1. Biegelinie
-      </a>
-     </li>
+    <ul class="simple collapse-ul">
     </ul>
     <i class="fas fa-chevron-down">
     </i>
@@ -497,17 +490,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#latex-formeln-in-beschriftungen-verwenden">
-   3.1. LaTeX Formeln in Beschriftungen verwenden
+   LaTeX Formeln in Beschriftungen verwenden
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bildbreite-nach-latexvorgabe-einstellen">
-   3.2. Bildbreite nach LaTeXvorgabe Einstellen
+   Bildbreite nach LaTeXvorgabe Einstellen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#latex-schrift-verwenden">
-   3.3. LaTeX Schrift verwenden
+   LaTeX Schrift verwenden
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -546,9 +539,9 @@
               <div>
                 
   <div class="section" id="latex-in-matplotlib">
-<h1><span class="section-number">3. </span>LaTeX in Matplotlib<a class="headerlink" href="#latex-in-matplotlib" title="Permalink to this headline">¶</a></h1>
+<h1>LaTeX in Matplotlib<a class="headerlink" href="#latex-in-matplotlib" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="latex-formeln-in-beschriftungen-verwenden">
-<h2><span class="section-number">3.1. </span>LaTeX Formeln in Beschriftungen verwenden<a class="headerlink" href="#latex-formeln-in-beschriftungen-verwenden" title="Permalink to this headline">¶</a></h2>
+<h2>LaTeX Formeln in Beschriftungen verwenden<a class="headerlink" href="#latex-formeln-in-beschriftungen-verwenden" title="Permalink to this headline">¶</a></h2>
 <p>Durch das Einschließen mit <code class="docutils literal notranslate"><span class="pre">$</span></code> und das vorstellen des Buchstaben <code class="docutils literal notranslate"><span class="pre">r</span></code> (interpretation als <code class="docutils literal notranslate"><span class="pre">raw</span></code> Text) können Formeln mit <span class="math notranslate nohighlight">\(\LaTeX\)</span> ausgedrückt werden</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,7 +566,7 @@
 </div>
 </div>
 <div class="section" id="bildbreite-nach-latexvorgabe-einstellen">
-<h2><span class="section-number">3.2. </span>Bildbreite nach LaTeXvorgabe Einstellen<a class="headerlink" href="#bildbreite-nach-latexvorgabe-einstellen" title="Permalink to this headline">¶</a></h2>
+<h2>Bildbreite nach LaTeXvorgabe Einstellen<a class="headerlink" href="#bildbreite-nach-latexvorgabe-einstellen" title="Permalink to this headline">¶</a></h2>
 <p>Beziehend auf den Artikel im <a class="reference external" href="https://scipy-cookbook.readthedocs.io/items/Matplotlib_LaTeX_Examples.html">SciPy Cookbock</a> wird hier aufgezeigt, wie man Grafiken so formatiert dass Sie im Stil von LaTeX entsprechen (Schriftart) und die richtige Bildbreite wählen</p>
 <p>Um die Bildbreite zu wählen muss in dem LaTeX figure der Befehl <code class="docutils literal notranslate"><span class="pre">\showthe\columnwidth</span></code> eingebaut werden, wodruch im LaTeX Output die Breite in pt abgelesen werden kann</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig_width_pt</span> <span class="o">=</span> <span class="mf">246.0</span>  <span class="c1"># Get this from LaTeX using \showthe\columnwidth</span>
@@ -589,7 +582,7 @@
 </div>
 </div>
 <div class="section" id="latex-schrift-verwenden">
-<h2><span class="section-number">3.3. </span>LaTeX Schrift verwenden<a class="headerlink" href="#latex-schrift-verwenden" title="Permalink to this headline">¶</a></h2>
+<h2>LaTeX Schrift verwenden<a class="headerlink" href="#latex-schrift-verwenden" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mit-der-schriftart-stix">
 <h3>mit der Schriftart <code class="docutils literal notranslate"><span class="pre">stix</span></code><a class="headerlink" href="#mit-der-schriftart-stix" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">plt.rcParams['mathtext.fontset']</span> <span class="pre">=</span> <span class="pre">'stix'</span></code> <br>
@@ -707,8 +700,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Uebungen1.html" title="previous page"><span class="section-number">2. </span>Übungen 1</a>
-    <a class='right-next' id="next-link" href="external_Links.html" title="next page"><span class="section-number">4. </span>Externes Infomaterial</a>
 
         </div>
         
