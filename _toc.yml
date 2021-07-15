@@ -63,8 +63,8 @@
       file: Datenvisualisierung/Matplotlib/Grundlagen
     - title: Übungen 1
       file: Datenvisualisierung/Matplotlib/Uebungen1
-    - title: LaTeX Formeln/Schriftart
-      file: Datenvisualisierung/Matplotlib/LaTeX
+    - title: Plots im wissenschaftlichem Stil
+      file: Datenvisualisierung/Matplotlib/scientific_plots
     - title: Externes Infomaterial
       file: Datenvisualisierung/Matplotlib/external_Links
 
