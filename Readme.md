@@ -40,6 +40,6 @@ Dies ist eine **Zusammenfassung von Werkzeugen** für ingenieurstechnische Frage
 | [Bestimmung effektives Volumen](Beispiele_Lehre/Bauteilbewertung/Groesseneffekt/Groesseneffekt.ipynb)
 
 1. **Technsiche Mechanik**
-| [Biegelinie](Beispiele_Lehre/TM/Biegelinie/Biegelinie.ipynb)
+| [Biegelinie](Beispiele_Lehre/TM/Biegelinie/Biegelinie1.ipynb)
 
 Der Inhalt ist als [Jupyter Book](https://fkaule.github.io/Python_for_Engineers/) veröffentlicht und Notebooks befinden sich [hier (Git repo:main)](https://github.com/Fkaule/Python_for_Engineers/tree/main)
